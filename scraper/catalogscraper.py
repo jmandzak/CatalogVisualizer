@@ -2,6 +2,11 @@ import requests
 from bs4 import BeautifulSoup
 from unicodedata import normalize
 
+class CatalogData:
+    def __init__(self):
+        self.terms = []
+        self.milestones = []
+
 # MANUALLY GO THROUGH THIS FUNCTION AND CHANGE URLS/YEARS TO UPDATE
 def getURLs():
     csURLs = {
@@ -62,14 +67,14 @@ def main():
                 temp_classes = []
 
                 # set the value of a certain catalog to an empty dict so we can fill it in later
-                catalogs[f'{major}-{year}'] = {}
+                catalogs[f'{major}-{year}'] = CatalogData()
                 for tr in trs:
                     tds = tr.find_all('td')
 
                     # rows with term, we add our temp list to the term if non-empty, then increment term
                     if 'Term' in tds[0].text:
                         if len(temp_classes) != 0:
-                            catalogs[f'{major}-{year}'][f'Term {term}'] = temp_classes.copy()
+                            catalogs[f'{major}-{year}'].terms.append(temp_classes.copy())
                             temp_classes.clear()
                         term += 1
                         continue
@@ -84,9 +89,19 @@ def main():
 
                     # add strings of class names to list. Normalize here for unicode data
                     text = normalize('NFKD', tds[0].text.strip())
+
+                    # Various text fixes to make things consistent
                     text = text.replace(' *', '')
+                    text = text.replace('*', '')
                     text = text.replace(' and ', '+')
+                    text = text.replace(', ', ' or ')
+                    text = text.replace('  ', ' ')
                     temp_classes.append(text)
+
+                    # now grab the milestone notes, if any
+                    milestones = normalize('NFKD', tds[2].text.strip())
+                    if milestones:
+                        catalogs[f'{major}-{year}'].milestones.append(milestones)
 
                     # for td in tds:
                     #     if td.find('sup'):
@@ -99,8 +114,8 @@ def main():
 
     for key, val in catalogs.items():
         print(f'{key}: ')
-        for term_number, classes in val.items():
-            print(f'{term_number}:\n{classes}\n')
+        for i, classes in enumerate(val.terms):
+            print(f'Term {i+1}:\nMilestones: {val.milestones[i]}\n{classes}\n')
         
 
 if __name__ == '__main__':
