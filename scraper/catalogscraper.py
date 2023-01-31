@@ -10,24 +10,24 @@ class CatalogData:
 # MANUALLY GO THROUGH THIS FUNCTION AND CHANGE URLS/YEARS TO UPDATE
 def getURLs():
     csURLs = {
-        '2019': '',
-        '2020': '',
-        '2021': '',
+        '2019': 'https://catalog.utk.edu/preview_program.php?catoid=26&poid=11104',
+        '2020': 'https://catalog.utk.edu/preview_program.php?catoid=29&poid=12469',
+        '2021': 'https://catalog.utk.edu/preview_program.php?catoid=32&poid=15044',
         '2022': 'https://catalog.utk.edu/preview_program.php?catoid=34&poid=16680',
     }
 
     ceURLs = {
-        '2019': '',
-        '2020': '',
-        '2021': '',
-        '2022': '',
+        '2019': 'https://catalog.utk.edu/preview_program.php?catoid=26&poid=11103',
+        '2020': 'https://catalog.utk.edu/preview_program.php?catoid=29&poid=12468',
+        '2021': 'https://catalog.utk.edu/preview_program.php?catoid=32&poid=15043',
+        '2022': 'https://catalog.utk.edu/preview_program.php?catoid=34&poid=16679',
     }
 
     eeURLs = {
-        '2019': '',
-        '2020': '',
-        '2021': '',
-        '2022': '',
+        '2019': 'https://catalog.utk.edu/preview_program.php?catoid=26&poid=11111',
+        '2020': 'https://catalog.utk.edu/preview_program.php?catoid=29&poid=12476',
+        '2021': 'https://catalog.utk.edu/preview_program.php?catoid=32&poid=15051',
+        '2022': 'https://catalog.utk.edu/preview_program.php?catoid=34&poid=16687',
     }
 
     urls = {
@@ -102,13 +102,7 @@ def main():
                     milestones = normalize('NFKD', tds[2].text.strip())
                     if milestones:
                         catalogs[f'{major}-{year}'].milestones.append(milestones)
-
-                    # for td in tds:
-                    #     if td.find('sup'):
-                    #         td.sup.decompose()
                         
-                    #     print(td.text, end=' - ')
-                    # print()
             except:
                 print('unable to access page\n')
 
