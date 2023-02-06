@@ -57,6 +57,11 @@ def main():
                 page = requests.get(url)
                 soup = BeautifulSoup(page.content, 'html.parser')
 
+                # f = open('test.txt', 'w')
+                # f.write(soup.prettify())
+                # f.close()
+                # break
+
                 # the table we want has a class of 'acalog-core'
                 # we want the first table with this class
                 results = soup.find(class_='acalog-core')
@@ -84,7 +89,7 @@ def main():
                         continue
 
                     # remove superscripts
-                    if tds[0].find('sup'):
+                    while tds[0].find('sup'):
                         tds[0].sup.decompose()
 
                     # add strings of class names to list. Normalize here for unicode data
@@ -94,22 +99,33 @@ def main():
                     text = text.replace(' *', '')
                     text = text.replace('*', '')
                     text = text.replace(' and ', '+')
+                    text = text.replace(', or', ' or')
                     text = text.replace(', ', ' or ')
                     text = text.replace('  ', ' ')
                     temp_classes.append(text)
 
                     # now grab the milestone notes, if any
                     milestones = normalize('NFKD', tds[2].text.strip())
+                    milestones = milestones.replace(' *', '')
+                    milestones = milestones.replace('*', '')
+                    milestones = milestones.replace('  ', ' ')
                     if milestones:
                         catalogs[f'{major}-{year}'].milestones.append(milestones)
-                        
+
             except:
                 print('unable to access page\n')
 
-    for key, val in catalogs.items():
-        print(f'{key}: ')
-        for i, classes in enumerate(val.terms):
-            print(f'Term {i+1}:\nMilestones: {val.milestones[i]}\n{classes}\n')
+        #     break
+        # exit()
+
+    for catalog, catalog_class in catalogs.items():
+        print(f'{catalog}: ')
+        for i, courses in enumerate(catalog_class.terms):
+            print(f'Term {i+1}:\nMilestones: {catalog_class.milestones[i]}\n')
+            for course in courses:
+                print(course)
+            print('')
+        print('\n\n*****************************************************************\n\n')
         
 
 if __name__ == '__main__':
