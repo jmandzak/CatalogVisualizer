@@ -118,6 +118,58 @@ def getAllCourses(soup: BeautifulSoup):
 
     return all_courses
 
+def getSchedule(soup: BeautifulSoup, catalogs: dict, major: str, year: str):
+    # the table we want has a class of 'acalog-core'
+    # we want the first table with this class
+    results = soup.find(class_='acalog-core')
+    tables = results.find_all('table')
+    trs = tables[0].find_all('tr')
+    
+    # keep up with the term number
+    term = 0
+
+    # temporary list for storing classes needed in a term
+    temp_classes = []
+    
+    for tr in trs:
+        tds = tr.find_all('td')
+
+        # rows with term, we add our temp list to the term if non-empty, then increment term
+        if 'Term' in tds[0].text:
+            if len(temp_classes) != 0:
+                catalogs[f'{major}-{year}'].terms.append(temp_classes.copy())
+                temp_classes.clear()
+            term += 1
+            continue
+
+        # this is the last line of our table
+        if 'TOTAL' in tds[0].text:
+            continue
+
+        # remove superscripts
+        while tds[0].find('sup'):
+            tds[0].sup.decompose()
+
+        # add strings of class names to list. Normalize here for unicode data
+        text = normalize('NFKD', tds[0].text.strip())
+
+        # Various text fixes to make things consistent
+        text = text.replace(' *', '')
+        text = text.replace('*', '')
+        text = text.replace(' and ', '+')
+        text = text.replace(', or', ' or')
+        text = text.replace(', ', ' or ')
+        text = text.replace('  ', ' ')
+        temp_classes.append(text)
+
+        # now grab the milestone notes, if any
+        milestones = normalize('NFKD', tds[2].text.strip())
+        milestones = milestones.replace(' *', '')
+        milestones = milestones.replace('*', '')
+        milestones = milestones.replace('  ', ' ')
+        if milestones:
+            catalogs[f'{major}-{year}'].milestones.append(milestones)
+
 def main():
     urls = getURLs()
 
@@ -138,8 +190,6 @@ def main():
         for year, url in majorURLs.items():
             print(f'{major}-{year}')
 
-            # keep up with the term number
-            term = 0
             try:
                 # grab the page, click all the links to get everything on the DOM, then let BS4 parse it
                 driver.get(url)
@@ -153,52 +203,7 @@ def main():
                 all_courses = getAllCourses(soup)
                 catalogs[f'{major}-{year}'].all_courses = all_courses.copy()
 
-                # the table we want has a class of 'acalog-core'
-                # we want the first table with this class
-                results = soup.find(class_='acalog-core')
-                tables = results.find_all('table')
-                trs = tables[0].find_all('tr')
-
-                # temporary list for storing classes needed in a term
-                temp_classes = []
-                for tr in trs:
-                    tds = tr.find_all('td')
-
-                    # rows with term, we add our temp list to the term if non-empty, then increment term
-                    if 'Term' in tds[0].text:
-                        if len(temp_classes) != 0:
-                            catalogs[f'{major}-{year}'].terms.append(temp_classes.copy())
-                            temp_classes.clear()
-                        term += 1
-                        continue
-
-                    # this is the last line of our table
-                    if 'TOTAL' in tds[0].text:
-                        continue
-
-                    # remove superscripts
-                    while tds[0].find('sup'):
-                        tds[0].sup.decompose()
-
-                    # add strings of class names to list. Normalize here for unicode data
-                    text = normalize('NFKD', tds[0].text.strip())
-
-                    # Various text fixes to make things consistent
-                    text = text.replace(' *', '')
-                    text = text.replace('*', '')
-                    text = text.replace(' and ', '+')
-                    text = text.replace(', or', ' or')
-                    text = text.replace(', ', ' or ')
-                    text = text.replace('  ', ' ')
-                    temp_classes.append(text)
-
-                    # now grab the milestone notes, if any
-                    milestones = normalize('NFKD', tds[2].text.strip())
-                    milestones = milestones.replace(' *', '')
-                    milestones = milestones.replace('*', '')
-                    milestones = milestones.replace('  ', ' ')
-                    if milestones:
-                        catalogs[f'{major}-{year}'].milestones.append(milestones)
+                getSchedule(soup, catalogs, major, year)
 
             except:
                 print('unable to access page\n')
