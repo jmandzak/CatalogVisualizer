@@ -1,0 +1,705 @@
+cs-2019: 
+Term 1:
+Milestones: MATH 130 or higher or one Arts and Humanities, Cultures and Civilizations, or Social Sciences Elective
+
+COSC 102
+ENGL 101 or ENGL 118
+MATH 141 or MATH 147
+PHYS 135 or PHYS 137 or EF 151 or EF 157
+
+Term 2:
+Milestones: MATH 130 or higher
+
+COSC 130
+ENGL 102
+MATH 142 or MATH 148
+PHYS 136 or PHYS 138 or EF 152 or EF 158
+
+Term 3:
+Milestones: EF 151 or PHYS 135
+
+BIOL 101 or BIOL 150 or BIOL 158 or CHEM 100 or CHEM 120 or CHEM 128 or PHYS 231
+COSC 140
+MATH 251 or MATH 257
+Cultures+Civilizations Elective
+
+Term 4:
+Milestones: EF 152 or PHYS 136
+
+Arts+Humanities Elective
+COSC 302 or COSC 307
+ECE 313 or ECE 317
+COSC 311 or COSC 317
+Social Sciences Elective
+
+Term 5:
+Milestones: CBE 201 or COSC 102 or ME 202 or MSE 201
+
+COSC 360 or COSC 367
+Computer Science Upper-Division Elective
+COSC 312 or COSC 340
+Unrestricted Elective
+
+Term 6:
+Milestones: No milestones
+
+COSC 361 or COSC 365 or COSC 366
+Cultures+Civilizations Elective
+Computer Science Upper-Division Elective
+COSC 395
+
+Term 7:
+Milestones: No milestones
+
+Arts+Humanities Elective
+COSC 401
+Computer Science Upper-Division Electives
+ENGL 355 or ENGL 360
+
+cs-2020: 
+Term 1:
+Milestones: MATH 130 or MATH 131 or higher or one Arts and Humanities, Cultures and Civilizations, or Social Sciences Elective
+
+COSC 102
+ENGL 101 or ENGL 118
+MATH 132 or MATH 141 or MATH 147
+PHYS 135 or PHYS 137 or EF 151 or EF 157
+
+Term 2:
+Milestones: MATH 130 or MATH 131 or higher
+
+COSC 130
+ENGL 102
+MATH 142 or MATH 148
+PHYS 136 or PHYS 138 or EF 152 or EF 158
+
+Term 3:
+Milestones: EF 151 or PHYS 135
+
+BIOL 101 or BIOL 150 or BIOL 158 or CHEM 100 or CHEM 120 or CHEM 128 or PHYS 231
+COSC 140
+MATH 251 or MATH 257
+Cultures+Civilizations Elective
+
+Term 4:
+Milestones: EF 152 or PHYS 136
+
+Arts+Humanities Elective
+COSC 302 or COSC 307
+ECE 313 or ECE 317
+COSC 311 or COSC 317
+Social Sciences Elective
+
+Term 5:
+Milestones: CBE 201 or COSC 102 or ME 202 or MSE 201
+
+COSC 360 or COSC 367
+Computer Science Upper-Division Elective
+COSC 312 or COSC 340
+Unrestricted Elective
+
+Term 6:
+Milestones: No milestones
+
+COSC 361 or COSC 365 or COSC 366
+Cultures+Civilizations Elective
+Computer Science Upper-Division Elective
+COSC 395
+
+Term 7:
+Milestones: No milestones
+
+Arts+Humanities Elective
+COSC 401
+Computer Science Upper-Division Electives
+ENGL 355 or ENGL 360
+
+cs-2021: 
+Term 1:
+Milestones: MATH 130 or MATH 131 or higher or one Arts and Humanities, Cultures and Civilizations, or Social Sciences Elective
+
+COSC 101
+ENGL 101 or ENGL 118
+MATH 132 or MATH 141 or MATH 147
+PHYS 135 or PHYS 137 or EF 151 or EF 157
+
+Term 2:
+Milestones: MATH 130 or MATH 131 or higher
+
+COSC 102
+ENGL 102
+MATH 142 or MATH 148
+PHYS 136 or PHYS 138 or EF 152 or EF 158
+
+Term 3:
+Milestones: EF 151 or PHYS 135
+
+BIOL 101 or BIOL 150 or BIOL 158 or CHEM 102 +CHEM 103 or CHEM 122+CHEM 123 or CHEM 128 or PHYS 231
+COSC 202 or COSC 230
+MATH 251 or MATH 257
+Cultures+Civilizations Elective
+
+Term 4:
+Milestones: EF 152 or PHYS 136
+
+Arts+Humanities Elective
+COSC 302 or COSC 307
+ECE 313 or ECE 317
+COSC 311 or COSC 317
+Social Sciences Elective
+
+Term 5:
+Milestones: CBE 201 or COSC 101 or COSC 102 or ME 202 or MSE 201
+
+COSC 360 or COSC 367
+Computer Science Upper-Division Elective
+COSC 312 or COSC 340
+Unrestricted Elective
+
+Term 6:
+Milestones: No milestones
+
+COSC 361 or COSC 365 or COSC 366
+Cultures+Civilizations Elective
+Computer Science Upper-Division Elective
+COSC 395
+
+Term 7:
+Milestones: No milestones
+
+Arts+Humanities Elective
+COSC 401
+Computer Science Upper-Division Electives
+ENGL 355 or ENGL 360
+
+cs-2022: 
+Term 1:
+Milestones: MATH 130 or MATH 131 or higher or one Arts and Humanities, Global Citizenship – US or Global Citizenship – International, or Social Sciences Elective
+
+COSC 101
+ENGL 101 or ENGL 118 or ENGL 131 or ENGL 198
+MATH 132 or MATH 141 or MATH 147
+EF 142 or EF 151 or EF 157
+
+Term 2:
+Milestones: MATH 130 or MATH 131 or higher
+
+COSC 102
+ENGL 102 or ENGL 132 orENGL 290 or ENGL 298
+MATH 142 or MATH 148
+EF 152 or EF 158
+
+Term 3:
+Milestones: EF 141 and EF 142, or EF 151, or EF 157, or PHYS 135, or PHYS 137
+
+BIOL 101 or BIOL 150 or BIOL 158 or CHEM 102+CHEM 103 or CHEM 122+CHEM 123 or CHEM 128 or PHYS 231
+COSC 202
+COSC 230
+MATH 251 or MATH 257
+Global Citizenship – US Elective
+
+Term 4:
+Milestones: EF 152 or EF 158 or PHYS 136 or PHYS 138
+
+Arts+Humanities Elective
+COSC 302 or COSC 307
+ECE 313 or ECE 317
+COSC 311 or COSC 317
+Social Sciences Elective
+
+Term 5:
+Milestones: CBE 201 or COSC 101 or COSC 102 or ME 202 or MSE 201
+
+COSC 360 or COSC 367
+COSC 312
+COSC 340
+COSC 366
+Unrestricted Elective or Engaged Inquiries Elective
+
+Term 6:
+Milestones: No milestones
+
+COSC 361
+COSC 365
+Global Citizenship – International Elective
+Computer Science Upper-Division Electives
+COSC 395
+
+Term 7:
+Milestones: No milestones
+
+Expanded Perspectives Elective. Encourage students to choose courses that meet EI also.
+COSC 401
+Computer Science Upper-Division Electives
+ENGL 355 or ENGL 360
+
+ce-2019: 
+Term 1:
+Milestones: MATH 130 or higher or one Arts and Humanities, Cultures and Civilizations, or Social Sciences Elective
+
+COSC 102
+EF 151 or EF 157
+ENGL 101 or ENGL 118
+MATH 141 or MATH 147
+
+Term 2:
+Milestones: MATH 130 or higher
+
+COSC 130
+EF 152 or EF 158
+ENGL 102
+MATH 142 or MATH 148
+
+Term 3:
+Milestones: EF 151 or PHYS 135
+
+COSC 140
+ECE 201 or ECE 255
+PHYS 231
+MATH 231 or MATH 237
+
+Term 4:
+Milestones: EF 152 or PHYS 136
+
+CHEM 120 or CHEM 128
+ECE 202
+MATH 241 or MATH 247
+MATH 251 or MATH 257
+ECE 256
+
+Term 5:
+Milestones: CBE 201 or COSC 102 or ME 202 or MSE 201
+
+COSC 302 or COSC 307
+Cultures+Civilizations Elective
+ECE 351 or ECE 357 or ECE 335 or ECE 395
+ECE 313 or ECE 317
+
+Term 6:
+Milestones: No milestones
+
+Arts+Humanities Elective
+COSC 311 or COSC 317 or COSC 360 or COSC 367
+ECE 315
+ECE 356 or ECE 358
+
+Term 7:
+Milestones: No milestones
+
+Arts+Humanities Elective
+ECE 401
+Core Elective
+Social Sciences Elective
+Senior Electives
+
+ce-2020: 
+Term 1:
+Milestones: MATH 130 or MATH 131 or higher or one Arts and Humanities, Cultures and Civilizations, or Social Sciences Elective
+
+COSC 102
+EF 151 or EF 157
+ENGL 101 or ENGL 118
+MATH 132 or MATH 141 or MATH 147
+
+Term 2:
+Milestones: MATH 130 or MATH 131 or higher
+
+COSC 130
+EF 152 or EF 158
+ENGL 102
+MATH 142 or MATH 148
+
+Term 3:
+Milestones: EF 151 or PHYS 135
+
+COSC 140
+ECE 201 or ECE 255
+PHYS 231
+MATH 231 or MATH 237
+
+Term 4:
+Milestones: EF 152 or PHYS 136
+
+CHEM 120 or CHEM 128
+ECE 202
+MATH 241 or MATH 247
+MATH 251 or MATH 257
+ECE 256
+
+Term 5:
+Milestones: CBE 201 or COSC 102 or ME 202 or MSE 201
+
+COSC 302 or COSC 307
+Cultures+Civilizations Elective
+ECE 351 or ECE 357 or ECE 335 or ECE 395
+ECE 313 or ECE 317
+
+Term 6:
+Milestones: No milestones
+
+Arts+Humanities Elective
+COSC 311 or COSC 317 or COSC 360 or COSC 367
+ECE 315
+ECE 356 or ECE 358
+
+Term 7:
+Milestones: No milestones
+
+Arts+Humanities Elective
+ECE 401
+Core Elective
+Social Sciences Elective
+Senior Electives
+
+ce-2021: 
+Term 1:
+Milestones: MATH 130 or MATH 131 or higher or one Arts and Humanities, Cultures and Civilizations, or Social Sciences Elective
+
+COSC 101
+EF 151 or EF 157
+ENGL 101 or ENGL 118
+MATH 132 or MATH 141 or MATH 147
+
+Term 2:
+Milestones: MATH 130 or MATH 131 or higher
+
+COSC 102
+EF 152 or EF 158
+ENGL 102
+MATH 142 or MATH 148
+
+Term 3:
+Milestones: EF 151 or PHYS 135
+
+COSC 202
+ECE 201 or ECE 255
+PHYS 231
+MATH 231 or MATH 237
+
+Term 4:
+Milestones: EF 152 or PHYS 136
+
+CHEM 122+CHEM 123 or CHEM 128
+ECE 202
+MATH 241 or MATH 247
+MATH 251 or MATH 257
+ECE 256
+
+Term 5:
+Milestones: CBE 201 or COSC 101 or COSC 102 or COSC 111 or ME 202 or MSE 201
+
+COSC 302 or COSC 307
+Cultures+Civilizations Elective
+ECE 351 or ECE 357 or ECE 335 or ECE 395
+ECE 313 or ECE 317
+
+Term 6:
+Milestones: No milestones
+
+Arts+Humanities Elective
+COSC 311 or COSC 317 or COSC 360 or COSC 367
+ECE 315
+ECE 356 or ECE 358
+
+Term 7:
+Milestones: No milestones
+
+Arts+Humanities Elective
+ECE 401
+Core Elective
+Social Sciences Elective
+Senior Electives
+
+ce-2022: 
+Term 1:
+Milestones: MATH 130 or MATH 131 or higher or one Arts and Humanities, Global Citizenship – US, or Global Citizenship – International, or Social Sciences Elective
+
+COSC 101
+EF 142 or EF 151 or EF 157
+ENGL 101 or ENGL 118 or ENGL 131 or ENGL 198
+MATH 132 or MATH 141 or MATH 147
+
+Term 2:
+Milestones: MATH 130 or MATH 131 or higher
+
+COSC 102
+EF 152 or EF 158
+ENGL 102 orENGL 132 or ENGL 290 or ENGL 298
+MATH 142 or MATH 148
+
+Term 3:
+Milestones: EF 141 and EF 142, or EF 151, or EF 157, or PHYS 135, or PHYS 137
+
+COSC 202
+ECE 201
+ECE 255
+PHYS 231
+MATH 231 or MATH 237
+
+Term 4:
+Milestones: EF 152 or EF 158or PHYS 136 or PHYS 138
+
+CHEM 122+CHEM 123 or CHEM 128
+ECE 202
+MATH 241 or MATH 247
+MATH 251 or MATH 257
+ECE 256
+
+Term 5:
+Milestones: CBE 201 or COSC 101 or COSC 102 or COSC 111 or ME 202 or MSE 201
+
+COSC 302 or COSC 307
+Global Citizenship – US Elective
+ECE 351 or ECE 357
+ECE 335
+ECE 395
+ECE 313 or ECE 317
+
+Term 6:
+Milestones: No milestones
+
+Arts+Humanities Elective
+COSC 311 or COSC 317
+COSC 360 or COSC 367
+ECE 315
+ECE 356 or ECE 358
+
+Term 7:
+Milestones: No milestones
+
+Expanded Perspectives Elective
+ECE 401
+Core Elective
+Social Sciences Elective
+Senior Electives
+
+ee-2019: 
+Term 1:
+Milestones: MATH 130 or higher or one Arts and Humanities, Cultures and Civilizations, or Social Sciences Elective
+
+COSC 102
+EF 151 or EF 157
+ENGL 101 or ENGL 118
+MATH 141 or MATH 147
+
+Term 2:
+Milestones: MATH 130 or higher
+
+COSC 130
+EF 152 or EF 158
+ENGL 102
+MATH 142 or MATH 148
+
+Term 3:
+Milestones: EF 151 or PHYS 135
+
+CHEM 120 or CHEM 128
+ECE 201 or ECE 255
+MATH 231 or MATH 237
+PHYS 231
+
+Term 4:
+Milestones: EF 152 or PHYS 136
+
+ECE 202
+ECE 313 or ECE 317
+MATH 241 or MATH 247
+MATH 251 or MATH 257
+PHYS 232
+
+Term 5:
+Milestones: CBE 201 or COSC 102 or ME 202 or MSE 201
+
+ECE 315 or ECE 325 or ECE 335 or ECE 395
+ECE 341 or ECE 347
+Social Sciences Elective
+
+Term 6:
+Milestones: No milestones
+
+Arts+Humanities Elective
+ECE 316 or ECE 336 or ECE 342
+Social Sciences Elective
+
+Term 7:
+Milestones: No milestones
+
+Arts+Humanities Elective
+Cultures+Civilizations Elective
+ECE 401
+Electrical Engineering Senior Electives
+
+ee-2020: 
+Term 1:
+Milestones: MATH 130 or MATH 131 or higher or one Arts and Humanities, Cultures and Civilizations, or Social Sciences Elective
+
+COSC 102
+EF 151 or EF 157
+ENGL 101 or ENGL 118
+MATH 132 or MATH 141 or MATH 147
+
+Term 2:
+Milestones: MATH 130 or MATH 131 or higher
+
+COSC 130
+EF 152 or EF 158
+ENGL 102
+MATH 142 or MATH 148
+
+Term 3:
+Milestones: EF 151 or PHYS 135
+
+CHEM 120 or CHEM 128
+ECE 201 or ECE 255
+MATH 231 or MATH 237
+PHYS 231
+
+Term 4:
+Milestones: EF 152 or PHYS 136
+
+ECE 202
+ECE 313 or ECE 317
+MATH 241 or MATH 247
+MATH 251 or MATH 257
+PHYS 232
+
+Term 5:
+Milestones: CBE 201 or COSC 102 or ME 202 or MSE 201
+
+ECE 315 or ECE 325 or ECE 335 or ECE 395
+ECE 341 or ECE 347
+Social Sciences Elective
+
+Term 6:
+Milestones: No milestones
+
+Arts+Humanities Elective
+ECE 316 or ECE 336 or ECE 342
+Social Sciences Elective
+
+Term 7:
+Milestones: No milestones
+
+Arts+Humanities Elective
+Cultures+Civilizations Elective
+ECE 401
+Electrical Engineering Senior Electives
+
+ee-2021: 
+Term 1:
+Milestones: MATH 130 or MATH 131 or higher or one Arts and Humanities, Cultures and Civilizations, or Social Sciences Elective
+
+COSC 101
+EF 151 or EF 157
+ENGL 101 or ENGL 118
+MATH 132 or MATH 141 or MATH 147
+
+Term 2:
+Milestones: MATH 130 or MATH 131 or higher
+
+COSC 102
+EF 152 or EF 158
+ENGL 102
+MATH 142 or MATH 148
+
+Term 3:
+Milestones: EF 151 or PHYS 135
+
+CHEM 122+CHEM 123 or CHEM 128
+ECE 201 or ECE 255
+MATH 231 or MATH 237
+PHYS 231
+
+Term 4:
+Milestones: EF 152 or PHYS 136
+
+ECE 202
+ECE 313 or ECE 317
+MATH 241 or MATH 247
+MATH 251 or MATH 257
+PHYS 232
+
+Term 5:
+Milestones: CBE 201 or COSC 101 or COSC 102 or COSC 111 or ME 202 or MSE 201
+
+ECE 315 or ECE 325 or ECE 335 or ECE 395
+ECE 341 or ECE 347
+Social Sciences Elective
+
+Term 6:
+Milestones: No milestones
+
+Arts+Humanities Elective
+ECE 316 or ECE 336 or ECE 342
+Social Sciences Elective
+
+Term 7:
+Milestones: No milestones
+
+Arts+Humanities Elective
+Cultures+Civilizations Elective
+ECE 401
+Electrical Engineering Senior Electives
+
+ee-2022: 
+Term 1:
+Milestones: MATH 130 or MATH 131 or higher or one Arts and Humanities, Global Citizenship – US or Global Citizenship – International, or Social Sciences Elective
+
+COSC 101
+EF 142 or EF 151 or EF 157
+ENGL 101 or ENGL 118 or ENGL 131 or ENGL 198
+MATH 132 or MATH 141 or MATH 147
+
+Term 2:
+Milestones: MATH 130 or MATH 131 or higher
+
+COSC 102
+EF 152 or EF 158
+ENGL 102 or ENGL 132 or ENGL 290 or ENGL 298
+MATH 142 or MATH 148
+
+Term 3:
+Milestones: EF 141 and EF 142, or EF 151, or EF 157, or PHYS 135, or PHYS 137
+
+CHEM 122+CHEM 123 or CHEM 128
+ECE 201
+ECE 255
+MATH 231 or MATH 237
+PHYS 231
+
+Term 4:
+Milestones: EF 152 or EF 158 or PHYS 136 or PHYS 138
+
+ECE 202
+ECE 313 or ECE 317
+MATH 241 or MATH 247
+MATH 251 or MATH 257
+PHYS 232
+
+Term 5:
+Milestones: CBE 201 or COSC 101 or COSC 102 or COSC 111 or ME 202 or MSE 201
+
+ECE 315
+ECE 325
+ECE 335
+ECE 395
+ECE 341 or ECE 347
+Expanded Perspectives Elective
+
+Term 6:
+Milestones: No milestones
+
+Arts+Humanities Elective
+ECE 316
+ECE 336
+ECE 342
+Social Sciences Elective
+
+Term 7:
+Milestones: No milestones
+
+Expanded Perspectives Elective
+Global Citizenship – US Elective
+ECE 401
+Electrical Engineering Senior Electives
+
