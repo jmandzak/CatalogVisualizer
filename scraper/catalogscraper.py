@@ -6,19 +6,20 @@ from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 from unicodedata import normalize
 import time
+import json
 
-class Course:
+class Course(dict):
     def __init__(self):
-        self.title = ""
-        self.full_description = ""
-        self.prereqs = ""
-        self.coreqs = ""
+        self['title'] = ""
+        self['full_description'] = ""
+        self['prereqs'] = ""
+        self['coreqs'] = ""
 
-class CatalogData:
+class CatalogData(dict):
     def __init__(self):
-        self.terms = []
-        self.milestones = []
-        self.all_courses = {}
+        self['terms'] = []
+        self['milestones'] = []
+        self['all_courses'] = {}
 
 # MANUALLY GO THROUGH THIS FUNCTION AND CHANGE URLS/YEARS TO UPDATE
 def getURLs():
@@ -57,6 +58,7 @@ def clickAllLinks(driver: webdriver.Chrome):
 
     # Grab all the a elements that have hrefs
     links = driver.find_elements(By.TAG_NAME, 'a')
+    f = open('error.txt', 'w')
     
     # go through all the grabbed elements and look for classes we should click on
     for link in links:
@@ -67,13 +69,15 @@ def clickAllLinks(driver: webdriver.Chrome):
                 # print(link.text, end='  ')
                 # print(link.location)
                 link.click()
-                time.sleep(0.5)
+                time.sleep(2)
                 link.click()
-                time.sleep(0.5)
+                time.sleep(2)
 
         except Exception as e:
+            f.write(str(e))
             pass
     
+    f.close()
     return driver.page_source
 
 def getAllCourses(soup: BeautifulSoup):
@@ -97,24 +101,24 @@ def getAllCourses(soup: BeautifulSoup):
         text = text.replace('  ', ' ')
 
         # get name of class
-        temp_course.title = text.split()[0] + ' ' + text.split()[1]
+        temp_course['title'] = text.split()[0] + ' ' + text.split()[1]
 
         # put in full description
-        temp_course.full_description = text
+        temp_course['full_description'] = text
 
         # find prereqs if there are any
         index_prereq = text.find('Prerequisite(s):')
         if index_prereq != -1:
             prereq_end = text[index_prereq:].find('.')
-            temp_course.prereqs = text[index_prereq+17:index_prereq+prereq_end]
+            temp_course['prereqs'] = text[index_prereq+17:index_prereq+prereq_end]
         
         # find coreqs if there are any
         index_coreq = text.find('Corequisite(s):')
         if index_coreq != -1:
             coreq_end = text[index_coreq:].find('.')
-            temp_course.coreqs = text[index_coreq+16:index_coreq+coreq_end]
+            temp_course['coreqs'] = text[index_coreq+16:index_coreq+coreq_end]
 
-        all_courses[temp_course.title] = temp_course
+        all_courses[temp_course['title']] = temp_course.copy()
 
     return all_courses
 
@@ -137,7 +141,7 @@ def getSchedule(soup: BeautifulSoup, catalogs: dict, major: str, year: str):
         # rows with term, we add our temp list to the term if non-empty, then increment term
         if 'Term' in tds[0].text:
             if len(temp_classes) != 0:
-                catalogs[f'{major}-{year}'].terms.append(temp_classes.copy())
+                catalogs[f'{major}-{year}']['terms'].append(temp_classes.copy())
                 temp_classes.clear()
             term += 1
             continue
@@ -168,7 +172,7 @@ def getSchedule(soup: BeautifulSoup, catalogs: dict, major: str, year: str):
         milestones = milestones.replace('*', '')
         milestones = milestones.replace('  ', ' ')
         if milestones:
-            catalogs[f'{major}-{year}'].milestones.append(milestones)
+            catalogs[f'{major}-{year}']['milestones'].append(milestones)
 
 def main():
     urls = getURLs()
@@ -196,17 +200,17 @@ def main():
                 page = clickAllLinks(driver)
                 soup = BeautifulSoup(page, 'html.parser')
 
-                # set the value of a certain catalog to an empty dict so we can fill it in later
-                catalogs[f'{major}-{year}'] = CatalogData()
-
-                # Before we grab the schedule, we can go ahead and store all of the courses for this catalog
-                all_courses = getAllCourses(soup)
-                catalogs[f'{major}-{year}'].all_courses = all_courses.copy()
-
-                getSchedule(soup, catalogs, major, year)
-
             except:
                 print('unable to access page\n')
+            
+            # set the value of a certain catalog to an empty dict so we can fill it in later
+            catalogs[f'{major}-{year}'] = CatalogData()
+
+            # Before we grab the schedule, we can go ahead and store all of the courses for this catalog
+            all_courses = getAllCourses(soup)
+            catalogs[f'{major}-{year}']['all_courses'] = all_courses.copy()
+
+            getSchedule(soup, catalogs, major, year)
 
 
     # open files for writing
@@ -214,23 +218,27 @@ def main():
     file_courses = open('catalog-courses.txt', 'w')
     for catalog, catalog_class in catalogs.items():
         file_schedule.write(f'{catalog}: \n')
-        for i, courses in enumerate(catalog_class.terms):
-            file_schedule.write(f'Term {i+1}:\nMilestones: {catalog_class.milestones[i]}\n\n')
+        for i, courses in enumerate(catalog_class['terms']):
+            file_schedule.write(f'Term {i+1}:\nMilestones: {catalog_class["milestones"][i]}\n\n')
             for course in courses:
                 file_schedule.write(course)
                 file_schedule.write('\n')
             file_schedule.write('\n')
         
         file_courses.write(f'{catalog}: \n')
-        for name, course in catalog_class.all_courses.items():
+        for name, course in catalog_class['all_courses'].items():
             file_courses.write(f'{name}\n')
-            file_courses.write(f'Description: {course.full_description}\n')
-            file_courses.write(f'Prerequisites: {course.prereqs}\n')
-            file_courses.write(f'Corequisites: {course.coreqs}\n')
+            file_courses.write(f'Description: {course["full_description"]}\n')
+            file_courses.write(f'Prerequisites: {course["prereqs"]}\n')
+            file_courses.write(f'Corequisites: {course["coreqs"]}\n')
             file_courses.write('\n')
 
     file_schedule.close()
     file_courses.close()
+
+    f = open('all_catalogs.json', 'w')
+    json.dump(catalogs, f)
+    f.close()
         
 
 if __name__ == '__main__':
