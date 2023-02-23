@@ -1,5 +1,6 @@
 import requests
 from selenium import webdriver
+from selenium.common.exceptions import StaleElementReferenceException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
@@ -54,7 +55,7 @@ def getURLs():
 
 def clickAllLinks(driver: webdriver.Chrome):
     # All of the classes that CS, CE, or EE takes
-    class_prefixes = ['COSC', 'ECE', 'EE', 'MATH', 'ENGL', 'BIOL', 'CHEM', 'PHYS', 'EF']
+    class_prefixes = ['COSC', 'ECE', 'EE', 'MATH', 'ENGL', 'BIOL', 'CHEM', 'PHYS', 'EF', 'ME', 'MSE', 'CBE', 'NE', 'IE']
 
     # Grab all the a elements that have hrefs
     links = driver.find_elements(By.TAG_NAME, 'a')
@@ -65,13 +66,20 @@ def clickAllLinks(driver: webdriver.Chrome):
         # wrap in a try except block because we get some non-class elements that throw exceptions
         try:
             if link.text.split(' ')[0] in class_prefixes:
-                # these print comments are for debugging
-                # print(link.text, end='  ')
-                # print(link.location)
-                link.click()
-                time.sleep(2)
-                link.click()
-                time.sleep(2)
+                repeat = 0
+                while repeat < 3:
+                    try:
+                        # these print comments are for debugging
+                        # print(link.text, end='  ')
+                        # print(link.location)
+                        link.click()
+                        time.sleep(1)
+                        link.click()
+                        time.sleep(1)
+                        break
+                    except StaleElementReferenceException as e:
+                        print(e)
+                        repeat += 1
 
         except Exception as e:
             f.write(str(e))
@@ -82,7 +90,7 @@ def clickAllLinks(driver: webdriver.Chrome):
 
 def getAllCourses(soup: BeautifulSoup):
     # prefixes of classes taken for this major
-    class_prefixes = ['COSC', 'ECE', 'EE', 'MATH', 'ENGL', 'BIOL', 'CHEM', 'PHYS', 'EF']
+    class_prefixes = ['COSC', 'ECE', 'EE', 'MATH', 'ENGL', 'BIOL', 'CHEM', 'PHYS', 'EF', 'ME', 'MSE', 'CBE', 'NE', 'IE']
 
     # isolate all div elements that contain the box that pops up when you click on a class
     class_descriptions = soup.find_all("div")
@@ -173,6 +181,9 @@ def getSchedule(soup: BeautifulSoup, catalogs: dict, major: str, year: str):
         milestones = milestones.replace('  ', ' ')
         if milestones:
             catalogs[f'{major}-{year}']['milestones'].append(milestones)
+    else:
+        catalogs[f'{major}-{year}']['terms'].append(temp_classes.copy())
+
 
 def main():
     urls = getURLs()
@@ -186,8 +197,6 @@ def main():
     options.add_argument('--headless')
 
     webdriver_service = Service(ChromeDriverManager().install()) 
-    # Choose Chrome Browser
-    driver = webdriver.Chrome(service=webdriver_service, options=options)
 
     # loop through every URL to grab catalog
     for major, majorURLs in urls.items():
@@ -196,12 +205,15 @@ def main():
 
             try:
                 # grab the page, click all the links to get everything on the DOM, then let BS4 parse it
+                # Choose Chrome Browser
+                driver = webdriver.Chrome(service=webdriver_service, options=options)
                 driver.get(url)
                 page = clickAllLinks(driver)
                 soup = BeautifulSoup(page, 'html.parser')
 
-            except:
+            except Exception as e:
                 print('unable to access page\n')
+                continue
             
             # set the value of a certain catalog to an empty dict so we can fill it in later
             catalogs[f'{major}-{year}'] = CatalogData()
