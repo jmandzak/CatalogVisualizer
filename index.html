@@ -1,3 +1,42 @@
-<html>
-    big things coming soon .. !
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog Visualizer</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+  
+<body>
+    <section>
+        <h1>Catalog Visualizer</h1>
+        <table id='table'>
+            <tr>
+                <th>title</th>
+                <th>full_description</th>
+            </tr>
+  
+            <script>
+                $(document).ready(function () {
+                    $.getJSON("testSwasti.json", 
+                            function (data) {
+                        var course = '';
+
+                        $.each(data, function (key, value) {
+                            course += '<tr>';
+                            course += '<td>' + 
+                                value.title + '</td>';
+                            course += '<td>' + 
+                                value.full_description + '</td>';
+                            course += '</tr>';
+                            
+                        });
+
+                        $('#table').append(course);
+                    });
+                });
+            </script>
+    </section>
+</body>
+  
 </html>

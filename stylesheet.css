@@ -1,0 +1,25 @@
+*{
+    font-family: 'Arial';
+}
+
+h1 {
+    text-align: center;
+    font-size: xx-large;
+}
+
+table {
+    margin: 0 auto;
+    font-size: large;
+}
+
+th,
+    td {
+        font-weight: bold;
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+    }
+
+    td {
+        font-weight: lighter;
+    }

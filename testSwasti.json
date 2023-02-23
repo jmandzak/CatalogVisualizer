@@ -1,0 +1,14 @@
+[
+    {
+      "title": "COSC 102",
+      "full_description": "COSC 102 - Introduction to Computer Science 4 Credit Hours Problem solving+algorithm development. Organization+characteristics of modern digital computers with emphasis on software engineering or building abstractions with procedures+data,+programming in a modern computer language. Includes Level 1 design projects or which require laboratory work. Contact Hour Distribution: 3 hours lecture+1 lab.Grading Restriction: A or B or C or No Credit grading only.Credit Restriction: Students who have received credit for 140 or 160 may not receive subsequent credit for 102 without consent of instructor.(RE) Corequisite(s): Mathematics 141 or 147.",
+      "prereqs": "",
+      "coreqs": "Mathematics 141 or 147"
+    },
+    {
+      "title": "MATH 130",
+      "full_description": "MATH 130 - Precalculus I 4 Credit Hours Review of algebraic or logarithmic or exponential,+trigonometric functions. Grading Restriction: A or B or C or No Credit grading only.Credit Restriction: Students who receive a grade of C or better in 141 or 147 or 151 may not subsequently receive credit for 130.(RE) Prerequisite(s): 119 with a grade of C or better or appropriate placement exam score.Comment(s): For students who satisfy the course prerequisites for 141 or 151 or but whose placement test scores indicate additional preparation is necessary.",
+      "prereqs": "119 with a grade of C or better or appropriate placement exam score",
+      "coreqs": ""
+    }
+]
