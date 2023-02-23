@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 from unicodedata import normalize
 import time
 import json
+import re
 
 class Course(dict):
     def __init__(self):
@@ -65,8 +66,9 @@ def clickAllLinks(driver: webdriver.Chrome):
     for link in links:
         # wrap in a try except block because we get some non-class elements that throw exceptions
         try:
+            miss = 1
+            repeat = 0
             if link.text.split(' ')[0] in class_prefixes:
-                repeat = 0
                 while repeat < 3:
                     try:
                         # these print comments are for debugging
@@ -76,10 +78,16 @@ def clickAllLinks(driver: webdriver.Chrome):
                         time.sleep(1)
                         link.click()
                         time.sleep(1)
+                        miss = 0
                         break
-                    except StaleElementReferenceException as e:
-                        print(e)
+                    except Exception as e:
+                        print(f'hit exception on {link.text}\n')
+                        time.sleep(1)
                         repeat += 1
+
+            if miss and re.search('[A-Z][A-Z]+ [0-9]+', link.text):
+                print(f'Missed on: {link.text}')
+                print('\n')
 
         except Exception as e:
             f.write(str(e))
@@ -209,9 +217,11 @@ def main():
                 driver = webdriver.Chrome(service=webdriver_service, options=options)
                 driver.get(url)
                 page = clickAllLinks(driver)
+                driver.quit()
                 soup = BeautifulSoup(page, 'html.parser')
 
             except Exception as e:
+                print(e)
                 print('unable to access page\n')
                 continue
             
