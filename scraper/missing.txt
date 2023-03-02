@@ -1,0 +1,4 @@
+These are the classes I know for sure are missing, look for these in debugging
+
+cs-2022:
+ECE 347,357,358
