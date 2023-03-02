@@ -60,33 +60,64 @@ def clickAllLinks(driver: webdriver.Chrome):
 
     # Grab all the a elements that have hrefs
     links = driver.find_elements(By.TAG_NAME, 'a')
+    links = [link for link in links if re.search('[A-Z][A-Z]+ [0-9]+', link.text)]
+    first_half_links = links[:len(links)//2]
+    second_half_links = links[len(links)//2:]
     f = open('error.txt', 'w')
     
     # go through all the grabbed elements and look for classes we should click on
-    for link in links:
+    for first_link, second_link in zip(first_half_links, second_half_links):
         # wrap in a try except block because we get some non-class elements that throw exceptions
         try:
             miss = 1
             repeat = 0
-            if link.text.split(' ')[0] in class_prefixes:
+            if first_link.text.split(' ')[0] in class_prefixes:
                 while repeat < 3:
                     try:
                         # these print comments are for debugging
                         # print(link.text, end='  ')
                         # print(link.location)
-                        link.click()
-                        time.sleep(1)
-                        link.click()
-                        time.sleep(1)
+                        first_link.click()
+                        time.sleep(0.25)
+                        first_link.click()
+                        time.sleep(0.25)
                         miss = 0
                         break
                     except Exception as e:
-                        print(f'hit exception on {link.text}\n')
-                        time.sleep(1)
+                        print(f'hit exception on {first_link.text}\n')
+                        time.sleep(0.25)
                         repeat += 1
 
-            if miss and re.search('[A-Z][A-Z]+ [0-9]+', link.text):
-                print(f'Missed on: {link.text}')
+            if miss and re.search('[A-Z][A-Z]+ [0-9]+', first_link.text):
+                print(f'Missed on: {first_link.text}')
+                print('\n')
+
+        except Exception as e:
+            f.write(str(e))
+            pass
+
+        try:
+            miss = 1
+            repeat = 0
+            if second_link.text.split(' ')[0] in class_prefixes:
+                while repeat < 3:
+                    try:
+                        # these print comments are for debugging
+                        # print(link.text, end='  ')
+                        # print(link.location)
+                        second_link.click()
+                        time.sleep(0.5)
+                        second_link.click()
+                        time.sleep(0.5)
+                        miss = 0
+                        break
+                    except Exception as e:
+                        print(f'hit exception on {second_link.text}\n')
+                        time.sleep(0.5)
+                        repeat += 1
+
+            if miss and re.search('[A-Z][A-Z]+ [0-9]+', second_link.text):
+                print(f'Missed on: {second_link.text}')
                 print('\n')
 
         except Exception as e:
