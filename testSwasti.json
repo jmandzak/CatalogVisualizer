@@ -1,14 +1,49 @@
-[
-    {
-      "title": "COSC 102",
-      "full_description": "COSC 102 - Introduction to Computer Science 4 Credit Hours Problem solving+algorithm development. Organization+characteristics of modern digital computers with emphasis on software engineering or building abstractions with procedures+data,+programming in a modern computer language. Includes Level 1 design projects or which require laboratory work. Contact Hour Distribution: 3 hours lecture+1 lab.Grading Restriction: A or B or C or No Credit grading only.Credit Restriction: Students who have received credit for 140 or 160 may not receive subsequent credit for 102 without consent of instructor.(RE) Corequisite(s): Mathematics 141 or 147.",
-      "prereqs": "",
-      "coreqs": "Mathematics 141 or 147"
-    },
-    {
-      "title": "MATH 130",
-      "full_description": "MATH 130 - Precalculus I 4 Credit Hours Review of algebraic or logarithmic or exponential,+trigonometric functions. Grading Restriction: A or B or C or No Credit grading only.Credit Restriction: Students who receive a grade of C or better in 141 or 147 or 151 may not subsequently receive credit for 130.(RE) Prerequisite(s): 119 with a grade of C or better or appropriate placement exam score.Comment(s): For students who satisfy the course prerequisites for 141 or 151 or but whose placement test scores indicate additional preparation is necessary.",
-      "prereqs": "119 with a grade of C or better or appropriate placement exam score",
-      "coreqs": ""
-    }
-]
+{
+  "cs2019": {
+    "terms": [
+      [
+        "COSC 102",
+        "ENGL 101 or ENGL 118",
+        "MATH 141 or MATH 147",
+        "PHYS 135 or PHYS 137 or EF 151 or EF 157"
+      ],
+      [
+        "COSC 130",
+        "ENGL 102",
+        "MATH 142 or MATH 148",
+        "PHYS 136 or PHYS 138 or EF 152 or EF 158"
+      ],
+      [
+        "BIOL 101 or BIOL 150 or BIOL 158 or CHEM 100 or CHEM 120 or CHEM 128 or PHYS 231",
+        "COSC 140",
+        "MATH 251 or MATH 257",
+        "Cultures+Civilizations Elective"
+      ],
+      [
+        "Arts+Humanities Elective",
+        "COSC 302 or COSC 307",
+        "ECE 313 or ECE 317",
+        "COSC 311 or COSC 317",
+        "Social Sciences Elective"
+      ],
+      [
+        "COSC 360 or COSC 367",
+        "Computer Science Upper-Division Elective",
+        "COSC 312 or COSC 340",
+        "Unrestricted Elective"
+      ],
+      [
+        "COSC 361 or COSC 365 or COSC 366",
+        "Cultures+Civilizations Elective",
+        "Computer Science Upper-Division Elective",
+        "COSC 395"
+      ],
+      [
+        "Arts+Humanities Elective",
+        "COSC 401",
+        "Computer Science Upper-Division Electives",
+        "ENGL 355 or ENGL 360"
+      ]
+    ]
+  }
+}

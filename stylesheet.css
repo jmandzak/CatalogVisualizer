@@ -7,6 +7,16 @@ h1 {
     font-size: xx-large;
 }
 
+.box {
+    border-width: 3px ; 
+    border-style: solid ; 
+    border-color: #000000 ;
+    margin: 5px ;
+    padding: 5px ;
+    max-width: 30%;
+    float: left ;
+}
+
 table {
     margin: 0 auto;
     font-size: large;

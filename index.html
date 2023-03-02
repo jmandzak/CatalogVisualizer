@@ -10,32 +10,36 @@
 <body>
     <section>
         <h1>Catalog Visualizer</h1>
-        <table id='table'>
-            <tr>
-                <th>title</th>
-                <th>full_description</th>
-            </tr>
-  
+
+        <div class="box"> test class </div>
+        <div class="box"> test class </div>
+        <div class="box"> test class </div>
+
             <script>
+                var json = null ; 
                 $(document).ready(function () {
                     $.getJSON("testSwasti.json", 
-                            function (data) {
-                        var course = '';
+                    function (data) {
+                        
+                        json = JSON.stringify(data, null, 4) ;
+                        /*
+                        document.write(json) ;
+                        */
+                           
+                        var val = '';
 
-                        $.each(data, function (key, value) {
-                            course += '<tr>';
-                            course += '<td>' + 
-                                value.title + '</td>';
-                            course += '<td>' + 
-                                value.full_description + '</td>';
-                            course += '</tr>';
+                        $.each(data, function (key, value){
+                            document.body.innerHTML += '<div class="box">' + (key) + '</div>' ;
+                            console.log(value) ;
                             
-                        });
-
-                        $('#table').append(course);
+                        });      
+                            
                     });
+                    
                 });
+
             </script>
+
     </section>
 </body>
   
