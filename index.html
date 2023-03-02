@@ -10,11 +10,6 @@
 <body>
     <section>
         <h1>Catalog Visualizer</h1>
-
-        <div class="box"> test class </div>
-        <div class="box"> test class </div>
-        <div class="box"> test class </div>
-
             <script>
                 var json = null ; 
                 $(document).ready(function () {
@@ -28,12 +23,18 @@
                            
                         var val = '';
 
-                        $.each(data, function (key, value){
-                            document.body.innerHTML += '<div class="box">' + (key) + '</div>' ;
-                            console.log(value) ;
+                        for(var k in data) {
+                            for( var l in data[k]){
+                                for ( var m in data[k][l]){
+                                    for( var n in data[k][l][m]){
+                                        document.body.innerHTML += '<div class="box">' + data[k][l][m][n] + '</div>' ;   
+                                    }
+                                    document.body.innerHTML += '<br>' ;
+                                    
+                                }
+                            }
                             
-                        });      
-                            
+                        }
                     });
                     
                 });

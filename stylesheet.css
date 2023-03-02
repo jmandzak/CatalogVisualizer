@@ -13,8 +13,13 @@ h1 {
     border-color: #000000 ;
     margin: 5px ;
     padding: 5px ;
-    max-width: 30%;
-    float: left ;
+    width: 15%;
+    float: left
+}
+
+br{
+    clear:both ;
+    line-height: 20vh
 }
 
 table {
