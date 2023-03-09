@@ -10,37 +10,66 @@
 <body>
     <section>
         <h1>Catalog Visualizer</h1>
-            <script>
-                var json = null ; 
-                $(document).ready(function () {
-                    $.getJSON("testSwasti.json", 
+
+        <div style="float:right; padding-right: 10px;" class="dropdown">
+            <label for="language">Select a Catalog Year:</label>
+            <select name="catalogSelection" id="dropDownWrite" onmousedown="this.value='';" onchange="catalogClicked(this.value);"></select>
+        </div>
+        <div id="boxSection">
+
+        </div>
+    
+
+        <script>
+            // Dropdown Menu Scripts
+            $(document).ready(function () {
+                $.getJSON("testSwasti.json", 
                     function (data) {
-                        
-                        json = JSON.stringify(data, null, 4) ;
-                        /*
-                        document.write(json) ;
-                        */
-                           
-                        var val = '';
-
-                        for(var k in data) {
-                            for( var l in data[k]){
-                                for ( var m in data[k][l]){
-                                    for( var n in data[k][l][m]){
-                                        document.body.innerHTML += '<div class="box">' + data[k][l][m][n] + '</div>' ;   
-                                    }
-                                    document.body.innerHTML += '<br>' ;
-                                    
-                                }
-                            }
-                            
+                        for(var catalogs in data) {
+                            $("#dropDownWrite").append('<option value="' + catalogs + '">' + catalogs + '</option>'); 
                         }
-                    });
+                    } 
+                )
+            });
+
+            // Dropdown menu kind of works- next step is only writing the applicable catalog to the page
+            function catalogClicked(value){
+                var div = document.getElementById("boxSection");
+                if(value == 'cs-2019'){
+                    boxSection.innerHTML = "You clicked option 1";
+                }else if(value == 'cs-2020'){
+                    boxSection.innerHTML = "You clicked option 2.";
+                }
+            }
+
+        </script>
+
+        <script>
+            // Write Boxes to Page Script
+            var json = null ; 
+            $(document).ready(function () {
+                $.getJSON("testSwasti.json", 
+                function (data) {
                     
+                    json = JSON.stringify(data, null, 4) ;
+                    var val = '';
+
+                    for(var catalogs in data) {
+                        for( var terms in data[catalogs]){
+                            for ( var semesters in data[catalogs][terms]){
+                                for( var classes in data[catalogs][terms][semesters]){
+                                    boxSection.innerHTML += '<div class="box">' + data[catalogs][terms][semesters][classes] + '</div>' ;   
+                                }
+                                boxSection.innerHTML += '<br>' ;
+                            }
+                        }
+                        
+                    }
                 });
+                
+            });
 
-            </script>
-
+        </script>
     </section>
 </body>
   
