@@ -24,7 +24,7 @@
             // Dropdown Menu Scripts
             $(document).ready(function () {
                 // Write the dropdown box options, display classes of first possible catalog
-                $.getJSON("testSwasti.json", 
+                $.getJSON("scraper/all_catalogs.json", 
                     function (data) {
                         for(var catalogs in data) {
                             $("#dropDownWrite").append('<option value="' + catalogs + '">' + catalogs + '</option>'); 
@@ -43,21 +43,20 @@
                 boxSection.innerHTML = "";
 
                 // Grab the json and write all the classes
-                $.getJSON("testSwasti.json", 
+                $.getJSON("scraper/all_catalogs.json", 
                 function (data) {
-                    for( var terms in data[catalog]){
-                        for ( var semesters in data[catalog][terms]){
-                            for( var classes in data[catalog][terms][semesters]){
-                                boxSection.innerHTML += '<div class="box">' + data[catalog][terms][semesters][classes] + '</div>' ;   
-                            }
-                            boxSection.innerHTML += '<br>' ;
+                    console.log(data[catalog]['terms'])
+                    for ( var semesters in data[catalog]['terms']){
+                        for( var classes in data[catalog]['terms'][semesters]){
+                            boxSection.innerHTML += '<div class="box">' + data[catalog]['terms'][semesters][classes] + '</div>' ;   
                         }
+                        boxSection.innerHTML += '<br>' ;
                     }
                 });
             }
 
         </script>
-        
+
     </section>
 </body>
   
