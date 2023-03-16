@@ -22,6 +22,21 @@ br{
     line-height: 20vh
 }
 
+#close {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:#f10202;
+}
+
+#close:hover {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:#f10202;
+    color:#fff;
+}
+
 table {
     margin: 0 auto;
     font-size: large;
