@@ -13,7 +13,7 @@
 
         <div style="float:right; padding-right: 10px;" class="dropdown">
             <label for="language">Select a Catalog Year:</label>
-            <select name="catalogSelection" id="dropDownWrite" onmousedown="this.value='';" onchange="catalogClicked(this.value);"></select>
+            <select name="catalogSelection" id="dropDownWrite" onchange="catalogClicked(this.value);"></select>
         </div>
         <div id="boxSection">
 
@@ -50,7 +50,7 @@
 
                     for ( var semesters in data[catalog]['terms']){
                         for( var classes in data[catalog]['terms'][semesters]){
-                            boxSection.innerHTML += '<div class="box">' + data[catalog]['terms'][semesters][classes] + '</div>' ; 
+                            boxSection.innerHTML += '<div class="box" contenteditable="true">' + data[catalog]['terms'][semesters][classes] + '</div>' ; 
                             all_classes.push(data[catalog]['terms'][semesters][classes]);
                         }
                         boxSection.innerHTML += '<br>' ;
