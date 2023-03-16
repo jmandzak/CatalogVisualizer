@@ -23,53 +23,41 @@
         <script>
             // Dropdown Menu Scripts
             $(document).ready(function () {
+                // Write the dropdown box options, display classes of first possible catalog
                 $.getJSON("testSwasti.json", 
                     function (data) {
                         for(var catalogs in data) {
                             $("#dropDownWrite").append('<option value="' + catalogs + '">' + catalogs + '</option>'); 
                         }
+
+                        catalogClicked($("#dropDownWrite").val());
                     } 
                 )
             });
 
             // Dropdown menu kind of works- next step is only writing the applicable catalog to the page
-            function catalogClicked(value){
-                var div = document.getElementById("boxSection");
-                if(value == 'cs-2019'){
-                    boxSection.innerHTML = "You clicked option 1";
-                }else if(value == 'cs-2020'){
-                    boxSection.innerHTML = "You clicked option 2.";
-                }
+            function catalogClicked(catalog){
+                // Write Boxes to Page Script
+
+                // Clear out whatever is in there currently
+                boxSection.innerHTML = "";
+
+                // Grab the json and write all the classes
+                $.getJSON("testSwasti.json", 
+                function (data) {
+                    for( var terms in data[catalog]){
+                        for ( var semesters in data[catalog][terms]){
+                            for( var classes in data[catalog][terms][semesters]){
+                                boxSection.innerHTML += '<div class="box">' + data[catalog][terms][semesters][classes] + '</div>' ;   
+                            }
+                            boxSection.innerHTML += '<br>' ;
+                        }
+                    }
+                });
             }
 
         </script>
-
-        <script>
-            // Write Boxes to Page Script
-            var json = null ; 
-            $(document).ready(function () {
-                $.getJSON("testSwasti.json", 
-                function (data) {
-                    
-                    json = JSON.stringify(data, null, 4) ;
-                    var val = '';
-
-                    for(var catalogs in data) {
-                        for( var terms in data[catalogs]){
-                            for ( var semesters in data[catalogs][terms]){
-                                for( var classes in data[catalogs][terms][semesters]){
-                                    boxSection.innerHTML += '<div class="box">' + data[catalogs][terms][semesters][classes] + '</div>' ;   
-                                }
-                                boxSection.innerHTML += '<br>' ;
-                            }
-                        }
-                        
-                    }
-                });
-                
-            });
-
-        </script>
+        
     </section>
 </body>
   
