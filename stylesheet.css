@@ -3,14 +3,24 @@
 }
 
 h1 {
+    padding-top: 25px;
     text-align: center;
     font-size: xx-large;
+}
+
+.semesterCol{
+    display: inline-block; 
+    float: left; 
+    padding-right: 15px; 
+    padding-left: 5px ;
+    padding-top: 12px
 }
 
 .box {
     border-width: 3px ; 
     border-style: solid ; 
     border-color: #000000 ;
+    border-radius: 5px;
     margin: 5px ;
     padding: 5px ;
     width: 15%;
@@ -24,17 +34,28 @@ br{
 
 #close {
     float:right;
+    text-align: center;
+    line-height: 18px;
     display:inline-block;
-    padding:2px 5px;
+    width: 20px;
+    height: 20px;
     background:#f10202;
+    border-radius: 50%;
 }
 
 #close:hover {
     float:right;
     display:inline-block;
-    padding:2px 5px;
+    width: 20px;
+    height: 20px;
     background:#f10202;
     color:#fff;
+    border-radius: 50%;
+}
+
+.TRMenu{
+    width: 100%; 
+    margin-top: 5px;
 }
 
 table {
@@ -42,7 +63,7 @@ table {
     font-size: large;
 }
 
-th,
+th
     td {
         font-weight: bold;
         border: 1px solid black;

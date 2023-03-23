@@ -9,12 +9,16 @@
   
 <body>
     <section>
-        <h1>Catalog Visualizer</h1>
-
-        <div style="float:right; padding-right: 10px;" class="dropdown">
+        <div style=" float:right; margin-right: 15px;" class="dropdown">
             <label for="language">Select a Catalog Year:</label>
             <select name="catalogSelection" id="dropDownWrite" onchange="catalogClicked(this.value);"></select>
+            <br>
+            <button type="button" class="TRMenu">Add New Class</button>
+            <button type="button" class="TRMenu">Add Class Progression</button>
         </div>
+        <h1>Catalog Visualizer</h1>
+
+        
         <div id="boxSection">
 
         </div>
@@ -49,6 +53,7 @@
                     all_classes = [];
 
                     for ( var semesters in data[catalog]['terms']){
+                        boxSection.innerHTML += '<div class="semesterCol"> Semester '+semesters+'</div>' ;
                         for( var classes in data[catalog]['terms'][semesters]){
                             boxSection.innerHTML += '<div class="box" contenteditable="true"><span id="close" onclick="this.parentNode.remove(); return false;">x</span>' + data[catalog]['terms'][semesters][classes] + '</div>' ; 
                             all_classes.push(data[catalog]['terms'][semesters][classes]);
