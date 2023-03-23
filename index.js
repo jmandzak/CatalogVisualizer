@@ -1,5 +1,4 @@
-const $ = require("jquery")
-const connections = require("jquery-connections")
+import "jquery-connections"
 
 // Dropdown Menu Scripts
 $(document).ready(function () {
@@ -22,16 +21,18 @@ $(document).ready(function () {
 // Dropdown menu kind of works- next step is only writing the applicable catalog to the page
 function catalogClicked(){
     let catalog = $("#dropDownWrite").val()
-    // Write Boxes to Page Script
 
     // Clear out whatever is in there currently
     boxSection.innerHTML = "";
+
+    // Clear out any connections
+    $('connection').remove();
 
     // Grab the json and write all the classes
     $.getJSON("scraper/all_catalogs.json", 
     function (data) {
         // Some variables to keep up with classes
-        all_classes = [];
+        let all_classes = [];
 
         for ( var semesters in data[catalog]['terms']){
             boxSection.innerHTML += '<div class="semesterCol"> Semester '+semesters+'</div>' ;
@@ -49,20 +50,20 @@ function catalogClicked(){
             prereq_matrix[i] = new Array(all_classes.length);
         }
 
-        class_regex_string = /[A-Z][A-Z]+ [0-9][0-9]+/g
+        const class_regex_string = /[A-Z][A-Z]+ [0-9][0-9]+/g
         for(let i in all_classes) {
             // Grab the actual class names from inside the string
-            current_classes = [...all_classes[i].matchAll(class_regex_string)];
+            let current_classes = [...all_classes[i].matchAll(class_regex_string)];
             if(current_classes.length < 1) {
                 continue;
             }
 
             // Find all of the prereqs for each class listed
-            prereqs = []
+            let prereqs = []
             for(let j in current_classes) {
                 // console.log(data[catalog]['all_courses'][current_classes[j][0]]);
                 // console.log(data[catalog]['all_courses'][current_classes[j][0]]['prereqs']);
-                temp = []
+                let temp = []
 
                 // Try catch block here to catch classes that are missing from scraper
                 // find all classes in prereq string, put in temp array
@@ -101,6 +102,21 @@ function catalogClicked(){
         }
 
         // Now lets actually go through and draw all the arrows
+        // To do this, we need to add ids to all the box divs
+        let boxes = document.getElementsByClassName('box')
+        for(let i = 0; i < boxes.length; i++) {
+            boxes[i].id = "box" + i;
+        }
 
+
+        for(let i = 0; i < prereq_matrix.length; i++) {
+            for(let j = 0; j < prereq_matrix[i].length; j++) {
+                if(prereq_matrix[i][j]) {
+                    let from_box = "#box" + j;
+                    let to_box = "#box" + i;
+                    $(from_box).connections({to: to_box})
+                }
+            }
+        }
     });
 }
