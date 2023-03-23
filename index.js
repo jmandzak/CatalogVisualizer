@@ -3,6 +3,10 @@ const connections = require("jquery-connections")
 
 // Dropdown Menu Scripts
 $(document).ready(function () {
+    // Set the onclick of the dropdown box
+    let dropDownBox = document.getElementById("dropDownWrite")
+    dropDownBox.onchange = catalogClicked;
+
     // Write the dropdown box options, display classes of first possible catalog
     $.getJSON("scraper/all_catalogs.json", 
         function (data) {
@@ -10,13 +14,14 @@ $(document).ready(function () {
                 $("#dropDownWrite").append('<option value="' + catalogs + '">' + catalogs + '</option>'); 
             }
 
-            catalogClicked($("#dropDownWrite").val());
+            catalogClicked();
         } 
     )
 });
 
 // Dropdown menu kind of works- next step is only writing the applicable catalog to the page
-function catalogClicked(catalog){
+function catalogClicked(){
+    let catalog = $("#dropDownWrite").val()
     // Write Boxes to Page Script
 
     // Clear out whatever is in there currently
@@ -95,6 +100,7 @@ function catalogClicked(catalog){
             }
         }
 
-        console.log(prereq_matrix)
+        // Now lets actually go through and draw all the arrows
+
     });
 }

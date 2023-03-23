@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <title>Catalog Visualizer</title>
     <link rel="stylesheet" href="stylesheet.css?t=randomNum">
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="dist/bundle.js"></script>
 </head>
   
 <body>
     <section>
         <div style=" float:right; margin-right: 15px;" class="dropdown">
             <label for="language">Select a Catalog Year:</label>
-            <select name="catalogSelection" id="dropDownWrite" onchange="catalogClicked(this.value);"></select>
+            <select name="catalogSelection" id="dropDownWrite"></select>
             <br>
             <button type="button" class="TRMenu">Add New Class</button>
             <button type="button" class="TRMenu">Add Class Progression</button>
@@ -20,8 +18,12 @@
         <h1>Catalog Visualizer</h1>
 
         <div id="boxSection"></div>
-        
+
     </section>
+
+    
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="dist/bundle.js"></script>
 </body>
   
 </html>
