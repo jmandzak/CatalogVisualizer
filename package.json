@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "build": "webpack",
+    "build-watch": "webpack --watch"
+  },
+  "dependencies": {
+    "jquery": "^3.6.4",
+    "jquery-connections": "^1.0.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.76.3",
+    "webpack-cli": "^5.0.1"
+  }
+}
