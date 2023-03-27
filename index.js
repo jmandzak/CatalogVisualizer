@@ -4,11 +4,18 @@ let dragSrcEl;
 
 // Dropdown Menu Scripts
 $(document).ready(function () {
-    // Set the onclick of the dropdown box
+    // Set the onclick of the buttons
     let dropDownBox = document.getElementById("dropDownWrite")
     dropDownBox.onchange = catalogClicked;
+
     let updatePrereqBox = document.getElementById("updatePrereqs");
     updatePrereqBox.onclick = generatePrereqs;
+
+    let editClassesBox = document.getElementById("editClasses");
+    editClassesBox.onclick = editClasses;
+
+    let moveClassesBox = document.getElementById("moveClasses");
+    moveClassesBox.onclick = moveClasses;
 
     // Write the dropdown box options, display classes of first possible catalog
     $.getJSON("scraper/all_catalogs.json", 
@@ -38,7 +45,7 @@ function catalogClicked(){
         for ( var semesters in data[catalog]['terms']){
             boxSection.innerHTML += '<div class="semesterCol"> Semester '+semesters+'</div>' ;
             for( var classes in data[catalog]['terms'][semesters]){
-                boxSection.innerHTML += '<div class="box" contenteditable="true" draggable="true"><span id="close" onclick="this.parentNode.remove(); return false;">x</span>' + data[catalog]['terms'][semesters][classes] + '</div>' ; 
+                boxSection.innerHTML += '<div class="box"><span id="close" onclick="this.parentNode.remove(); return false;">x</span>' + data[catalog]['terms'][semesters][classes] + '</div>' ; 
                 all_classes.push(data[catalog]['terms'][semesters][classes]);
             }
             boxSection.innerHTML += '<br>' ;
@@ -185,4 +192,21 @@ function handleDrop(e) {
     this.classList.remove('over');
       
     return false;
+}
+
+function editClasses() {
+    let boxes = document.getElementsByClassName('box');
+    for(let i = 0; i < boxes.length; i++) {
+        console.log('hi')
+        boxes[i].setAttribute('contenteditable', 'true');
+        boxes[i].setAttribute('draggable', 'false');
+    }
+}
+
+function moveClasses() {
+    let boxes = document.getElementsByClassName('box');
+    for(let i = 0; i < boxes.length; i++) {
+        boxes[i].setAttribute('contenteditable', 'false');
+        boxes[i].setAttribute('draggable', 'true');
+    }
 }
