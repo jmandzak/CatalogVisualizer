@@ -1,10 +1,14 @@
 import "jquery-connections"
 
+let dragSrcEl;
+
 // Dropdown Menu Scripts
 $(document).ready(function () {
     // Set the onclick of the dropdown box
     let dropDownBox = document.getElementById("dropDownWrite")
     dropDownBox.onchange = catalogClicked;
+    let updatePrereqBox = document.getElementById("updatePrereqs");
+    updatePrereqBox.onclick = generatePrereqs;
 
     // Write the dropdown box options, display classes of first possible catalog
     $.getJSON("scraper/all_catalogs.json", 
@@ -34,10 +38,22 @@ function catalogClicked(){
         for ( var semesters in data[catalog]['terms']){
             boxSection.innerHTML += '<div class="semesterCol"> Semester '+semesters+'</div>' ;
             for( var classes in data[catalog]['terms'][semesters]){
-                boxSection.innerHTML += '<div class="box" contenteditable="true"><span id="close" onclick="this.parentNode.remove(); return false;">x</span>' + data[catalog]['terms'][semesters][classes] + '</div>' ; 
+                boxSection.innerHTML += '<div class="box" contenteditable="true" draggable="true"><span id="close" onclick="this.parentNode.remove(); return false;">x</span>' + data[catalog]['terms'][semesters][classes] + '</div>' ; 
                 all_classes.push(data[catalog]['terms'][semesters][classes]);
             }
             boxSection.innerHTML += '<br>' ;
+        }
+        
+
+        // Add drag and drop listening to each 
+        let items = document.getElementsByClassName('box');
+        for(let i = 0; i < items.length; i++) {
+            items[i].addEventListener('dragstart', handleDragStart);
+            items[i].addEventListener('dragend', handleDragEnd);
+            items[i].addEventListener('dragenter', handleDragEnter);
+            items[i].addEventListener('dragleave', handleDragLeave);
+            items[i].addEventListener('dragover', handleDragOver);
+            items[i].addEventListener('drop', handleDrop);
         }
         
         // Now draw the prereq lines
@@ -118,15 +134,55 @@ function generatePrereqs() {
         }
 
         let from_box = "";
-        let box_string = "";
         for(let i = 0; i < prereq_matrix.length; i++) {
             from_box = '#box' + i;
             for(let j = 0; j < prereq_matrix.length; j++) {
                 if(prereq_matrix[j][i]) {
                     let to_box = "#box" + j;
-                    $(from_box).connections({to: to_box});
+                    $(from_box).connections({to: to_box, css: { zIndex: -1 }});
                 }
             }
         }
     });
+}
+
+
+// Drag and Drop functionality: much of this taken from https://web.dev/drag-and-drop/
+function handleDragStart(e) {
+    this.style.opacity = '0.4';
+
+    dragSrcEl = this;
+
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/html', this.innerHTML);
+}
+
+function handleDragEnd(e) {
+    this.style.opacity = '1';
+}
+
+function handleDragOver(e) {
+    e.preventDefault();
+    return false;
+}
+
+function handleDragEnter(e) {
+    this.classList.add('over');
+}
+
+function handleDragLeave(e) {
+    this.classList.remove('over');
+}
+
+function handleDrop(e) {
+    e.stopPropagation(); // stops the browser from redirecting.
+
+    if (dragSrcEl !== this) {
+        dragSrcEl.innerHTML = this.innerHTML;
+        this.innerHTML = e.dataTransfer.getData('text/html');
+    }
+      
+    this.classList.remove('over');
+      
+    return false;
 }

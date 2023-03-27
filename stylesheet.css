@@ -24,7 +24,12 @@ h1 {
     margin: 5px ;
     padding: 5px ;
     width: 15%;
-    float: left
+    float: left;
+    z-index: 10;
+}
+
+.box.over {
+    border: 3px dotted #666;
 }
 
 br{
@@ -54,7 +59,7 @@ br{
 }
 
 .TRMenu{
-    width: 100%; 
+    width: 50%; 
     margin-top: 5px;
 }
 
