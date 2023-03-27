@@ -15,10 +15,32 @@
             <select name="catalogSelection" id="dropDownWrite"></select>
             <br>
             <button type="button" class="TRMenu">Add New Class</button>
-            <button type="button" class="TRMenu">Add Class Progression</button>
+            <button type="button" class="TRMenu" id="addPrereq">Add Class Progression</button>
             <button type="button" class="TRMenu" id="updatePrereqs">Update Prerequisite Lines</button>
             <button type="button" class="TRMenu" id="editClasses">Edit Classes</button>
             <button type="button" class="TRMenu" id="moveClasses">Move Classes</button>
+
+            <form class="prereqForm" autocomplete="off">
+                <h2>New Prerequisite</h2>
+                <label>
+                    <strong>Class</strong>
+                </label>
+                <input type="text" id="desiredClass" placeholder="Class Name" required>
+                <br>
+                Please enter class name in form PREFIX NUMBER, ex: COSC 101
+                <br>
+                <br>
+                <label>
+                    <strong>Prerequisite</strong>
+                </label>
+                <input type="text" id="prereq" placeholder="Class Name"required>
+                <br>
+                Please enter class name in form PREFIX NUMBER, ex: COSC 101
+                <br>
+                <br>
+                <button type="submit" class="submitButton" id="submitButton" >Submit</button>
+                <button type="button" class="cancelButton" id="cancelButton" >Close</button>
+            </form>
         </div>
         <h1>Catalog Visualizer</h1>
 

@@ -59,8 +59,13 @@ br{
 }
 
 .TRMenu{
-    width: 50%; 
+    width: fit-content; 
     margin-top: 5px;
+}
+
+.prereqForm {
+    visibility:hidden;
+    display:none;
 }
 
 table {

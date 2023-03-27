@@ -1,5 +1,5 @@
 import "jquery-connections"
-import data from "scraper/all_catalogs.json"
+import data from "./scraper/all_catalogs.json"
 
 let dragSrcEl;
 
@@ -17,6 +17,15 @@ $(document).ready(function () {
 
     let moveClassesBox = document.getElementById("moveClasses");
     moveClassesBox.onclick = moveClasses;
+
+    let addPrereqBox = document.getElementById("addPrereq");
+    addPrereqBox.onclick = openForm;
+    
+    let form = document.getElementsByClassName('prereqForm')[0];
+    form.addEventListener('submit', submitForm);
+
+    let cancelFormButton = document.getElementById("cancelButton");
+    cancelFormButton.onclick = closeForm;
 
     // Write the dropdown box options, display classes of first possible catalog
     for(var catalogs in data) {
@@ -188,7 +197,6 @@ function handleDrop(e) {
 function editClasses() {
     let boxes = document.getElementsByClassName('box');
     for(let i = 0; i < boxes.length; i++) {
-        console.log('hi')
         boxes[i].setAttribute('contenteditable', 'true');
         boxes[i].setAttribute('draggable', 'false');
     }
@@ -200,4 +208,51 @@ function moveClasses() {
         boxes[i].setAttribute('contenteditable', 'false');
         boxes[i].setAttribute('draggable', 'true');
     }
+}
+
+function openForm() {
+    let form = document.getElementsByClassName('prereqForm')[0];
+    form.style.display = "block";
+    form.style.visibility = "visible";
+    generatePrereqs();
+}
+
+function submitForm(e) {
+    e.preventDefault();
+
+    let prereq = document.getElementById('prereq').value;
+    let desiredClass = document.getElementById('desiredClass').value;
+
+    // Now we try to actually add the prereq
+    let catalog = $("#dropDownWrite").val();
+    if(data[catalog]['all_courses'][desiredClass]) {
+        data[catalog]['all_courses'][desiredClass]['prereqs'] += ' ' + prereq;
+    } else {
+        // If the class isn't in our records, we'll create it
+        let new_class = {
+            'title': desiredClass,
+            'full_description': desiredClass,
+            'coreqs': "",
+            'prereqs': prereq
+        }
+
+        data[catalog]['all_courses'][desiredClass] = new_class;
+        console.log(data[catalog]['all_courses']);
+    }
+
+    closeForm();
+}
+
+function closeForm() {
+    let form = document.getElementsByClassName('prereqForm')[0];
+    let prereq = document.getElementById('prereq');
+    let desiredClass = document.getElementById('desiredClass');
+
+    prereq.value = "";
+    desiredClass.value = "";
+
+    form.style.display = "none";
+    form.style.visibility = "hidden";
+    
+    generatePrereqs();
 }
