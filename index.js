@@ -48,12 +48,13 @@ function catalogClicked(){
     let all_classes = [];
 
     for ( var semesters in data[catalog]['terms']){
-        boxSection.innerHTML += '<div class="semesterCol"> Semester '+semesters+'</div>' ;
+        let semesterPrint = parseInt(semesters) + 1 ;
+        boxSection.innerHTML += '<div class="semesterCol"> Semester '+semesterPrint+'</div>' ;
         for( var classes in data[catalog]['terms'][semesters]){
             boxSection.innerHTML += '<div class="box"><span id="close" onclick="this.parentNode.remove(); return false;">x</span>' + data[catalog]['terms'][semesters][classes] + '</div>' ; 
             all_classes.push(data[catalog]['terms'][semesters][classes]);
         }
-        boxSection.innerHTML += '<br>' ;
+        boxSection.innerHTML += '<br><div style="padding:30px"></div' ;
     }
     
 
