@@ -56,6 +56,14 @@ COSC 401
 Computer Science Upper-Division Electives
 ENGL 355 or ENGL 360
 
+Term 8:
+Milestones: No milestones
+
+COSC 402
+Computer Science Upper-Division Electives
+Social Sciences Elective
+Unrestricted Elective
+
 cs-2020: 
 Term 1:
 Milestones: MATH 130 or MATH 131 or higher or one Arts and Humanities, Cultures and Civilizations, or Social Sciences Elective
@@ -114,6 +122,14 @@ COSC 401
 Computer Science Upper-Division Electives
 ENGL 355 or ENGL 360
 
+Term 8:
+Milestones: No milestones
+
+COSC 402
+Computer Science Upper-Division Electives
+Social Sciences Elective
+Unrestricted Elective
+
 cs-2021: 
 Term 1:
 Milestones: MATH 130 or MATH 131 or higher or one Arts and Humanities, Cultures and Civilizations, or Social Sciences Elective
@@ -171,6 +187,14 @@ Arts+Humanities Elective
 COSC 401
 Computer Science Upper-Division Electives
 ENGL 355 or ENGL 360
+
+Term 8:
+Milestones: No milestones
+
+COSC 402
+Computer Science Upper-Division Electives
+Social Sciences Elective
+Unrestricted Elective
 
 cs-2022: 
 Term 1:
@@ -233,6 +257,14 @@ COSC 401
 Computer Science Upper-Division Electives
 ENGL 355 or ENGL 360
 
+Term 8:
+Milestones: No milestones
+
+COSC 402
+Computer Science Upper-Division Electives
+Expanded Perspectives Elective. Encourage students to choose courses that meet EI also.
+Unrestricted Elective or Engaged Inquiries Elective
+
 ce-2019: 
 Term 1:
 Milestones: MATH 130 or higher or one Arts and Humanities, Cultures and Civilizations, or Social Sciences Elective
@@ -291,6 +323,15 @@ ECE 401
 Core Elective
 Social Sciences Elective
 Senior Electives
+
+Term 8:
+Milestones: No milestones
+
+Cultures+Civilizations Elective
+ECE 402
+Social Sciences Elective
+Core Elective
+Senior Elective
 
 ce-2020: 
 Term 1:
@@ -351,6 +392,15 @@ Core Elective
 Social Sciences Elective
 Senior Electives
 
+Term 8:
+Milestones: No milestones
+
+Cultures+Civilizations Elective
+ECE 402
+Social Sciences Elective
+Core Elective
+Senior Elective
+
 ce-2021: 
 Term 1:
 Milestones: MATH 130 or MATH 131 or higher or one Arts and Humanities, Cultures and Civilizations, or Social Sciences Elective
@@ -409,6 +459,15 @@ ECE 401
 Core Elective
 Social Sciences Elective
 Senior Electives
+
+Term 8:
+Milestones: No milestones
+
+Cultures+Civilizations Elective
+ECE 402
+Social Sciences Elective
+Core Elective
+Senior Elective
 
 ce-2022: 
 Term 1:
@@ -473,6 +532,16 @@ Core Elective
 Social Sciences Elective
 Senior Electives
 
+Term 8:
+Milestones: No milestones
+
+Global Citizenship – International Elective
+ECE 402
+Expanded Perspectives Elective
+If necessary or Engaged Inquiries (Note student may try to choose courses from Expanded Perspectives or Electives that also meet Engaged Inquiries)
+Core Elective
+Senior Elective
+
 ee-2019: 
 Term 1:
 Milestones: MATH 130 or higher or one Arts and Humanities, Cultures and Civilizations, or Social Sciences Elective
@@ -528,6 +597,14 @@ Arts+Humanities Elective
 Cultures+Civilizations Elective
 ECE 401
 Electrical Engineering Senior Electives
+
+Term 8:
+Milestones: No milestones
+
+Cultures+Civilizations Elective
+ECE 402
+Electrical Engineering Senior Elective
+Technical Electives
 
 ee-2020: 
 Term 1:
@@ -585,6 +662,14 @@ Cultures+Civilizations Elective
 ECE 401
 Electrical Engineering Senior Electives
 
+Term 8:
+Milestones: No milestones
+
+Cultures+Civilizations Elective
+ECE 402
+Electrical Engineering Senior Elective
+Technical Electives
+
 ee-2021: 
 Term 1:
 Milestones: MATH 130 or MATH 131 or higher or one Arts and Humanities, Cultures and Civilizations, or Social Sciences Elective
@@ -640,6 +725,14 @@ Arts+Humanities Elective
 Cultures+Civilizations Elective
 ECE 401
 Electrical Engineering Senior Electives
+
+Term 8:
+Milestones: No milestones
+
+Cultures+Civilizations Elective
+ECE 402
+Electrical Engineering Senior Elective
+Technical Electives
 
 ee-2022: 
 Term 1:
@@ -702,4 +795,13 @@ Expanded Perspectives Elective
 Global Citizenship – US Elective
 ECE 401
 Electrical Engineering Senior Electives
+
+Term 8:
+Milestones: No milestones
+
+Global Citizenship – International Elective
+ECE 402
+If necessary or Engaged Inquiries Elective (Note student may try to choose courses from Expanded Perspectives or Electives that also meet Engaged Inquiries )
+Electrical Engineering Senior Elective
+Technical Electives
 

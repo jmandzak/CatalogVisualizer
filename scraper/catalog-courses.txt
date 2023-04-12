@@ -179,6 +179,21 @@ Description: COSC 367 - Honors: Systems Programming 4 Credit Hours Same as 360 w
 Prerequisites: 130+302
 Corequisites: 
 
+CBE 201
+Description: CBE 201 - Material+Energy Balances 4 Credit Hours Steady-state+transient material+energy balances in chemical+biomolecular systems. Introduction to flowsheet software. (RE) Prerequisite(s): Engineering Fundamentals 152+Chemistry 130.(RE) Corequisite(s): Mathematics 231.
+Prerequisites: Engineering Fundamentals 152+Chemistry 130
+Corequisites: Mathematics 231
+
+ME 202
+Description: ME 202 - Engineering Mechanics 2 Credit Hours Review of vector algebra. Statics of two-dimensional trusses+frames or including methods of joints+sections. Geometric properties of cross sections or including first+second moments+location of centroid. Inertial properties of rigid bodies or including moment of inertia+location of mass center. (RE) Corequisite(s): Engineering Fundamentals 152+Mathematics 142.Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 
+Corequisites: Engineering Fundamentals 152+Mathematics 142
+
+MSE 201
+Description: MSE 201 - Introduction to Materials Science+Engineering 3 Credit Hours Correlation of atomic structure or crystal structure,+microstructure of solids with mechanical or physical,+chemical properties of engineering significance. (RE) Prerequisite(s): Chemistry 120.
+Prerequisites: Chemistry 120
+Corequisites: 
+
 COSC 312
 Description: COSC 312 - Algorithm Analysis+Automata 3 Credit Hours Counting+combinatorics or with applications to the analysis of algorithms. Introduction to finite automata+regular languages,+to pushdown automata+context free grammars. (RE) Prerequisite(s): 311.
 Prerequisites: 311
@@ -334,11 +349,6 @@ Description: MATH 237 - Honors: Differential Equations I 3 Credit Hours Honors v
 Prerequisites: 148
 Corequisites: 
 
-MATH 241
-Description: MATH 241 - Calculus III 4 Credit Hours Calculus of functions in two or more dimensions. Includes solid analytic geometry or partial differentiation or multiple integration,+selected topics in vector calculus. (RE) Prerequisite(s): 142 or 148.
-Prerequisites: 142 or 148
-Corequisites: 
-
 MATH 247
 Description: MATH 247 - Honors: Calculus III 4 Credit Hours (RE) Prerequisite(s): 148.Comment(s): Students should have a 32 mathematics ACT score or a 700 quantitative SAT score+credit for mathematics 142 or permission from the instructor to enroll.
 Prerequisites: 148
@@ -399,6 +409,11 @@ Description: ECE 469 - Mobile+Embedded Systems Security 3 Credit Hours Introduct
 Prerequisites: Computer Science 302
 Corequisites: 
 
+MSE 117
+Description: MSE 117 - Honors: Materials Chemistry 3 Credit Hours Honors version of 110 that requires an additional honors component. (RE) Prerequisite(s): Chemistry 120 or Chemistry 128.
+Prerequisites: Chemistry 120 or Chemistry 128
+Corequisites: 
+
 ECE 347
 Description: ECE 347 - Honors: Fields 3 Credit Hours Same as 341 with additional honors project. (RE) Prerequisite(s): 202+Mathematics 241.(DE) Prerequisite(s): Physics 232.
 Prerequisites: 202+Mathematics 241
@@ -427,16 +442,6 @@ Corequisites:
 ECE 477
 Description: ECE 477 - Honors: Introduction to Pattern Recognition 3 Credit Hours Same as 471 with additional honors project. (RE) Prerequisite(s): 313 or Mathematics 323; Mathematics 200 or Mathematics 251.
 Prerequisites: 313 or Mathematics 323; Mathematics 200 or Mathematics 251
-Corequisites: 
-
-ECE 478
-Description: ECE 478 - Honors: Introduction to Digital Image Processing 3 Credit Hours Same as 472 with additional honors project. (RE) Prerequisite(s): 313 or Mathematics 323; Mathematics 200 or Mathematics 251.
-Prerequisites: 313 or Mathematics 323; Mathematics 200 or Mathematics 251
-Corequisites: 
-
-ECE 487
-Description: ECE 487 - Honors: Power Electronics 3 Credit Hours Same as 481 with additional honors project. (RE) Prerequisite(s): 316+325.(DE) Prerequisite(s): 336.
-Prerequisites: 316+325
 Corequisites: 
 
 cs-2020: 
@@ -628,6 +633,21 @@ Corequisites:
 COSC 367
 Description: COSC 367 - Honors: Systems Programming 4 Credit Hours Same as COSC 360 with additional honors project. Contact Hour Distribution: 3 hours lecture+1 lab.(RE) Prerequisite(s): COSC 302 or COSC 307 with a grade of C or better.
 Prerequisites: COSC 302 or COSC 307 with a grade of C or better
+Corequisites: 
+
+CBE 201
+Description: CBE 201 - Material+Energy Balances 4 Credit Hours Steady-state+transient material+energy balances in chemical+biomolecular systems. Introduction to flowsheet software. (RE) Prerequisite(s): EF 152+CHEM 130.(RE) Corequisite(s): MATH 231 .
+Prerequisites: EF 152+CHEM 130
+Corequisites: MATH 231 
+
+ME 202
+Description: ME 202 - Engineering Mechanics 2 Credit Hours Review of vector algebra. Statics of two-dimensional trusses+frames or including methods of joints+sections. Geometric properties of cross sections or including first+second moments+location of centroid. Inertial properties of rigid bodies or including moment of inertia+location of mass center. (RE) Corequisite(s): EF 152+MATH 142.Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 
+Corequisites: EF 152+MATH 142
+
+MSE 201
+Description: MSE 201 - Introduction to Materials Science+Engineering 3 Credit Hours Correlation of atomic structure or crystal structure,+microstructure of solids with mechanical or physical,+chemical properties of engineering significance. (RE) Prerequisite(s): CHEM 120.
+Prerequisites: CHEM 120
 Corequisites: 
 
 COSC 312
@@ -853,6 +873,16 @@ Corequisites:
 ECE 469
 Description: ECE 469 - Mobile+Embedded Systems Security 3 Credit Hours Introduction to vulnerabilities+threat vectors associated with mobile+embedded devices or such as smartphones or wearable devices,+IoT devices. Topics include security features+limitations of mobile operating systems or secure programming or mobile location+activity privacy or user/device authentication or IoT wireless security or side-channel attacks on mobile/wearable devices,+security+privacy breaches on smart home devices. Coursework focuses on improving knowledge+awareness of mobile+embedded systems’ security issues or through individual homework assignments+an intensive group project involving hands-on research. (RE) Prerequisite(s): COSC 360 or COSC 367 with a grade of C or better.
 Prerequisites: COSC 360 or COSC 367 with a grade of C or better
+Corequisites: 
+
+MSE 117
+Description: MSE 117 - Honors: Materials Chemistry 3 Credit Hours Honors version of MSE 110 that requires an additional honors component. (RE) Prerequisite(s): CHEM 120 or CHEM 128.
+Prerequisites: CHEM 120 or CHEM 128
+Corequisites: 
+
+MSE 207
+Description: MSE 207 - Honors: Introduction to Materials Science+Engineering 3 Credit Hours Exploration of case studies to discover correlations between processing (physical+chemical) or structure (atomic or molecular or crystal,+microstructure)+properties (physical or mechanical,+chemical) of engineering materials. Creation of written documents+oral presentations that describe+explain discoveries. (RE) Prerequisite(s): CHEM 120 or CHEM 128+consent of instructor.
+Prerequisites: CHEM 120 or CHEM 128+consent of instructor
 Corequisites: 
 
 ECE 347
@@ -1101,6 +1131,21 @@ Description: COSC 367 - Honors: Systems Programming 4 Credit Hours Same as COSC 
 Prerequisites: COSC 302 or COSC 307 with a grade of C or better,+either COSC 230 or ECE 256 with a grade of C or better
 Corequisites: 
 
+CBE 201
+Description: CBE 201 - Material+Energy Balances 4 Credit Hours Steady-state+transient material+energy balances in chemical+biomolecular systems. Introduction to flowsheet software. (RE) Prerequisite(s): EF 152 or EF 158;+CHEM 132+CHEM 133 or CHEM 138.(RE) Corequisite(s): MATH 231 .
+Prerequisites: EF 152 or EF 158;+CHEM 132+CHEM 133 or CHEM 138
+Corequisites: MATH 231 
+
+ME 202
+Description: ME 202 - Engineering Mechanics 2 Credit Hours Review of vector algebra. Statics of two-dimensional trusses+frames or including methods of joints+sections. Geometric properties of cross sections or including first+second moments+location of centroid. Inertial properties of rigid bodies or including moment of inertia+location of mass center. (RE) Corequisite(s): EF 152+MATH 142.Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 
+Corequisites: EF 152+MATH 142
+
+MSE 201
+Description: MSE 201 - Introduction to Materials Science+Engineering 3 Credit Hours Correlation of atomic structure or crystal structure,+microstructure of solids with mechanical or physical,+chemical properties of engineering significance. (RE) Prerequisite(s): CHEM 122+CHEM 123; or CHEM 128.
+Prerequisites: CHEM 122+CHEM 123; or CHEM 128
+Corequisites: 
+
 COSC 312
 Description: COSC 312 - Algorithm Analysis+Automata 3 Credit Hours Counting+combinatorics or with applications to the analysis of algorithms. Introduction to finite automata+regular languages,+to pushdown automata+context free grammars. (RE) Prerequisite(s): COSC 311 or COSC 317 with a grade of C or better.
 Prerequisites: COSC 311 or COSC 317 with a grade of C or better
@@ -1334,6 +1379,16 @@ Corequisites:
 ECE 469
 Description: ECE 469 - Mobile+Embedded Systems Security 3 Credit Hours Introduction to vulnerabilities+threat vectors associated with mobile+embedded devices or such as smartphones or wearable devices,+IoT devices. Topics include security features+limitations of mobile operating systems or secure programming or mobile location+activity privacy or user/device authentication or IoT wireless security or side-channel attacks on mobile/wearable devices,+security+privacy breaches on smart home devices. Coursework focuses on improving knowledge+awareness of mobile+embedded systems’ security issues or through individual homework assignments+an intensive group project involving hands-on research. (RE) Prerequisite(s): COSC 360 or COSC 367 with a grade of C or better.
 Prerequisites: COSC 360 or COSC 367 with a grade of C or better
+Corequisites: 
+
+MSE 117
+Description: MSE 117 - Honors: Materials Chemistry 3 Credit Hours Honors version of MSE 110 that requires an additional honors component. (RE) Prerequisite(s): CHEM 122+CHEM 123; or CHEM 128.
+Prerequisites: CHEM 122+CHEM 123; or CHEM 128
+Corequisites: 
+
+MSE 207
+Description: MSE 207 - Honors: Introduction to Materials Science+Engineering 3 Credit Hours Exploration of case studies to discover correlations between processing (physical+chemical) or structure (atomic or molecular or crystal,+microstructure)+properties (physical or mechanical,+chemical) of engineering materials. Creation of written documents+oral presentations that describe+explain discoveries. (RE) Prerequisite(s): CHEM 122+CHEM 123; or CHEM 128+consent of instructor.
+Prerequisites: CHEM 122+CHEM 123; or CHEM 128+consent of instructor
 Corequisites: 
 
 ECE 347
@@ -1617,6 +1672,21 @@ Description: COSC 367 - Honors: Systems Programming 4 Credit Hours Same as COSC 
 Prerequisites: COSC 302 or COSC 307 with a grade of C or better,+either COSC 230 or ECE 256 with a grade of C or better
 Corequisites: 
 
+CBE 201
+Description: CBE 201 - Material+Energy Balances 4 Credit Hours Steady-state+transient material+energy balances in chemical+biomolecular systems. Introduction to flowsheet software. (RE) Prerequisite(s): EF 152 or EF 158;+CHEM 132+CHEM 133 or CHEM 138.(RE) Corequisite(s): MATH 231 .
+Prerequisites: EF 152 or EF 158;+CHEM 132+CHEM 133 or CHEM 138
+Corequisites: MATH 231 
+
+ME 202
+Description: ME 202 - Engineering Mechanics 2 Credit Hours Review of vector algebra. Statics of two-dimensional trusses+frames or including methods of joints+sections. Geometric properties of cross sections or including first+second moments+location of centroid. Inertial properties of rigid bodies or including moment of inertia+location of mass center. (RE) Corequisite(s): EF 152+MATH 142.Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 
+Corequisites: EF 152+MATH 142
+
+MSE 201
+Description: MSE 201 - Introduction to Materials Science+Engineering 3 Credit Hours Correlation of atomic structure or crystal structure,+microstructure of solids with mechanical or physical,+chemical properties of engineering significance. (RE) Prerequisite(s): CHEM 122+CHEM 123; or CHEM 128.
+Prerequisites: CHEM 122+CHEM 123; or CHEM 128
+Corequisites: 
+
 COSC 312
 Description: COSC 312 - Algorithm Analysis+Automata 3 Credit Hours Counting+combinatorics or with applications to the analysis of algorithms. Introduction to finite automata+regular languages,+to pushdown automata+context free grammars. (RE) Prerequisite(s): COSC 311 or COSC 317 with a grade of C or better.
 Prerequisites: COSC 311 or COSC 317 with a grade of C or better
@@ -1852,6 +1922,16 @@ Description: ECE 469 - Mobile+Embedded Systems Security 3 Credit Hours Introduct
 Prerequisites: COSC 360 or COSC 367 with a grade of C or better
 Corequisites: 
 
+MSE 117
+Description: MSE 117 - Honors: Materials Chemistry 3 Credit Hours Honors version of MSE 110 that requires an additional honors component. (RE) Prerequisite(s): CHEM 122+CHEM 123; or CHEM 128.
+Prerequisites: CHEM 122+CHEM 123; or CHEM 128
+Corequisites: 
+
+MSE 207
+Description: MSE 207 - Honors: Introduction to Materials Science+Engineering 3 Credit Hours Exploration of case studies to discover correlations between processing (physical+chemical) or structure (atomic or molecular or crystal,+microstructure)+properties (physical or mechanical,+chemical) of engineering materials. Creation of written documents+oral presentations that describe+explain discoveries. (RE) Prerequisite(s): CHEM 122+CHEM 123; or CHEM 128+consent of instructor.
+Prerequisites: CHEM 122+CHEM 123; or CHEM 128+consent of instructor
+Corequisites: 
+
 ECE 347
 Description: ECE 347 - Honors: Fields 3 Credit Hours Same as ECE 341 with additional honors project. (RE) Prerequisite(s): ECE 202 with a grade of C or better,+MATH 241 or MATH 247 with a grade of C or better.(DE) Prerequisite(s): PHYS 232.
 Prerequisites: ECE 202 with a grade of C or better,+MATH 241 or MATH 247 with a grade of C or better
@@ -1885,11 +1965,6 @@ Corequisites:
 ECE 478
 Description: ECE 478 - Honors: Introduction to Digital Image Processing 3 Credit Hours Same as ECE 472 with additional honors project. (RE) Prerequisite(s): ECE 313 or ECE 317 or MATH 323 with a grade of C or better;+MATH 200 or MATH 251 or MATH 257 with a grade of C or better.
 Prerequisites: ECE 313 or ECE 317 or MATH 323 with a grade of C or better;+MATH 200 or MATH 251 or MATH 257 with a grade of C or better
-Corequisites: 
-
-ECE 487
-Description: ECE 487 - Honors: Power Electronics 3 Credit Hours Same as ECE 481 with additional honors project. (RE) Prerequisite(s): ECE 316 with a grade of C or better,+ECE 325 with a grade of C or better.(DE) Prerequisite(s): ECE 336 .
-Prerequisites: ECE 316 with a grade of C or better,+ECE 325 with a grade of C or better
 Corequisites: 
 
 ce-2019: 
@@ -2053,6 +2128,21 @@ Description: COSC 307 - Honors: Data Structures+Algorithms II 4 Credit Hours Sam
 Prerequisites: 140
 Corequisites: 
 
+CBE 201
+Description: CBE 201 - Material+Energy Balances 4 Credit Hours Steady-state+transient material+energy balances in chemical+biomolecular systems. Introduction to flowsheet software. (RE) Prerequisite(s): Engineering Fundamentals 152+Chemistry 130.(RE) Corequisite(s): Mathematics 231.
+Prerequisites: Engineering Fundamentals 152+Chemistry 130
+Corequisites: Mathematics 231
+
+ME 202
+Description: ME 202 - Engineering Mechanics 2 Credit Hours Review of vector algebra. Statics of two-dimensional trusses+frames or including methods of joints+sections. Geometric properties of cross sections or including first+second moments+location of centroid. Inertial properties of rigid bodies or including moment of inertia+location of mass center. (RE) Corequisite(s): Engineering Fundamentals 152+Mathematics 142.Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 
+Corequisites: Engineering Fundamentals 152+Mathematics 142
+
+MSE 201
+Description: MSE 201 - Introduction to Materials Science+Engineering 3 Credit Hours Correlation of atomic structure or crystal structure,+microstructure of solids with mechanical or physical,+chemical properties of engineering significance. (RE) Prerequisite(s): Chemistry 120.
+Prerequisites: Chemistry 120
+Corequisites: 
+
 ECE 351
 Description: ECE 351 - Digital Systems Design 3 Credit Hours Introduction to techniques+strategies for designing digital systems using hardware description languages+industry-standard design tools. Topics include simulation+synthesis of high-level designs or finite state-machine design or digital memory systems or arithmetic circuit design or circuit delay estimation or timing,+power analysis. Laboratory+project activities include the implementation of digital systems using field-programmable gate arrays (FPGAs). (RE) Prerequisite(s): 255.
 Prerequisites: 255
@@ -2081,6 +2171,11 @@ Corequisites:
 ECE 317
 Description: ECE 317 - Honors: Probability+Random Variables 3 Credit Hours Same as 313 with additional honors project. (RE) Prerequisite(s): Mathematics 142 or 148.
 Prerequisites: Mathematics 142 or 148
+Corequisites: 
+
+COSC 311
+Description: COSC 311 - Discrete Structures 3 Credit Hours Sets or functions or relations or equivalence relations or partial orderings+proof techniques or especially mathematical induction. Application of proof techniques to prove correctness of algorithms. Introduction to basic counting+combinatorics. (RE) Prerequisite(s): 140+either Mathematics 142 or 148.
+Prerequisites: 140+either Mathematics 142 or 148
 Corequisites: 
 
 COSC 317
@@ -2151,6 +2246,11 @@ Corequisites:
 ECE 455
 Description: ECE 455 - Embedded Systems Design 3 Credit Hours Design+development of embedded systems for data acquisition+special-purpose computing systems or such as peripheral interfacing or serial/parallel communications,+bus systems. Assembly language programming or software architecture,+machine architecture of microcontrollers. Includes Level 1 design projects which require laboratory work. (RE) Prerequisite(s): 256 or 336 or Computer Science 360 or 367.
 Prerequisites: 256 or 336 or Computer Science 360 or 367
+Corequisites: 
+
+MSE 117
+Description: MSE 117 - Honors: Materials Chemistry 3 Credit Hours Honors version of 110 that requires an additional honors component. (RE) Prerequisite(s): Chemistry 120 or Chemistry 128.
+Prerequisites: Chemistry 120 or Chemistry 128
 Corequisites: 
 
 COSC 377
@@ -2364,6 +2464,21 @@ Description: COSC 307 - Honors: Data Structures+Algorithms II 4 Credit Hours Sam
 Prerequisites: COSC 140 with a grade of C or better
 Corequisites: 
 
+CBE 201
+Description: CBE 201 - Material+Energy Balances 4 Credit Hours Steady-state+transient material+energy balances in chemical+biomolecular systems. Introduction to flowsheet software. (RE) Prerequisite(s): EF 152+CHEM 130.(RE) Corequisite(s): MATH 231 .
+Prerequisites: EF 152+CHEM 130
+Corequisites: MATH 231 
+
+ME 202
+Description: ME 202 - Engineering Mechanics 2 Credit Hours Review of vector algebra. Statics of two-dimensional trusses+frames or including methods of joints+sections. Geometric properties of cross sections or including first+second moments+location of centroid. Inertial properties of rigid bodies or including moment of inertia+location of mass center. (RE) Corequisite(s): EF 152+MATH 142.Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 
+Corequisites: EF 152+MATH 142
+
+MSE 201
+Description: MSE 201 - Introduction to Materials Science+Engineering 3 Credit Hours Correlation of atomic structure or crystal structure,+microstructure of solids with mechanical or physical,+chemical properties of engineering significance. (RE) Prerequisite(s): CHEM 120.
+Prerequisites: CHEM 120
+Corequisites: 
+
 ECE 351
 Description: ECE 351 - Digital Systems Design 3 Credit Hours Introduction to techniques+strategies for designing digital systems using hardware description languages+industry-standard design tools. Topics include simulation+synthesis of high-level designs or finite state-machine design or digital memory systems or arithmetic circuit design or circuit delay estimation or timing,+power analysis. Laboratory+project activities include the implementation of digital systems using field-programmable gate arrays (FPGAs). (RE) Prerequisite(s): ECE 255 with a grade of C or better.
 Prerequisites: ECE 255 with a grade of C or better
@@ -2434,11 +2549,6 @@ Description: ECE 401 - Senior Design Theory 2 Credit Hours A design course that 
 Prerequisites: ECE 315 or ECE 351 or ECE 357 with a grade of C or better
 Corequisites: 
 
-ECE 402
-Description: ECE 402 - Senior Design Practicum 3 Credit Hours A project-oriented course that requires teams of students to design a major project that incorporates the principles taught in ECE 401 . The design emphasis is directed to topics within the field of electrical+computer engineering. Satisfies General Education Requirement: (WC) (OC)(RE) Prerequisite(s): ECE 401 with a grade of C or better;+ENGL 102 or ENGL 132 or ENGL 290 or ENGL 298 with a grade of C or better.
-Prerequisites: ECE 401 with a grade of C or better;+ENGL 102 or ENGL 132 or ENGL 290 or ENGL 298 with a grade of C or better
-Corequisites: 
-
 COSC 340
 Description: COSC 340 - Software Engineering 3 Credit Hours Introduction to software processes that can be used on large projects to help design or manage or maintain,+test software. (RE) Prerequisite(s): COSC 302 or COSC 307 with a grade of C or better.
 Prerequisites: COSC 302 or COSC 307 with a grade of C or better
@@ -2467,6 +2577,11 @@ Corequisites:
 ECE 455
 Description: ECE 455 - Embedded Systems Design 3 Credit Hours Design+development of embedded systems for data acquisition+special-purpose computing systems or such as peripheral interfacing or serial/parallel communications,+bus systems. Assembly language programming or software architecture,+machine architecture of microcontrollers. (RE) Prerequisite(s): ECE 256 or ECE 336 or COSC 360 or COSC 367 with a grade of C or better.
 Prerequisites: ECE 256 or ECE 336 or COSC 360 or COSC 367 with a grade of C or better
+Corequisites: 
+
+MSE 117
+Description: MSE 117 - Honors: Materials Chemistry 3 Credit Hours Honors version of MSE 110 that requires an additional honors component. (RE) Prerequisite(s): CHEM 120 or CHEM 128.
+Prerequisites: CHEM 120 or CHEM 128
 Corequisites: 
 
 COSC 377
@@ -2502,11 +2617,6 @@ Corequisites:
 ECE 478
 Description: ECE 478 - Honors: Introduction to Digital Image Processing 3 Credit Hours Same as ECE 472 with additional honors project. (RE) Prerequisite(s): ECE 313 or ECE 317 or MATH 323 with a grade of C or better;+MATH 200 or MATH 251 or MATH 257 with a grade of C or better.
 Prerequisites: ECE 313 or ECE 317 or MATH 323 with a grade of C or better;+MATH 200 or MATH 251 or MATH 257 with a grade of C or better
-Corequisites: 
-
-ECE 487
-Description: ECE 487 - Honors: Power Electronics 3 Credit Hours Same as ECE 481 with additional honors project. (RE) Prerequisite(s): ECE 316 with a grade of C or better,+ECE 325 with a grade of C or better.(DE) Prerequisite(s): ECE 336 .
-Prerequisites: ECE 316 with a grade of C or better,+ECE 325 with a grade of C or better
 Corequisites: 
 
 ce-2021: 
@@ -2685,9 +2795,24 @@ Description: COSC 307 - Honors: Data Structures+Algorithms II 4 Credit Hours Sam
 Prerequisites: COSC 202 with a grade of C or better
 Corequisites: 
 
+CBE 201
+Description: CBE 201 - Material+Energy Balances 4 Credit Hours Steady-state+transient material+energy balances in chemical+biomolecular systems. Introduction to flowsheet software. (RE) Prerequisite(s): EF 152 or EF 158;+CHEM 132+CHEM 133 or CHEM 138.(RE) Corequisite(s): MATH 231 .
+Prerequisites: EF 152 or EF 158;+CHEM 132+CHEM 133 or CHEM 138
+Corequisites: MATH 231 
+
 COSC 111
 Description: COSC 111 - Computational Thinking+the Art of Programming 3 Credit Hours An introduction to the thought processes of computer science+the art of programming. Topics include learning to think algorithmically,+solve problems efficiently or using a high-level programming language+a variety of software tools+technologies. Skills learned include designing programs to solve problems or developing the algorithms needed or using abstractions or data structures+encapsulation or writing code to implement algorithms or testing the code for errors,+documenting the process+the outcome. This course welcomes students with limited or no programming experience.
 Prerequisites: 
+Corequisites: 
+
+ME 202
+Description: ME 202 - Engineering Mechanics 2 Credit Hours Review of vector algebra. Statics of two-dimensional trusses+frames or including methods of joints+sections. Geometric properties of cross sections or including first+second moments+location of centroid. Inertial properties of rigid bodies or including moment of inertia+location of mass center. (RE) Corequisite(s): EF 152+MATH 142.Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 
+Corequisites: EF 152+MATH 142
+
+MSE 201
+Description: MSE 201 - Introduction to Materials Science+Engineering 3 Credit Hours Correlation of atomic structure or crystal structure,+microstructure of solids with mechanical or physical,+chemical properties of engineering significance. (RE) Prerequisite(s): CHEM 122+CHEM 123; or CHEM 128.
+Prerequisites: CHEM 122+CHEM 123; or CHEM 128
 Corequisites: 
 
 ECE 351
@@ -2800,6 +2925,11 @@ Description: COSC 422 - Applied Machine Learning 3 Credit Hours Machine learning
 Prerequisites: COSC 102 or COSC 111 ; MATH 251 or MATH 257 ; MATH 241 or MATH 247 ;+ECE 313 or ECE 317 or MATH 323 or STAT 251 
 Corequisites: 
 
+MSE 117
+Description: MSE 117 - Honors: Materials Chemistry 3 Credit Hours Honors version of MSE 110 that requires an additional honors component. (RE) Prerequisite(s): CHEM 122+CHEM 123; or CHEM 128.
+Prerequisites: CHEM 122+CHEM 123; or CHEM 128
+Corequisites: 
+
 COSC 377
 Description: COSC 377 - Honors: Introduction to Scientific Computing 3 Credit Hours Same as COSC 370 with additional honors project. Credit Restriction: Students may not receive credit for both COSC 377+MATH 371 .(RE) Prerequisite(s): COSC 202 with a grade of C or better,+MATH 251 or MATH 257 with a grade of C or better.
 Prerequisites: COSC 202 with a grade of C or better,+MATH 251 or MATH 257 with a grade of C or better
@@ -2815,29 +2945,14 @@ Description: ECE 347 - Honors: Fields 3 Credit Hours Same as ECE 341 with additi
 Prerequisites: ECE 202 with a grade of C or better,+MATH 241 or MATH 247 with a grade of C or better
 Corequisites: 
 
-ECE 417
-Description: ECE 417 - Honors: Computer Control Systems 3 Credit Hours Same as ECE 416 with additional honors project. (RE) Prerequisite(s): ECE 316 with a grade of C or better.
-Prerequisites: ECE 316 with a grade of C or better
-Corequisites: 
-
 ECE 427
 Description: ECE 427 - Honors: Electric Energy Systems 3 Credit Hours Same as ECE 421 with additional honors project. (RE) Prerequisite(s): ECE 316 with a grade of C or better,+ECE 325 with a grade of C or better.
 Prerequisites: ECE 316 with a grade of C or better,+ECE 325 with a grade of C or better
 Corequisites: 
 
-ECE 477
-Description: ECE 477 - Honors: Introduction to Pattern Recognition 3 Credit Hours Same as ECE 471 with additional honors project. (RE) Prerequisite(s): ECE 313 or ECE 317 or MATH 323 with a grade of C or better;+MATH 200 or MATH 251 or MATH 257 with a grade of C or better.
-Prerequisites: ECE 313 or ECE 317 or MATH 323 with a grade of C or better;+MATH 200 or MATH 251 or MATH 257 with a grade of C or better
-Corequisites: 
-
 ECE 478
 Description: ECE 478 - Honors: Introduction to Digital Image Processing 3 Credit Hours Same as ECE 472 with additional honors project. (RE) Prerequisite(s): ECE 313 or ECE 317 or MATH 323 with a grade of C or better;+MATH 200 or MATH 251 or MATH 257 with a grade of C or better.
 Prerequisites: ECE 313 or ECE 317 or MATH 323 with a grade of C or better;+MATH 200 or MATH 251 or MATH 257 with a grade of C or better
-Corequisites: 
-
-ECE 487
-Description: ECE 487 - Honors: Power Electronics 3 Credit Hours Same as ECE 481 with additional honors project. (RE) Prerequisite(s): ECE 316 with a grade of C or better,+ECE 325 with a grade of C or better.(DE) Prerequisite(s): ECE 336 .
-Prerequisites: ECE 316 with a grade of C or better,+ECE 325 with a grade of C or better
 Corequisites: 
 
 ce-2022: 
@@ -3061,9 +3176,24 @@ Description: COSC 307 - Honors: Data Structures+Algorithms II 4 Credit Hours Sam
 Prerequisites: COSC 202 with a grade of C or better
 Corequisites: 
 
+CBE 201
+Description: CBE 201 - Material+Energy Balances 4 Credit Hours Steady-state+transient material+energy balances in chemical+biomolecular systems. Introduction to flowsheet software. (RE) Prerequisite(s): EF 152 or EF 158;+CHEM 132+CHEM 133 or CHEM 138.(RE) Corequisite(s): MATH 231 .
+Prerequisites: EF 152 or EF 158;+CHEM 132+CHEM 133 or CHEM 138
+Corequisites: MATH 231 
+
 COSC 111
 Description: COSC 111 - Computational Thinking+the Art of Programming 3 Credit Hours An introduction to the thought processes of computer science+the art of programming. Topics include learning to think algorithmically,+solve problems efficiently or using a high-level programming language+a variety of software tools+technologies. Skills learned include designing programs to solve problems or developing the algorithms needed or using abstractions or data structures+encapsulation or writing code to implement algorithms or testing the code for errors,+documenting the process+the outcome. This course welcomes students with limited or no programming experience. Satisfies Volunteer Core Requirement: (QR)
 Prerequisites: 
+Corequisites: 
+
+ME 202
+Description: ME 202 - Engineering Mechanics 2 Credit Hours Review of vector algebra. Statics of two-dimensional trusses+frames or including methods of joints+sections. Geometric properties of cross sections or including first+second moments+location of centroid. Inertial properties of rigid bodies or including moment of inertia+location of mass center. (RE) Corequisite(s): EF 152+MATH 142.Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 
+Corequisites: EF 152+MATH 142
+
+MSE 201
+Description: MSE 201 - Introduction to Materials Science+Engineering 3 Credit Hours Correlation of atomic structure or crystal structure,+microstructure of solids with mechanical or physical,+chemical properties of engineering significance. (RE) Prerequisite(s): CHEM 122+CHEM 123; or CHEM 128.
+Prerequisites: CHEM 122+CHEM 123; or CHEM 128
 Corequisites: 
 
 ECE 351
@@ -3179,6 +3309,11 @@ Corequisites:
 ENGL 355
 Description: ENGL 355 - Rhetoric+Writing 3 Credit Hours Strategies of writing on personal+academic subjects. Discussion of student+professional writing. Satisfies Volunteer Core Requirement: (WC)Satisfies General Education Requirement through the 2021-2022 academic catalog: (WC)(RE) Prerequisite(s): ENGL 102 or ENGL 118 or ENGL 132 or ENGL 290 or ENGL 298.
 Prerequisites: ENGL 102 or ENGL 118 or ENGL 132 or ENGL 290 or ENGL 298
+Corequisites: 
+
+MSE 117
+Description: MSE 117 - Honors: Materials Chemistry 3 Credit Hours Honors version of MSE 110 that requires an additional honors component. (RE) Prerequisite(s): CHEM 122+CHEM 123; or CHEM 128.
+Prerequisites: CHEM 122+CHEM 123; or CHEM 128
 Corequisites: 
 
 COSC 377
@@ -3352,6 +3487,11 @@ Description: ECE 313 - Probability+Random Variables 3 Credit Hours Probability a
 Prerequisites: Mathematics 142 or 148
 Corequisites: 
 
+ECE 317
+Description: ECE 317 - Honors: Probability+Random Variables 3 Credit Hours Same as 313 with additional honors project. (RE) Prerequisite(s): Mathematics 142 or 148.
+Prerequisites: Mathematics 142 or 148
+Corequisites: 
+
 MATH 241
 Description: MATH 241 - Calculus III 4 Credit Hours Calculus of functions in two or more dimensions. Includes solid analytic geometry or partial differentiation or multiple integration,+selected topics in vector calculus. (RE) Prerequisite(s): 142 or 148.
 Prerequisites: 142 or 148
@@ -3395,6 +3535,21 @@ Corequisites:
 ECE 395
 Description: ECE 395 - Junior Seminar 1 Credit Hours Presentations+discussions related to professional development or including registration or ethics,+current topics in electrical engineering. Grading Restriction: Satisfactory/No Credit grading only.(RE) Prerequisite(s): 202.
 Prerequisites: 202
+Corequisites: 
+
+CBE 201
+Description: CBE 201 - Material+Energy Balances 4 Credit Hours Steady-state+transient material+energy balances in chemical+biomolecular systems. Introduction to flowsheet software. (RE) Prerequisite(s): Engineering Fundamentals 152+Chemistry 130.(RE) Corequisite(s): Mathematics 231.
+Prerequisites: Engineering Fundamentals 152+Chemistry 130
+Corequisites: Mathematics 231
+
+ME 202
+Description: ME 202 - Engineering Mechanics 2 Credit Hours Review of vector algebra. Statics of two-dimensional trusses+frames or including methods of joints+sections. Geometric properties of cross sections or including first+second moments+location of centroid. Inertial properties of rigid bodies or including moment of inertia+location of mass center. (RE) Corequisite(s): Engineering Fundamentals 152+Mathematics 142.Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 
+Corequisites: Engineering Fundamentals 152+Mathematics 142
+
+MSE 201
+Description: MSE 201 - Introduction to Materials Science+Engineering 3 Credit Hours Correlation of atomic structure or crystal structure,+microstructure of solids with mechanical or physical,+chemical properties of engineering significance. (RE) Prerequisite(s): Chemistry 120.
+Prerequisites: Chemistry 120
 Corequisites: 
 
 ECE 341
@@ -3482,6 +3637,66 @@ Description: ECE 358 - Honors: Computer Systems Architecture 3 Credit Hours Same
 Prerequisites: 256 or 336 or Computer Science 360 or 367
 Corequisites: 
 
+IE 405
+Description: IE 405 - Engineering Economic Analysis 3 Credit Hours Role of engineering economy in engineering practice; principles of economic equivalence; time value of money+discounted cash-flow techniques; analysis of single+multiple investments; comparison of alternatives; capital recovery+tax implications; inflation; public sector analysis; cost estimation; depreciation schedules; break-even point concepts; decision making under uncertainty; risk analysis; introduction to investing in the financial market; basic accounting principles+financial statements including balance sheets or income statements or cost of goods sold statements,+business ratios. Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 
+Corequisites: 
+
+IE 457
+Description: IE 457 - Engineering Entrepreneurship 3 Credit Hours (See Mechanical Engineering 457.)
+Prerequisites: 
+Corequisites: 
+
+ME 231
+Description: ME 231 - Dynamics 3 Credit Hours Kinematics of rigid bodies or center of mass,+kinetics of systems of particles. Mass moments of inertia. Kinetics of rigid bodies. Newton’s laws or work-energy,+impulse-momentum. (RE) Prerequisite(s): 202+Engineering Fundamentals 152 or 158 with grades of C or better.Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 202+Engineering Fundamentals 152 or 158 with grades of C or better
+Corequisites: 
+
+ME 321
+Description: ME 321 - Mechanics of Materials 3 Credit Hours Concepts of stress+strain; stress-strain relations; applications including axially loaded members or torsion of circular shafts,+bending of beams. (RE) Prerequisite(s): 202 with a grade of C or better+Mathematics 142 or 148.Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 202 with a grade of C or better+Mathematics 142 or 148
+Corequisites: 
+
+ME 331
+Description: ME 331 - Thermodynamics 3 Credit Hours Energy+laws governing energy transformations. Thermodynamic properties+thermodynamic cycles. Ideal gas mixtures+application to engineering problems. (RE) Corequisite(s): Mathematics 241.Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 
+Corequisites: Mathematics 241
+
+ME 363
+Description: ME 363 - System Dynamics 3 Credit Hours Free+forced vibrations of damped+undamped lumped parameter systems. Transient+frequency response of lumped parameter systems. Introduction to feedback control systems. (RE) Prerequisite(s): 231+Mathematics 231 with grades of C or better.Registration Restriction(s): Aerospace or biomedical or mechanical engineering major.
+Prerequisites: 231+Mathematics 231 with grades of C or better
+Corequisites: 
+
+ME 367
+Description: ME 367 - Honors: System Dynamics 3 Credit Hours Honors version of 363. Students will attend 363 classes with supplementary assignments. (RE) Prerequisite(s): 231+Mathematics 231 with grades of C or better.Registration Restriction(s): Aerospace or biomedical or mechanical engineering major. Students in any honors program.
+Prerequisites: 231+Mathematics 231 with grades of C or better
+Corequisites: 
+
+MSE 207
+Description: MSE 207 - Honors: Introduction to Materials Science+Engineering 3 Credit Hours Exploration of case studies to discover correlations between processing (physical+chemical) or structure (atomic or molecular or crystal,+microstructure)+properties (physical or mechanical,+chemical) of engineering materials. Creation of written documents+oral presentations that describe+explain discoveries. (RE) Prerequisite(s): Chemistry 120 or Chemistry 128+consent of instructor.
+Prerequisites: Chemistry 120 or Chemistry 128+consent of instructor
+Corequisites: 
+
+MSE 410
+Description: MSE 410 - Theory+Processing of Conventional+Nano-Structured Devices 3 Credit Hours Conventional+nano-scale device structure+processing; p-n junctions or semiconductor diode solid state amplifiers; semiconductor crystal growth or epitaxial growth or doping or ion implantation or diffusion,+lithography. (RE) Prerequisite(s): Physics 232.Registration Restriction(s): Minimum student level – junior.
+Prerequisites: Physics 232
+Corequisites: 
+
+NE 342
+Description: NE 342 - Thermal Science 3 Credit Hours Fluid statics. Conservation equations of mass or momentum,+energy. Applications to fluid machinery. Heat transfer processes or heat conduction,+thermal radiation. Free+forced convection. (RE) Prerequisite(s): Mathematics 241 or 247.
+Prerequisites: Mathematics 241 or 247
+Corequisites: 
+
+NE 347
+Description: NE 347 - Honors: Thermal Science 3 Credit Hours Students will attend 342 classes with supplementary assignments and/or class meetings. (RE) Prerequisite(s): Mathematics 241 or 247.Registration Permission: Consent of instructor.
+Prerequisites: Mathematics 241 or 247
+Corequisites: 
+
+MSE 117
+Description: MSE 117 - Honors: Materials Chemistry 3 Credit Hours Honors version of 110 that requires an additional honors component. (RE) Prerequisite(s): Chemistry 120 or Chemistry 128.
+Prerequisites: Chemistry 120 or Chemistry 128
+Corequisites: 
+
 COSC 307
 Description: COSC 307 - Honors: Data Structures+Algorithms II 4 Credit Hours Same as 302 with additional honors project. Contact Hour Distribution: 3 hours lecture+1 lab.(RE) Prerequisite(s): 140.
 Prerequisites: 140
@@ -3500,11 +3715,6 @@ Corequisites:
 COSC 427
 Description: COSC 427 - Honors: Biologically-Inspired Computation 3 Credit Hours Same as 420 with additional honors project. Recommended Background: Completion of core courses.
 Prerequisites: 
-Corequisites: 
-
-ECE 317
-Description: ECE 317 - Honors: Probability+Random Variables 3 Credit Hours Same as 313 with additional honors project. (RE) Prerequisite(s): Mathematics 142 or 148.
-Prerequisites: Mathematics 142 or 148
 Corequisites: 
 
 ECE 357
@@ -3728,6 +3938,21 @@ Description: ECE 395 - Junior Seminar 1 Credit Hours Presentations+discussions r
 Prerequisites: ECE 202 with a grade of C or better
 Corequisites: 
 
+CBE 201
+Description: CBE 201 - Material+Energy Balances 4 Credit Hours Steady-state+transient material+energy balances in chemical+biomolecular systems. Introduction to flowsheet software. (RE) Prerequisite(s): EF 152+CHEM 130.(RE) Corequisite(s): MATH 231 .
+Prerequisites: EF 152+CHEM 130
+Corequisites: MATH 231 
+
+ME 202
+Description: ME 202 - Engineering Mechanics 2 Credit Hours Review of vector algebra. Statics of two-dimensional trusses+frames or including methods of joints+sections. Geometric properties of cross sections or including first+second moments+location of centroid. Inertial properties of rigid bodies or including moment of inertia+location of mass center. (RE) Corequisite(s): EF 152+MATH 142.Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 
+Corequisites: EF 152+MATH 142
+
+MSE 201
+Description: MSE 201 - Introduction to Materials Science+Engineering 3 Credit Hours Correlation of atomic structure or crystal structure,+microstructure of solids with mechanical or physical,+chemical properties of engineering significance. (RE) Prerequisite(s): CHEM 120.
+Prerequisites: CHEM 120
+Corequisites: 
+
 ECE 341
 Description: ECE 341 - Fields 3 Credit Hours Coulomb’s law or Gauss’ law or Ampere’s law or Maxwell’s equations for electrostatic+magnetostatic cases. Maxwell’s equations for dynamic case or dynamic potentials,+uniform plane wave propagation. Transmission lines. (RE) Prerequisite(s): ECE 202 with a grade of C or better,+MATH 241 or MATH 247 with a grade of C or better.(DE) Prerequisite(s): PHYS 232.
 Prerequisites: ECE 202 with a grade of C or better,+MATH 241 or MATH 247 with a grade of C or better
@@ -3823,9 +4048,74 @@ Description: EF 303 - Creating Synergies in Business+Engineering Collaborations 
 Prerequisites: EF 203 or consent of instructor
 Corequisites: 
 
+IE 405
+Description: IE 405 - Engineering Economic Analysis 3 Credit Hours Role of engineering economy in engineering practice; principles of economic equivalence; time value of money+discounted cash-flow techniques; analysis of single+multiple investments; comparison of alternatives; capital recovery+tax implications; inflation; public sector analysis; cost estimation; depreciation schedules; break-even point concepts; decision making under uncertainty; risk analysis; introduction to investing in the financial market; basic accounting principles+financial statements including balance sheets or income statements or cost of goods sold statements,+business ratios. Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 
+Corequisites: 
+
+IE 457
+Description: IE 457 - Engineering Entrepreneurship 3 Credit Hours (See ME 457 .)
+Prerequisites: 
+Corequisites: 
+
+ME 231
+Description: ME 231 - Dynamics 3 Credit Hours Kinematics of rigid bodies or center of mass,+kinetics of systems of particles. Mass moments of inertia. Kinetics of rigid bodies. Newton’s laws or work-energy,+impulse-momentum. (RE) Prerequisite(s): ME 202+EF 152 or EF 158 with grades of C or better.Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: ME 202+EF 152 or EF 158 with grades of C or better
+Corequisites: 
+
+ME 321
+Description: ME 321 - Mechanics of Materials 3 Credit Hours Concepts of stress+strain; stress-strain relations; applications including axially loaded members or torsion of circular shafts,+bending of beams. (RE) Prerequisite(s): ME 202 with a grade of C or better+MATH 142 or MATH 148 with a grade of C or better.Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: ME 202 with a grade of C or better+MATH 142 or MATH 148 with a grade of C or better
+Corequisites: 
+
+ME 331
+Description: ME 331 - Thermodynamics 3 Credit Hours Energy+laws governing energy transformations. Thermodynamic properties+thermodynamic cycles. Ideal gas mixtures+application to engineering problems. (RE) Corequisite(s): MATH 241 .Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 
+Corequisites: MATH 241 
+
+ME 363
+Description: ME 363 - System Dynamics 3 Credit Hours Free+forced vibrations of damped+undamped lumped parameter systems. Transient+frequency response of lumped parameter systems. Introduction to feedback control systems. (Same as BME 363 .)(RE) Prerequisite(s): ME 231+MATH 231 with grades of C or better.Registration Restriction(s): Aerospace or biomedical or mechanical engineering major.
+Prerequisites: ME 231+MATH 231 with grades of C or better
+Corequisites: 
+
+ME 367
+Description: ME 367 - Honors: System Dynamics 3 Credit Hours Honors version of ME 363 . Students will attend ME 363 classes with supplementary assignments. (Same as BME 367 .)(RE) Prerequisite(s): ME 231+MATH 231 with grades of C or better.Registration Restriction(s): Aerospace or biomedical or mechanical engineering major. Students in any honors program.
+Prerequisites: ME 231+MATH 231 with grades of C or better
+Corequisites: 
+
+MSE 207
+Description: MSE 207 - Honors: Introduction to Materials Science+Engineering 3 Credit Hours Exploration of case studies to discover correlations between processing (physical+chemical) or structure (atomic or molecular or crystal,+microstructure)+properties (physical or mechanical,+chemical) of engineering materials. Creation of written documents+oral presentations that describe+explain discoveries. (RE) Prerequisite(s): CHEM 120 or CHEM 128+consent of instructor.
+Prerequisites: CHEM 120 or CHEM 128+consent of instructor
+Corequisites: 
+
+MSE 410
+Description: MSE 410 - Theory+Processing of Conventional+Nano-Structured Devices 3 Credit Hours Conventional+nano-scale device structure+processing; p-n junctions or semiconductor diode solid state amplifiers; semiconductor crystal growth or epitaxial growth or doping or ion implantation or diffusion,+lithography. (RE) Prerequisite(s): PHYS 232.Registration Restriction(s): Minimum student level – junior.
+Prerequisites: PHYS 232
+Corequisites: 
+
+MSE 460
+Description: MSE 460 - Solar Photovoltaics 3 Credit Hours Underlying physics of semiconductor materials used as photovoltaics+a review of the current state of the art of converting sunlight to electrical energy. Registration Restriction(s): Minimum student level – juniors+seniors in engineering or physical sciences.
+Prerequisites: 
+Corequisites: 
+
+NE 342
+Description: NE 342 - Thermal Science 3 Credit Hours Fluid statics. Conservation equations of mass or momentum,+energy. Applications to fluid machinery. Heat transfer processes or heat conduction,+thermal radiation. Free+forced convection. (RE) Prerequisite(s): MATH 241 or MATH 247 .
+Prerequisites: MATH 241 or MATH 247 
+Corequisites: 
+
+NE 347
+Description: NE 347 - Honors: Thermal Science 3 Credit Hours Students will attend NE 342 classes with supplementary assignments and/or class meetings. (RE) Prerequisite(s): MATH 241 or MATH 247 .Registration Permission: Consent of instructor.
+Prerequisites: MATH 241 or MATH 247 
+Corequisites: 
+
 PHYS 250
 Description: PHYS 250 - Fundamentals of Physics: Modern Physics 4 Credit Hours Fundamental concepts of modern physics+their applications to atomic or nuclear or particle,+condensed matter physics or with lab. (RE) Prerequisite(s): PHYS 136 or PHYS 138 or PHYS 231.
 Prerequisites: PHYS 136 or PHYS 138 or PHYS 231
+Corequisites: 
+
+MSE 117
+Description: MSE 117 - Honors: Materials Chemistry 3 Credit Hours Honors version of MSE 110 that requires an additional honors component. (RE) Prerequisite(s): CHEM 120 or CHEM 128.
+Prerequisites: CHEM 120 or CHEM 128
 Corequisites: 
 
 COSC 307
@@ -3871,11 +4161,6 @@ Corequisites:
 ECE 478
 Description: ECE 478 - Honors: Introduction to Digital Image Processing 3 Credit Hours Same as ECE 472 with additional honors project. (RE) Prerequisite(s): ECE 313 or ECE 317 or MATH 323 with a grade of C or better;+MATH 200 or MATH 251 or MATH 257 with a grade of C or better.
 Prerequisites: ECE 313 or ECE 317 or MATH 323 with a grade of C or better;+MATH 200 or MATH 251 or MATH 257 with a grade of C or better
-Corequisites: 
-
-ECE 487
-Description: ECE 487 - Honors: Power Electronics 3 Credit Hours Same as ECE 481 with additional honors project. (RE) Prerequisite(s): ECE 316 with a grade of C or better,+ECE 325 with a grade of C or better.(DE) Prerequisite(s): ECE 336 .
-Prerequisites: ECE 316 with a grade of C or better,+ECE 325 with a grade of C or better
 Corequisites: 
 
 ee-2021: 
@@ -4074,9 +4359,24 @@ Description: ECE 395 - Junior Seminar 1 Credit Hours Presentations+discussions r
 Prerequisites: ECE 202 with a grade of C or better
 Corequisites: 
 
+CBE 201
+Description: CBE 201 - Material+Energy Balances 4 Credit Hours Steady-state+transient material+energy balances in chemical+biomolecular systems. Introduction to flowsheet software. (RE) Prerequisite(s): EF 152 or EF 158;+CHEM 132+CHEM 133 or CHEM 138.(RE) Corequisite(s): MATH 231 .
+Prerequisites: EF 152 or EF 158;+CHEM 132+CHEM 133 or CHEM 138
+Corequisites: MATH 231 
+
 COSC 111
 Description: COSC 111 - Computational Thinking+the Art of Programming 3 Credit Hours An introduction to the thought processes of computer science+the art of programming. Topics include learning to think algorithmically,+solve problems efficiently or using a high-level programming language+a variety of software tools+technologies. Skills learned include designing programs to solve problems or developing the algorithms needed or using abstractions or data structures+encapsulation or writing code to implement algorithms or testing the code for errors,+documenting the process+the outcome. This course welcomes students with limited or no programming experience.
 Prerequisites: 
+Corequisites: 
+
+ME 202
+Description: ME 202 - Engineering Mechanics 2 Credit Hours Review of vector algebra. Statics of two-dimensional trusses+frames or including methods of joints+sections. Geometric properties of cross sections or including first+second moments+location of centroid. Inertial properties of rigid bodies or including moment of inertia+location of mass center. (RE) Corequisite(s): EF 152+MATH 142.Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 
+Corequisites: EF 152+MATH 142
+
+MSE 201
+Description: MSE 201 - Introduction to Materials Science+Engineering 3 Credit Hours Correlation of atomic structure or crystal structure,+microstructure of solids with mechanical or physical,+chemical properties of engineering significance. (RE) Prerequisite(s): CHEM 122+CHEM 123; or CHEM 128.
+Prerequisites: CHEM 122+CHEM 123; or CHEM 128
 Corequisites: 
 
 ECE 341
@@ -4144,6 +4444,11 @@ Description: COSC 370 - Introduction to Scientific Computing 3 Credit Hours The 
 Prerequisites: COSC 202 with a grade of C or better,+MATH 251 or MATH 257 with a grade of C or better
 Corequisites: 
 
+COSC 377
+Description: COSC 377 - Honors: Introduction to Scientific Computing 3 Credit Hours Same as COSC 370 with additional honors project. Credit Restriction: Students may not receive credit for both COSC 377+MATH 371 .(RE) Prerequisite(s): COSC 202 with a grade of C or better,+MATH 251 or MATH 257 with a grade of C or better.
+Prerequisites: COSC 202 with a grade of C or better,+MATH 251 or MATH 257 with a grade of C or better
+Corequisites: 
+
 COSC 422
 Description: COSC 422 - Applied Machine Learning 3 Credit Hours Machine learning (ML) concepts; ML techniques for practical applications. ML approaches+learning methods in modeling+prediction of complex systems. Data acquisition+preprocessing or training or classification+prediction or modeling tools,+postprocessing+evaluation. Credit Restriction: May not be applied toward the computer science or computer engineering majors.(RE) Prerequisite(s): COSC 102 or COSC 111 ; MATH 251 or MATH 257 ; MATH 241 or MATH 247 ;+ECE 313 or ECE 317 or MATH 323 or STAT 251 .Comment(s): Prior knowledge may satisfy prerequisites with consent of instructor.
 Prerequisites: COSC 102 or COSC 111 ; MATH 251 or MATH 257 ; MATH 241 or MATH 247 ;+ECE 313 or ECE 317 or MATH 323 or STAT 251 
@@ -4184,9 +4489,74 @@ Description: EF 303 - Creating Synergies in Business+Engineering Collaborations 
 Prerequisites: EF 203 or consent of instructor
 Corequisites: 
 
+IE 405
+Description: IE 405 - Engineering Economic Analysis 3 Credit Hours Role of engineering economy in engineering practice; principles of economic equivalence; time value of money+discounted cash-flow techniques; analysis of single+multiple investments; comparison of alternatives; capital recovery+tax implications; inflation; public sector analysis; cost estimation; depreciation schedules; break-even point concepts; decision making under uncertainty; risk analysis; introduction to investing in the financial market; basic accounting principles+financial statements including balance sheets or income statements or cost of goods sold statements,+business ratios. Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 
+Corequisites: 
+
+IE 457
+Description: IE 457 - Engineering Entrepreneurship 3 Credit Hours (See ME 457 .)
+Prerequisites: 
+Corequisites: 
+
+ME 231
+Description: ME 231 - Dynamics 3 Credit Hours Kinematics of rigid bodies or center of mass,+kinetics of systems of particles. Mass moments of inertia. Kinetics of rigid bodies. Newton’s laws or work-energy,+impulse-momentum. (RE) Prerequisite(s): ME 202+EF 152 or EF 158 with grades of C or better.Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: ME 202+EF 152 or EF 158 with grades of C or better
+Corequisites: 
+
+ME 321
+Description: ME 321 - Mechanics of Materials 3 Credit Hours Concepts of stress+strain; stress-strain relations; applications including axially loaded members or torsion of circular shafts,+bending of beams. (RE) Prerequisite(s): ME 202 with a grade of C or better+MATH 142 or MATH 148 with a grade of C or better.Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: ME 202 with a grade of C or better+MATH 142 or MATH 148 with a grade of C or better
+Corequisites: 
+
+ME 331
+Description: ME 331 - Thermodynamics 3 Credit Hours Energy+laws governing energy transformations. Thermodynamic properties+thermodynamic cycles. Ideal gas mixtures+application to engineering problems. (RE) Corequisite(s): MATH 241 .Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 
+Corequisites: MATH 241 
+
+ME 363
+Description: ME 363 - System Dynamics 3 Credit Hours Free+forced vibrations of damped+undamped lumped parameter systems. Transient+frequency response of lumped parameter systems. Introduction to feedback control systems. (Same as BME 363 .)(RE) Prerequisite(s): ME 231+MATH 231 with grades of C or better.Registration Restriction(s): Aerospace or biomedical or mechanical engineering major.
+Prerequisites: ME 231+MATH 231 with grades of C or better
+Corequisites: 
+
+ME 367
+Description: ME 367 - Honors: System Dynamics 3 Credit Hours Honors version of ME 363 . Students will attend ME 363 classes with supplementary assignments. (Same as BME 367 .)(RE) Prerequisite(s): ME 231+MATH 231 with grades of C or better.Registration Restriction(s): Aerospace or biomedical or mechanical engineering major. Students in any honors program.
+Prerequisites: ME 231+MATH 231 with grades of C or better
+Corequisites: 
+
+MSE 207
+Description: MSE 207 - Honors: Introduction to Materials Science+Engineering 3 Credit Hours Exploration of case studies to discover correlations between processing (physical+chemical) or structure (atomic or molecular or crystal,+microstructure)+properties (physical or mechanical,+chemical) of engineering materials. Creation of written documents+oral presentations that describe+explain discoveries. (RE) Prerequisite(s): CHEM 122+CHEM 123; or CHEM 128+consent of instructor.
+Prerequisites: CHEM 122+CHEM 123; or CHEM 128+consent of instructor
+Corequisites: 
+
+MSE 410
+Description: MSE 410 - Theory+Processing of Conventional+Nano-Structured Devices 3 Credit Hours Conventional+nano-scale device structure+processing; p-n junctions or semiconductor diode solid state amplifiers; semiconductor crystal growth or epitaxial growth or doping or ion implantation or diffusion,+lithography. Registration Restriction(s): Minimum student level – junior.
+Prerequisites: 
+Corequisites: 
+
+MSE 460
+Description: MSE 460 - Solar Photovoltaics 3 Credit Hours Underlying physics of semiconductor materials used as photovoltaics+a review of the current state of the art of converting sunlight to electrical energy. Registration Restriction(s): Minimum student level – juniors+seniors in engineering or physical sciences.
+Prerequisites: 
+Corequisites: 
+
+NE 342
+Description: NE 342 - Thermal Science 3 Credit Hours Fluid statics. Conservation equations of mass or momentum,+energy. Applications to fluid machinery. Heat transfer processes or heat conduction,+thermal radiation. Free+forced convection. (RE) Prerequisite(s): MATH 241 or MATH 247 .
+Prerequisites: MATH 241 or MATH 247 
+Corequisites: 
+
+NE 347
+Description: NE 347 - Honors: Thermal Science 3 Credit Hours Students will attend NE 342 classes with supplementary assignments and/or class meetings. (RE) Prerequisite(s): MATH 241 or MATH 247 .Registration Permission: Consent of instructor.
+Prerequisites: MATH 241 or MATH 247 
+Corequisites: 
+
 PHYS 250
 Description: PHYS 250 - Fundamentals of Physics: Modern Physics 4 Credit Hours Fundamental concepts of modern physics+their applications to atomic or nuclear or particle,+condensed matter physics or with lab. (RE) Prerequisite(s): PHYS 136 or PHYS 138 or PHYS 231.
 Prerequisites: PHYS 136 or PHYS 138 or PHYS 231
+Corequisites: 
+
+MSE 117
+Description: MSE 117 - Honors: Materials Chemistry 3 Credit Hours Honors version of MSE 110 that requires an additional honors component. (RE) Prerequisite(s): CHEM 122+CHEM 123; or CHEM 128.
+Prerequisites: CHEM 122+CHEM 123; or CHEM 128
 Corequisites: 
 
 COSC 307
@@ -4202,11 +4572,6 @@ Corequisites:
 COSC 367
 Description: COSC 367 - Honors: Systems Programming 4 Credit Hours Same as COSC 360 with additional honors project. Contact Hour Distribution: 3 hours lecture+1 lab.(RE) Prerequisite(s): COSC 302 or COSC 307 with a grade of C or better,+either COSC 230 or ECE 256 with a grade of C or better.
 Prerequisites: COSC 302 or COSC 307 with a grade of C or better,+either COSC 230 or ECE 256 with a grade of C or better
-Corequisites: 
-
-COSC 377
-Description: COSC 377 - Honors: Introduction to Scientific Computing 3 Credit Hours Same as COSC 370 with additional honors project. Credit Restriction: Students may not receive credit for both COSC 377+MATH 371 .(RE) Prerequisite(s): COSC 202 with a grade of C or better,+MATH 251 or MATH 257 with a grade of C or better.
-Prerequisites: COSC 202 with a grade of C or better,+MATH 251 or MATH 257 with a grade of C or better
 Corequisites: 
 
 COSC 427
@@ -4237,11 +4602,6 @@ Corequisites:
 ECE 478
 Description: ECE 478 - Honors: Introduction to Digital Image Processing 3 Credit Hours Same as ECE 472 with additional honors project. (RE) Prerequisite(s): ECE 313 or ECE 317 or MATH 323 with a grade of C or better;+MATH 200 or MATH 251 or MATH 257 with a grade of C or better.
 Prerequisites: ECE 313 or ECE 317 or MATH 323 with a grade of C or better;+MATH 200 or MATH 251 or MATH 257 with a grade of C or better
-Corequisites: 
-
-ECE 487
-Description: ECE 487 - Honors: Power Electronics 3 Credit Hours Same as ECE 481 with additional honors project. (RE) Prerequisite(s): ECE 316 with a grade of C or better,+ECE 325 with a grade of C or better.(DE) Prerequisite(s): ECE 336 .
-Prerequisites: ECE 316 with a grade of C or better,+ECE 325 with a grade of C or better
 Corequisites: 
 
 ee-2022: 
@@ -4470,9 +4830,24 @@ Description: ECE 315 - Signals+Systems I 3 Credit Hours Continuous-+discrete-tim
 Prerequisites: ECE 202 with a grade of C or better
 Corequisites: 
 
+CBE 201
+Description: CBE 201 - Material+Energy Balances 4 Credit Hours Steady-state+transient material+energy balances in chemical+biomolecular systems. Introduction to flowsheet software. (RE) Prerequisite(s): EF 152 or EF 158;+CHEM 132+CHEM 133 or CHEM 138.(RE) Corequisite(s): MATH 231 .
+Prerequisites: EF 152 or EF 158;+CHEM 132+CHEM 133 or CHEM 138
+Corequisites: MATH 231 
+
 COSC 111
 Description: COSC 111 - Computational Thinking+the Art of Programming 3 Credit Hours An introduction to the thought processes of computer science+the art of programming. Topics include learning to think algorithmically,+solve problems efficiently or using a high-level programming language+a variety of software tools+technologies. Skills learned include designing programs to solve problems or developing the algorithms needed or using abstractions or data structures+encapsulation or writing code to implement algorithms or testing the code for errors,+documenting the process+the outcome. This course welcomes students with limited or no programming experience. Satisfies Volunteer Core Requirement: (QR)
 Prerequisites: 
+Corequisites: 
+
+ME 202
+Description: ME 202 - Engineering Mechanics 2 Credit Hours Review of vector algebra. Statics of two-dimensional trusses+frames or including methods of joints+sections. Geometric properties of cross sections or including first+second moments+location of centroid. Inertial properties of rigid bodies or including moment of inertia+location of mass center. (RE) Corequisite(s): EF 152+MATH 142.Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 
+Corequisites: EF 152+MATH 142
+
+MSE 201
+Description: MSE 201 - Introduction to Materials Science+Engineering 3 Credit Hours Correlation of atomic structure or crystal structure,+microstructure of solids with mechanical or physical,+chemical properties of engineering significance. (RE) Prerequisite(s): CHEM 122+CHEM 123; or CHEM 128.
+Prerequisites: CHEM 122+CHEM 123; or CHEM 128
 Corequisites: 
 
 ECE 325
@@ -4600,6 +4975,61 @@ Description: EF 303 - Creating Synergies in Business+Engineering Collaborations 
 Prerequisites: EF 203 or consent of instructor
 Corequisites: 
 
+IE 405
+Description: IE 405 - Engineering Economic Analysis 3 Credit Hours Role of engineering economy in engineering practice; principles of economic equivalence; time value of money+discounted cash-flow techniques; analysis of single+multiple investments; comparison of alternatives; capital recovery+tax implications; inflation; public sector analysis; cost estimation; depreciation schedules; break-even point concepts; decision making under uncertainty; risk analysis; introduction to investing in the financial market; basic accounting principles+financial statements including balance sheets or income statements or cost of goods sold statements,+business ratios. Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 
+Corequisites: 
+
+IE 457
+Description: IE 457 - Engineering Entrepreneurship 3 Credit Hours (See ME 457 .)
+Prerequisites: 
+Corequisites: 
+
+ME 231
+Description: ME 231 - Dynamics 3 Credit Hours Kinematics of rigid bodies or center of mass,+kinetics of systems of particles. Mass moments of inertia. Kinetics of rigid bodies. Newton’s laws or work-energy,+impulse-momentum. (RE) Prerequisite(s): ME 202+EF 152 or EF 158 with grades of C or better.Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: ME 202+EF 152 or EF 158 with grades of C or better
+Corequisites: 
+
+ME 331
+Description: ME 331 - Thermodynamics 3 Credit Hours Energy+laws governing energy transformations. Thermodynamic properties+thermodynamic cycles. Ideal gas mixtures+application to engineering problems. (RE) Corequisite(s): MATH 241 .Registration Restriction(s): Tickle College of Engineering or biosystems engineering majors.
+Prerequisites: 
+Corequisites: MATH 241 
+
+ME 363
+Description: ME 363 - System Dynamics 3 Credit Hours Free+forced vibrations of damped+undamped lumped parameter systems. Transient+frequency response of lumped parameter systems. Introduction to feedback control systems. (Same as BME 363 .)(RE) Prerequisite(s): ME 231+MATH 231 with grades of C or better.Registration Restriction(s): Aerospace or biomedical or mechanical engineering major.
+Prerequisites: ME 231+MATH 231 with grades of C or better
+Corequisites: 
+
+ME 367
+Description: ME 367 - Honors: System Dynamics 3 Credit Hours Honors version of ME 363 . Students will attend ME 363 classes with supplementary assignments. (Same as BME 367 .)(RE) Prerequisite(s): ME 231+MATH 231 with grades of C or better.Registration Restriction(s): Aerospace or biomedical or mechanical engineering major. Students in any honors program.
+Prerequisites: ME 231+MATH 231 with grades of C or better
+Corequisites: 
+
+MSE 207
+Description: MSE 207 - Honors: Introduction to Materials Science+Engineering 3 Credit Hours Exploration of case studies to discover correlations between processing (physical+chemical) or structure (atomic or molecular or crystal,+microstructure)+properties (physical or mechanical,+chemical) of engineering materials. Creation of written documents+oral presentations that describe+explain discoveries. (RE) Prerequisite(s): CHEM 122+CHEM 123; or CHEM 128+consent of instructor.
+Prerequisites: CHEM 122+CHEM 123; or CHEM 128+consent of instructor
+Corequisites: 
+
+MSE 410
+Description: MSE 410 - Theory+Processing of Conventional+Nano-Structured Devices 3 Credit Hours Conventional+nano-scale device structure+processing; p-n junctions or semiconductor diode solid state amplifiers; semiconductor crystal growth or epitaxial growth or doping or ion implantation or diffusion,+lithography. Registration Restriction(s): Minimum student level – junior.
+Prerequisites: 
+Corequisites: 
+
+MSE 460
+Description: MSE 460 - Solar Photovoltaics 3 Credit Hours Underlying physics of semiconductor materials used as photovoltaics+a review of the current state of the art of converting sunlight to electrical energy. Registration Restriction(s): Minimum student level – juniors+seniors in engineering or physical sciences.
+Prerequisites: 
+Corequisites: 
+
+NE 342
+Description: NE 342 - Thermal Science 3 Credit Hours Fluid statics. Conservation equations of mass or momentum,+energy. Applications to fluid machinery. Heat transfer processes or heat conduction,+thermal radiation. Free+forced convection. (RE) Prerequisite(s): MATH 241 or MATH 247 ; ME 331 (C or better).
+Prerequisites: MATH 241 or MATH 247 ; ME 331 (C or better)
+Corequisites: 
+
+NE 347
+Description: NE 347 - Honors: Thermal Science 3 Credit Hours Students will attend NE 342 classes with supplementary assignments and/or class meetings. (RE) Prerequisite(s): MATH 241 or MATH 247 ; ME 331 (C or better).Registration Permission: Consent of instructor.
+Prerequisites: MATH 241 or MATH 247 ; ME 331 (C or better)
+Corequisites: 
+
 PHYS 250
 Description: PHYS 250 - Fundamentals of Physics: Modern Physics 4 Credit Hours Fundamental concepts of modern physics+their applications to atomic or nuclear or particle,+condensed matter physics or with lab. Satisfies Volunteer Core Requirement: (NS)(RE) Prerequisite(s): PHYS 136 or PHYS 138 or PHYS 231.
 Prerequisites: PHYS 136 or PHYS 138 or PHYS 231
@@ -4608,6 +5038,11 @@ Corequisites:
 ENGL 355
 Description: ENGL 355 - Rhetoric+Writing 3 Credit Hours Strategies of writing on personal+academic subjects. Discussion of student+professional writing. Satisfies Volunteer Core Requirement: (WC)Satisfies General Education Requirement through the 2021-2022 academic catalog: (WC)(RE) Prerequisite(s): ENGL 102 or ENGL 118 or ENGL 132 or ENGL 290 or ENGL 298.
 Prerequisites: ENGL 102 or ENGL 118 or ENGL 132 or ENGL 290 or ENGL 298
+Corequisites: 
+
+MSE 117
+Description: MSE 117 - Honors: Materials Chemistry 3 Credit Hours Honors version of MSE 110 that requires an additional honors component. (RE) Prerequisite(s): CHEM 122+CHEM 123; or CHEM 128.
+Prerequisites: CHEM 122+CHEM 123; or CHEM 128
 Corequisites: 
 
 COSC 307

@@ -1,5 +1,5 @@
-let json = require('./json_test.json');
+let json = require('./all_catalogs.json');
 // console.log(json, 'the json obj');
 
 console.log("\n")
-console.log(json['cs-2019'].milestones[0])
+console.log(json['cs-2022']['terms'])
