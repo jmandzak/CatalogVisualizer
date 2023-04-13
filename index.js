@@ -288,14 +288,24 @@ function closeClassForm() {
 }
 
 function printFunction() { 
+    // change the width of page to match a piece of printer paper
+    let widthContainer = document.getElementById('widthContainer');
+    widthContainer.style.width = "1063px";
+
     let buttonPanel = document.getElementsByClassName("dropdown")[0];
 
     buttonPanel.style.display = "none";
     buttonPanel.style.visibility = "hidden";
 
+    // redraw lines
+    generatePrereqs();
 
     window.print(); 
     
     buttonPanel.style.display = "";
     buttonPanel.style.visibility = "";
+
+    // Change width back
+    widthContainer.style.width = null;
+    generatePrereqs();
   }

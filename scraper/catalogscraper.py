@@ -142,9 +142,9 @@ def getAllCourses(soup: BeautifulSoup):
         text = " ".join(c.text.strip().split())
         text = text.replace(' *', '')
         text = text.replace('*', '')
-        text = text.replace(' and ', '+')
+        # text = text.replace(' and ', '+')
         text = text.replace(', or', ' or')
-        text = text.replace(', ', ' or ')
+        # text = text.replace(', ', ' or ')
         text = text.replace('  ', ' ')
 
         # get name of class
@@ -207,9 +207,9 @@ def getSchedule(soup: BeautifulSoup, catalogs: dict, major: str, year: str):
         # Various text fixes to make things consistent
         text = text.replace(' *', '')
         text = text.replace('*', '')
-        text = text.replace(' and ', '+')
+        # text = text.replace(' and ', '+')
         text = text.replace(', or', ' or')
-        text = text.replace(', ', ' or ')
+        # text = text.replace(', ', ' or ')
         text = text.replace('  ', ' ')
         temp_classes.append(text)
 
