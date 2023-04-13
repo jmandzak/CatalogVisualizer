@@ -17,12 +17,21 @@ $(document).ready(function () {
 
     let moveClassesBox = document.getElementById("moveClasses");
     moveClassesBox.onclick = moveClasses;
+    
+    let printBox = document.getElementById("printButton");
+    printBox.onclick = printFunction;
+
+    let addClassBox = document.getElementById("addClass");
+    addClassBox.onclick = openClassForm;
 
     let addPrereqBox = document.getElementById("addPrereq");
     addPrereqBox.onclick = openForm;
     
     let form = document.getElementsByClassName('prereqForm')[0];
     form.addEventListener('submit', submitForm);
+
+    let classForm = document.getElementsByClassName('addClassForm')[0];
+    form.addEventListener('submit', classForm);
 
     let cancelFormButton = document.getElementById("cancelButton");
     cancelFormButton.onclick = closeForm;
@@ -211,6 +220,13 @@ function moveClasses() {
     }
 }
 
+function openClassForm() {
+    console.log(test1);
+    let form = document.getElementsByClassName('newClassForm')[0];
+    form.style.display = "block";
+    form.style.visibility = "visible";
+}
+
 function openForm() {
     let form = document.getElementsByClassName('prereqForm')[0];
     form.style.display = "block";
@@ -257,3 +273,29 @@ function closeForm() {
     
     generatePrereqs();
 }
+
+function closeClassForm() {
+    let form = document.getElementsByClassName('newClassForm')[0];
+    let newClass = document.getElementById('newClass');
+    let newClassSem = document.getElementById('newClassSem');
+
+    newClass.value = "";
+    newClassSem.value = "";
+
+    form.style.display = "none";
+    form.style.visibility = "hidden";
+    
+}
+
+function printFunction() { 
+    let buttonPanel = document.getElementsByClassName("dropdown")[0];
+
+    buttonPanel.style.display = "none";
+    buttonPanel.style.visibility = "hidden";
+
+
+    window.print(); 
+    
+    buttonPanel.style.display = "";
+    buttonPanel.style.visibility = "";
+  }

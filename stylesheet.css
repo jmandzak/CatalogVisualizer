@@ -67,6 +67,11 @@ br{
     display:none;
 }
 
+.newClassForm {
+    visibility:hidden;
+    display:none;
+}
+
 table {
     margin: 0 auto;
     font-size: large;
@@ -83,3 +88,12 @@ th
     td {
         font-weight: lighter;
     }
+
+@media print {
+    print-area *{
+        transform: scale(x)
+    }
+    body{ 
+        width:1000px;  
+    }
+}
