@@ -84,7 +84,7 @@ function catalogClicked(){
 
 function generatePrereqs() {
     // Clear out any connections
-    $('connection').remove();
+    $('.leader-line').remove();
 
     let catalog = $("#dropDownWrite").val()
 
@@ -144,6 +144,11 @@ function generatePrereqs() {
         }
     }
 
+    drawArrows(prereq_matrix)
+}
+
+// Draw arrows
+function drawArrows(prereq_matrix) {
     // Now lets actually go through and draw all the arrows
     // To do this, we need to add ids to all the box divs
     let boxes = document.getElementsByClassName('box')
@@ -152,14 +157,35 @@ function generatePrereqs() {
     }
 
     let from_box = "";
+    let all_lines = [];
     for(let i = 0; i < prereq_matrix.length; i++) {
-        from_box = '#box' + i;
+        from_box = 'box' + i;
         for(let j = 0; j < prereq_matrix.length; j++) {
             if(prereq_matrix[j][i]) {
-                let to_box = "#box" + j;
-                $(from_box).connections({to: to_box, css: { zIndex: -1 }});
+                let to_box = "box" + j;
+                let line = new LeaderLine(
+                    document.getElementById(from_box),
+                    document.getElementById(to_box),
+                    {
+                        path: "liquid",
+                        startSocket: "bottom",
+                        endSocket: "top",
+                        outline: true,
+                        color: "fff",
+                        endPlugOutline: true,
+                        endPlugSize: 1.5
+                    }
+                );
+                all_lines.push(line);
             }
         }
+    }
+
+    let colors = ["aqua", "blue", "blueviolet", "brown", "cadetblue", "coral", "cyan", "darkgoldenrod", "deeppink", "greenyellow", "green", "lightpink", "palegreen", "steelblue", "wheat", "slategray", "silver", "plum"]
+    for(let i = 0; i < all_lines.length; i++) {
+        all_lines[i].outlineColor = colors[i % colors.length];
+        all_lines[i].startPlugColor = colors[i % colors.length];
+        all_lines[i].endPlugColor = colors[i % colors.length];
     }
 }
 
@@ -201,6 +227,7 @@ function handleDrop(e) {
       
     this.classList.remove('over');
       
+    generatePrereqs();
     return false;
 }
 
