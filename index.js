@@ -357,8 +357,12 @@ function printFunction() {
     let widthContainer = document.getElementById('widthContainer');
     widthContainer.style.width = "1063px";
     
-    // remove x
-    $('.box').find('span').remove();
+    // remove x if there are any
+    let containsSpans = false;
+    if($('.box').find('span').length > 0) {
+        containsSpans = true;
+        $('.box').find('span').remove();
+    }
 
     // Hide all boxes with nothing in them
     let all_boxes = document.getElementsByClassName('box');
@@ -388,13 +392,16 @@ function printFunction() {
         }
     }
 
-    // add back x
-    $('.box').prepend('<span id="close">x</span>');
+    // add back x if there are any
+    if(containsSpans) {
+        console.log(containsSpans);
+        $('.box').prepend('<span id="close">x</span>');
 
-    // set onclick of all spans
-    let spans = document.getElementsByClassName("span");
-    for(let i = 0; i < spans.length; i++) {
-        spans[i].onclick = deleteText;
+        // set onclick of all spans
+        let spans = document.getElementsByClassName("span");
+        for(let i = 0; i < spans.length; i++) {
+            spans[i].onclick = deleteText;
+        }
     }
 
     // Change width back
