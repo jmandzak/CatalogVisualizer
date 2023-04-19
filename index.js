@@ -327,6 +327,9 @@ function printFunction() {
     // change the width of page to match a piece of printer paper
     let widthContainer = document.getElementById('widthContainer');
     widthContainer.style.width = "1063px";
+    
+    // remove x
+    $('.box').find('span').remove();
 
     let buttonPanel = document.getElementsByClassName("dropdown")[0];
 
@@ -340,6 +343,9 @@ function printFunction() {
     
     buttonPanel.style.display = "";
     buttonPanel.style.visibility = "";
+
+    // add back x
+    $('.box').prepend('<span id="close" onclick="this.parentNode.remove(); return false;">x</span>');
 
     // Change width back
     widthContainer.style.width = null;
