@@ -63,11 +63,11 @@ function catalogClicked(){
         // let semesterPrint = parseInt(semesters) + 1 ;
         // boxSection.innerHTML += '<div class="semesterCol"> Semester '+semesterPrint+'</div>' ;
         for( var classes in data[catalog]['terms'][semesters]){
-            htmlString += '<div class="cell"><div class="box"><span id="close" onclick="this.parentNode.remove(); return false;">x</span>' + data[catalog]['terms'][semesters][classes] + '</div></div>' ; 
+            htmlString += '<div class="cell"><div class="box"><span class="span" id="close">x</span>' + data[catalog]['terms'][semesters][classes] + '</div></div>' ; 
             all_classes.push(data[catalog]['terms'][semesters][classes]);
         }
         while(classes < 5) {
-            htmlString += '<div class="cell"><div class="box"><span id="close" onclick="this.parentNode.remove(); return false;">x</span></div></div>';
+            htmlString += '<div class="cell"><div class="box"><span class="span" id="close">x</span></div></div>';
             classes = Number(classes) + 1;
         }
         // htmlString += '<br><div style="padding:30px"></div' ;
@@ -75,6 +75,12 @@ function catalogClicked(){
     
     htmlString += '</div>';
     boxSection.innerHTML = htmlString;
+
+    // set onclick of all spans
+    let spans = document.getElementsByClassName("span");
+    for(let i = 0; i < spans.length; i++) {
+        spans[i].onclick = deleteText;
+    }
 
     // Add drag and drop listening to each 
     let items = document.getElementsByClassName('box');
@@ -190,12 +196,12 @@ function drawArrows(prereq_matrix) {
         }
     }
 
-    let colors = ["aqua", "blue", "blueviolet", "brown", "cadetblue", "coral", "cyan", "darkgoldenrod", "deeppink", "greenyellow", "green", "lightpink", "palegreen", "steelblue", "wheat", "slategray", "silver", "plum"]
-    for(let i = 0; i < all_lines.length; i++) {
-        all_lines[i].outlineColor = colors[i % colors.length];
-        all_lines[i].startPlugColor = colors[i % colors.length];
-        all_lines[i].endPlugColor = colors[i % colors.length];
-    }
+    // let colors = ["aqua", "blue", "blueviolet", "brown", "cadetblue", "coral", "cyan", "darkgoldenrod", "deeppink", "greenyellow", "green", "lightpink", "palegreen", "steelblue", "wheat", "slategray", "silver", "plum"]
+    // for(let i = 0; i < all_lines.length; i++) {
+    //     all_lines[i].outlineColor = colors[i % colors.length];
+    //     all_lines[i].startPlugColor = colors[i % colors.length];
+    //     all_lines[i].endPlugColor = colors[i % colors.length];
+    // }
 }
 
 
@@ -360,9 +366,19 @@ function printFunction() {
     }
 
     // add back x
-    $('.box').prepend('<span id="close" onclick="this.parentNode.remove(); return false;">x</span>');
+    $('.box').prepend('<span id="close">x</span>');
+
+    // set onclick of all spans
+    let spans = document.getElementsByClassName("span");
+    for(let i = 0; i < spans.length; i++) {
+        spans[i].onclick = deleteText;
+    }
 
     // Change width back
     widthContainer.style.width = null;
     generatePrereqs();
   }
+
+function deleteText() {
+    this.parentNode.childNodes[1].textContent = "";
+}
