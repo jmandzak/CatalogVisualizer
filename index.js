@@ -1,4 +1,3 @@
-import "jquery-connections"
 import data from "./scraper/all_catalogs.json"
 
 let dragSrcEl;
@@ -55,17 +54,32 @@ function catalogClicked(){
     // Grab the json and write all the classes
     // Some variables to keep up with classes
     let all_classes = [];
+    let htmlString = "";
+    
+    htmlString += '<div class="grid">';
 
     for ( var semesters in data[catalog]['terms']){
-        let semesterPrint = parseInt(semesters) + 1 ;
-        boxSection.innerHTML += '<div class="semesterCol"> Semester '+semesterPrint+'</div>' ;
+        // let semesterPrint = parseInt(semesters) + 1 ;
+        // boxSection.innerHTML += '<div class="semesterCol"> Semester '+semesterPrint+'</div>' ;
         for( var classes in data[catalog]['terms'][semesters]){
-            boxSection.innerHTML += '<div class="box"><span id="close" onclick="this.parentNode.remove(); return false;">x</span>' + data[catalog]['terms'][semesters][classes] + '</div>' ; 
+            htmlString += '<div class="cell"><div class="box"><span class="span" id="close">x</span>' + data[catalog]['terms'][semesters][classes] + '</div></div>' ; 
             all_classes.push(data[catalog]['terms'][semesters][classes]);
         }
-        boxSection.innerHTML += '<br><div style="padding:30px"></div' ;
+        while(classes < 5) {
+            htmlString += '<div class="cell"><div class="box"><span class="span" id="close">x</span></div></div>';
+            classes = Number(classes) + 1;
+        }
+        // htmlString += '<br><div style="padding:30px"></div' ;
     }
     
+    htmlString += '</div>';
+    boxSection.innerHTML = htmlString;
+
+    // set onclick of all spans
+    let spans = document.getElementsByClassName("span");
+    for(let i = 0; i < spans.length; i++) {
+        spans[i].onclick = deleteText;
+    }
 
     // Add drag and drop listening to each 
     let items = document.getElementsByClassName('box');
@@ -83,8 +97,8 @@ function catalogClicked(){
 }
 
 function generatePrereqs() {
-    // Clear out any connections
-    $('connection').remove();
+    // Clear out any prereq lines
+    $('.leader-line').remove();
 
     let catalog = $("#dropDownWrite").val()
 
@@ -144,6 +158,11 @@ function generatePrereqs() {
         }
     }
 
+    drawArrows(prereq_matrix)
+}
+
+// Draw arrows
+function drawArrows(prereq_matrix) {
     // Now lets actually go through and draw all the arrows
     // To do this, we need to add ids to all the box divs
     let boxes = document.getElementsByClassName('box')
@@ -152,15 +171,36 @@ function generatePrereqs() {
     }
 
     let from_box = "";
+    let all_lines = [];
     for(let i = 0; i < prereq_matrix.length; i++) {
-        from_box = '#box' + i;
+        from_box = 'box' + i;
         for(let j = 0; j < prereq_matrix.length; j++) {
             if(prereq_matrix[j][i]) {
-                let to_box = "#box" + j;
-                $(from_box).connections({to: to_box, css: { zIndex: -1 }});
+                let to_box = "box" + j;
+                let line = new LeaderLine(
+                    document.getElementById(from_box),
+                    document.getElementById(to_box),
+                    {
+                        path: "grid",
+                        startSocket: "bottom",
+                        endSocket: "top",
+                        outline: true,
+                        color: "fff",
+                        endPlugOutline: true,
+                        endPlugSize: 1.5
+                    }
+                );
+                all_lines.push(line);
             }
         }
     }
+
+    // let colors = ["aqua", "blue", "blueviolet", "brown", "cadetblue", "coral", "cyan", "darkgoldenrod", "deeppink", "greenyellow", "green", "lightpink", "palegreen", "steelblue", "wheat", "slategray", "silver", "plum"]
+    // for(let i = 0; i < all_lines.length; i++) {
+    //     all_lines[i].outlineColor = colors[i % colors.length];
+    //     all_lines[i].startPlugColor = colors[i % colors.length];
+    //     all_lines[i].endPlugColor = colors[i % colors.length];
+    // }
 }
 
 
@@ -201,14 +241,38 @@ function handleDrop(e) {
       
     this.classList.remove('over');
       
+    generatePrereqs();
     return false;
 }
 
 function editClasses() {
-    let boxes = document.getElementsByClassName('box');
-    for(let i = 0; i < boxes.length; i++) {
-        boxes[i].setAttribute('contenteditable', 'true');
-        boxes[i].setAttribute('draggable', 'false');
+    // Two options: Either we're choosing to edit classes, or we're done editing
+
+    // If editing, remove span, make editable
+    if(this.textContent == "Edit Classes") {
+        $('.box').find('span').remove();
+        let boxes = document.getElementsByClassName('box');
+        for(let i = 0; i < boxes.length; i++) {
+            boxes[i].setAttribute('contenteditable', 'true');
+            boxes[i].setAttribute('draggable', 'false');
+        }
+        this.textContent = "Done Editing";
+    }
+    // If done editing, add span back
+    else if(this.textContent == "Done Editing") {
+        let boxes = document.getElementsByClassName('box');
+        for(let i = 0; i < boxes.length; i++) {
+            boxes[i].setAttribute('contenteditable', 'false');
+            boxes[i].setAttribute('draggable', 'false');
+        }
+        $('.box').prepend('<span id="close">x</span>');
+
+        // set onclick of all spans
+        let spans = document.getElementsByClassName("span");
+        for(let i = 0; i < spans.length; i++) {
+            spans[i].onclick = deleteText;
+        }
+        this.textContent = "Edit Classes";
     }
 }
 
@@ -291,6 +355,21 @@ function printFunction() {
     // change the width of page to match a piece of printer paper
     let widthContainer = document.getElementById('widthContainer');
     widthContainer.style.width = "1063px";
+    
+    // remove x if there are any
+    let containsSpans = false;
+    if($('.box').find('span').length > 0) {
+        containsSpans = true;
+        $('.box').find('span').remove();
+    }
+
+    // Hide all boxes with nothing in them
+    let all_boxes = document.getElementsByClassName('box');
+    for(let i = 0; i < all_boxes.length; i++) {
+        if(all_boxes[i].innerHTML == "") {
+            all_boxes[i].style.visibility = "hidden";
+        }
+    }
 
     let buttonPanel = document.getElementsByClassName("dropdown")[0];
 
@@ -305,7 +384,30 @@ function printFunction() {
     buttonPanel.style.display = "";
     buttonPanel.style.visibility = "";
 
+    // Bring back all boxes with nothing in them
+    for(let i = 0; i < all_boxes.length; i++) {
+        if(all_boxes[i].innerHTML == "") {
+            all_boxes[i].style.visibility = "";
+        }
+    }
+
+    // add back x if there are any
+    if(containsSpans) {
+        console.log(containsSpans);
+        $('.box').prepend('<span id="close">x</span>');
+
+        // set onclick of all spans
+        let spans = document.getElementsByClassName("span");
+        for(let i = 0; i < spans.length; i++) {
+            spans[i].onclick = deleteText;
+        }
+    }
+
     // Change width back
     widthContainer.style.width = null;
     generatePrereqs();
   }
+
+function deleteText() {
+    this.parentNode.childNodes[1].textContent = "";
+}
