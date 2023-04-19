@@ -55,17 +55,26 @@ function catalogClicked(){
     // Grab the json and write all the classes
     // Some variables to keep up with classes
     let all_classes = [];
+    let htmlString = "";
+    
+    htmlString += '<div class="grid">';
 
     for ( var semesters in data[catalog]['terms']){
-        let semesterPrint = parseInt(semesters) + 1 ;
-        boxSection.innerHTML += '<div class="semesterCol"> Semester '+semesterPrint+'</div>' ;
+        // let semesterPrint = parseInt(semesters) + 1 ;
+        // boxSection.innerHTML += '<div class="semesterCol"> Semester '+semesterPrint+'</div>' ;
         for( var classes in data[catalog]['terms'][semesters]){
-            boxSection.innerHTML += '<div class="box"><span id="close" onclick="this.parentNode.remove(); return false;">x</span>' + data[catalog]['terms'][semesters][classes] + '</div>' ; 
+            htmlString += '<div class="cell"><div class="box"><span id="close" onclick="this.parentNode.remove(); return false;">x</span>' + data[catalog]['terms'][semesters][classes] + '</div></div>' ; 
             all_classes.push(data[catalog]['terms'][semesters][classes]);
         }
-        boxSection.innerHTML += '<br><div style="padding:30px"></div' ;
+        while(classes < 5) {
+            htmlString += '<div class="cell"><div class="box"><span id="close" onclick="this.parentNode.remove(); return false;">x</span></div></div>';
+            classes = Number(classes) + 1;
+        }
+        // htmlString += '<br><div style="padding:30px"></div' ;
     }
     
+    htmlString += '</div>';
+    boxSection.innerHTML = htmlString;
 
     // Add drag and drop listening to each 
     let items = document.getElementsByClassName('box');
@@ -167,7 +176,7 @@ function drawArrows(prereq_matrix) {
                     document.getElementById(from_box),
                     document.getElementById(to_box),
                     {
-                        path: "liquid",
+                        path: "grid",
                         startSocket: "bottom",
                         endSocket: "top",
                         outline: true,
