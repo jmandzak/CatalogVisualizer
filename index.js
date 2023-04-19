@@ -247,10 +247,33 @@ function handleDrop(e) {
 }
 
 function editClasses() {
-    let boxes = document.getElementsByClassName('box');
-    for(let i = 0; i < boxes.length; i++) {
-        boxes[i].setAttribute('contenteditable', 'true');
-        boxes[i].setAttribute('draggable', 'false');
+    // Two options: Either we're choosing to edit classes, or we're done editing
+
+    // If editing, remove span, make editable
+    if(this.textContent == "Edit Classes") {
+        $('.box').find('span').remove();
+        let boxes = document.getElementsByClassName('box');
+        for(let i = 0; i < boxes.length; i++) {
+            boxes[i].setAttribute('contenteditable', 'true');
+            boxes[i].setAttribute('draggable', 'false');
+        }
+        this.textContent = "Done Editing";
+    }
+    // If done editing, add span back
+    else if(this.textContent == "Done Editing") {
+        let boxes = document.getElementsByClassName('box');
+        for(let i = 0; i < boxes.length; i++) {
+            boxes[i].setAttribute('contenteditable', 'false');
+            boxes[i].setAttribute('draggable', 'false');
+        }
+        $('.box').prepend('<span id="close">x</span>');
+
+        // set onclick of all spans
+        let spans = document.getElementsByClassName("span");
+        for(let i = 0; i < spans.length; i++) {
+            spans[i].onclick = deleteText;
+        }
+        this.textContent = "Edit Classes";
     }
 }
 
