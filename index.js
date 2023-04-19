@@ -9,7 +9,7 @@ $(document).ready(function () {
     dropDownBox.onchange = catalogClicked;
 
     let updatePrereqBox = document.getElementById("updatePrereqs");
-    updatePrereqBox.onclick = generatePrereqs;
+    updatePrereqBox.onclick = generateReqs;
 
     let editClassesBox = document.getElementById("editClasses");
     editClassesBox.onclick = editClasses;
@@ -92,21 +92,30 @@ function catalogClicked(){
         items[i].addEventListener('drop', handleDrop);
     }
     
-    // Now draw the prereq lines
-    generatePrereqs();
+    // Now draw the req lines
+    // Clear out any req lines
+    $('.leader-line').remove();
+    generateReqs(true);
+    generateReqs(false);
 }
 
-function generatePrereqs() {
-    // Clear out any prereq lines
-    $('.leader-line').remove();
+// Parameter prereq is true if generating prereqs, false for coreqs
+function generateReqs(prereq) {
+    // special case for when button is clicked and the parameter is null
+    if(prereq != true && prereq != false) {
+        // Clear out any req lines
+        $('.leader-line').remove();
+        generateReqs(false);
+        prereq = true;
+    }
 
     let catalog = $("#dropDownWrite").val()
 
-    // Now let's create the adjacency matrix for this catalog to do prereqs
+    // Now let's create the adjacency matrix for this catalog to do reqs
     let all_classes = document.getElementsByClassName('box')
-    let prereq_matrix = new Array(all_classes.length);
-    for(let i = 0; i < prereq_matrix.length; i++) {
-        prereq_matrix[i] = new Array(all_classes.length);
+    let req_matrix = new Array(all_classes.length);
+    for(let i = 0; i < req_matrix.length; i++) {
+        req_matrix[i] = new Array(all_classes.length);
     }
 
     const class_regex_string = /[A-Z][A-Z]+ [0-9][0-9]+/g
@@ -117,22 +126,26 @@ function generatePrereqs() {
             continue;
         }
 
-        // Find all of the prereqs for each class listed
-        let prereqs = []
+        // Find all of the reqs for each class listed
+        let reqs = []
         for(let j = 0; j < current_classes.length; j++) {
             let temp = []
 
             // Try catch block here to catch classes that are missing from scraper
-            // find all classes in prereq string, put in temp array
+            // find all classes in req string, put in temp array
             try {
-                temp = [...data[catalog]['all_courses'][current_classes[j][0]]['prereqs'].matchAll(class_regex_string)]
+                if(prereq) {
+                    temp = [...data[catalog]['all_courses'][current_classes[j][0]]['prereqs'].matchAll(class_regex_string)]
+                } else {
+                    temp = [...data[catalog]['all_courses'][current_classes[j][0]]['coreqs'].matchAll(class_regex_string)]
+                }
             } catch(error) {
                 console.log("Could not find class %s", current_classes[j][0])
             }
 
-            // add all classes from temp array into prereq array
+            // add all classes from temp array into req array
             for(let k = 0; k < temp.length; k++){
-                prereqs.push(temp[k][0])
+                reqs.push(temp[k][0])
             }
         }
 
@@ -144,13 +157,13 @@ function generatePrereqs() {
                 continue;
             }
             
-            // Loop through all prereq possibilities
+            // Loop through all req possibilities
             matches = []
-            for(let k = 0; k < prereqs.length; k++) {
-                // See if prereq is in class string, if it is then set adj matrix and break
-                matches = all_classes[j].innerText.match(prereqs[k]);
+            for(let k = 0; k < reqs.length; k++) {
+                // See if req is in class string, if it is then set adj matrix and break
+                matches = all_classes[j].innerText.match(reqs[k]);
                 if(matches) {
-                    prereq_matrix[i][j] = 1;
+                    req_matrix[i][j] = 1;
                     matches = []
                     break;
                 }
@@ -158,11 +171,16 @@ function generatePrereqs() {
         }
     }
 
-    drawArrows(prereq_matrix)
+    drawArrows(req_matrix, prereq)
 }
 
 // Draw arrows
-function drawArrows(prereq_matrix) {
+function drawArrows(req_matrix, prereq) {
+    // DELETE THIS TO DRAW COREQS
+    if(!prereq) {
+        return;
+    }
+
     // Now lets actually go through and draw all the arrows
     // To do this, we need to add ids to all the box divs
     let boxes = document.getElementsByClassName('box')
@@ -172,24 +190,42 @@ function drawArrows(prereq_matrix) {
 
     let from_box = "";
     let all_lines = [];
-    for(let i = 0; i < prereq_matrix.length; i++) {
+    for(let i = 0; i < req_matrix.length; i++) {
         from_box = 'box' + i;
-        for(let j = 0; j < prereq_matrix.length; j++) {
-            if(prereq_matrix[j][i]) {
+        for(let j = 0; j < req_matrix.length; j++) {
+            if(req_matrix[j][i]) {
                 let to_box = "box" + j;
-                let line = new LeaderLine(
-                    document.getElementById(from_box),
-                    document.getElementById(to_box),
-                    {
-                        path: "grid",
-                        startSocket: "bottom",
-                        endSocket: "top",
-                        outline: true,
-                        color: "fff",
-                        endPlugOutline: true,
-                        endPlugSize: 1.5
-                    }
-                );
+
+                // Line style changes based on if it's a prereq or coreq
+                let line = null;
+                if(prereq) {
+                    line = new LeaderLine(
+                        document.getElementById(from_box),
+                        document.getElementById(to_box),
+                        {
+                            path: "grid",
+                            startSocket: "bottom",
+                            endSocket: "top",
+                            outline: true,
+                            color: "fff",
+                            endPlugOutline: true,
+                            endPlugSize: 1.5
+                        }
+                    );
+                } else {
+                    line = new LeaderLine(
+                        document.getElementById(from_box),
+                        document.getElementById(to_box),
+                        {
+                            path: "grid",
+                            color: "black",
+                            startPlug: "behind",
+                            endPlug: "behind",
+                            dash: true,
+                            endPlugSize: 0
+                        }
+                    );
+                }
                 all_lines.push(line);
             }
         }
@@ -240,8 +276,11 @@ function handleDrop(e) {
     }
       
     this.classList.remove('over');
-      
-    generatePrereqs();
+    
+    // Clear out any req lines
+    $('.leader-line').remove();
+    generateReqs(true);
+    generateReqs(false);
     return false;
 }
 
@@ -295,7 +334,10 @@ function openForm() {
     let form = document.getElementsByClassName('prereqForm')[0];
     form.style.display = "block";
     form.style.visibility = "visible";
-    generatePrereqs();
+    // Clear out any req lines
+    $('.leader-line').remove();
+    generateReqs(true);
+    generateReqs(false);
 }
 
 function submitForm(e) {
@@ -318,7 +360,6 @@ function submitForm(e) {
         }
 
         data[catalog]['all_courses'][desiredClass] = new_class;
-        console.log(data[catalog]['all_courses']);
     }
 
     closeForm();
@@ -335,7 +376,10 @@ function closeForm() {
     form.style.display = "none";
     form.style.visibility = "hidden";
     
-    generatePrereqs();
+    // Clear out any req lines
+    $('.leader-line').remove();
+    generateReqs(true);
+    generateReqs(false);
 }
 
 function closeClassForm() {
@@ -377,7 +421,10 @@ function printFunction() {
     buttonPanel.style.visibility = "hidden";
 
     // redraw lines
-    generatePrereqs();
+    // Clear out any req lines
+    $('.leader-line').remove();
+    generateReqs(true);
+    generateReqs(false);
 
     window.print(); 
     
@@ -393,7 +440,6 @@ function printFunction() {
 
     // add back x if there are any
     if(containsSpans) {
-        console.log(containsSpans);
         $('.box').prepend('<span id="close">x</span>');
 
         // set onclick of all spans
@@ -405,7 +451,10 @@ function printFunction() {
 
     // Change width back
     widthContainer.style.width = null;
-    generatePrereqs();
+    // Clear out any req lines
+    $('.leader-line').remove();
+    generateReqs(true);
+    generateReqs(false);
   }
 
 function deleteText() {
