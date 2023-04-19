@@ -331,6 +331,14 @@ function printFunction() {
     // remove x
     $('.box').find('span').remove();
 
+    // Hide all boxes with nothing in them
+    let all_boxes = document.getElementsByClassName('box');
+    for(let i = 0; i < all_boxes.length; i++) {
+        if(all_boxes[i].innerHTML == "") {
+            all_boxes[i].style.visibility = "hidden";
+        }
+    }
+
     let buttonPanel = document.getElementsByClassName("dropdown")[0];
 
     buttonPanel.style.display = "none";
@@ -343,6 +351,13 @@ function printFunction() {
     
     buttonPanel.style.display = "";
     buttonPanel.style.visibility = "";
+
+    // Bring back all boxes with nothing in them
+    for(let i = 0; i < all_boxes.length; i++) {
+        if(all_boxes[i].innerHTML == "") {
+            all_boxes[i].style.visibility = "";
+        }
+    }
 
     // add back x
     $('.box').prepend('<span id="close" onclick="this.parentNode.remove(); return false;">x</span>');
