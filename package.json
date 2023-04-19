@@ -5,7 +5,6 @@
   },
   "dependencies": {
     "jquery": "^3.6.4",
-    "jquery-connections": "^1.0.1",
     "leader-line": "^1.0.7"
   },
   "devDependencies": {

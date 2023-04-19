@@ -1,4 +1,3 @@
-import "jquery-connections"
 import data from "./scraper/all_catalogs.json"
 
 let dragSrcEl;
@@ -98,7 +97,7 @@ function catalogClicked(){
 }
 
 function generatePrereqs() {
-    // Clear out any connections
+    // Clear out any prereq lines
     $('.leader-line').remove();
 
     let catalog = $("#dropDownWrite").val()
