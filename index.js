@@ -176,10 +176,6 @@ function generateReqs(prereq) {
 
 // Draw arrows
 function drawArrows(req_matrix, prereq) {
-    // DELETE THIS TO DRAW COREQS
-    if(!prereq) {
-        return;
-    }
 
     // Now lets actually go through and draw all the arrows
     // To do this, we need to add ids to all the box divs
@@ -209,7 +205,9 @@ function drawArrows(req_matrix, prereq) {
                             outline: true,
                             color: "fff",
                             endPlugOutline: true,
-                            endPlugSize: 1.5
+                            endPlugSize: 1.5,
+                            startSocketGravity: 10,
+                            endSocketGravity: 10,
                         }
                     );
                 } else {
@@ -217,10 +215,13 @@ function drawArrows(req_matrix, prereq) {
                         document.getElementById(from_box),
                         document.getElementById(to_box),
                         {
-                            path: "grid",
+                            path: "straight",
                             color: "black",
                             startPlug: "behind",
                             endPlug: "behind",
+                            size: 2,
+                            startSocketGravity: 10,
+                            endSocketGravity: 10,
                             dash: true,
                             endPlugSize: 0
                         }
