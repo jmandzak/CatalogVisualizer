@@ -1,6 +1,7 @@
 import data from "./scraper/all_catalogs.json"
 
 let dragSrcEl;
+let highlighted_classes = [];
 
 // Dropdown Menu Scripts
 $(document).ready(function () {
@@ -34,6 +35,9 @@ $(document).ready(function () {
 
     let cancelFormButton = document.getElementById("cancelButton");
     cancelFormButton.onclick = closeForm;
+
+    let highlightButton = document.getElementById("highlightPrereqs");
+    highlightButton.onclick = highlightPrereqs;
 
     // Write the dropdown box options, display classes of first possible catalog
     for(var catalogs in data) {
@@ -90,6 +94,12 @@ function catalogClicked(){
         items[i].addEventListener('dragleave', handleDragLeave);
         items[i].addEventListener('dragover', handleDragOver);
         items[i].addEventListener('drop', handleDrop);
+    }
+    
+    // initialize highlighted prereq classes list
+    highlighted_classes = [];
+    for(let i = 0; i < all_classes.length; i++) {
+        highlighted_classes.push(false);
     }
     
     // Now draw the req lines
@@ -184,8 +194,12 @@ function drawArrows(req_matrix, prereq) {
         boxes[i].id = "box" + i;
     }
 
+    let highlighted_from_boxes = [];
+    let highlighted_to_boxes = [];
+
     let from_box = "";
     let all_lines = [];
+    let line = null;
     for(let i = 0; i < req_matrix.length; i++) {
         from_box = 'box' + i;
         for(let j = 0; j < req_matrix.length; j++) {
@@ -193,23 +207,29 @@ function drawArrows(req_matrix, prereq) {
                 let to_box = "box" + j;
 
                 // Line style changes based on if it's a prereq or coreq
-                let line = null;
                 if(prereq) {
-                    line = new LeaderLine(
-                        document.getElementById(from_box),
-                        document.getElementById(to_box),
-                        {
-                            path: "grid",
-                            startSocket: "bottom",
-                            endSocket: "top",
-                            outline: true,
-                            color: "fff",
-                            endPlugOutline: true,
-                            endPlugSize: 1.5,
-                            startSocketGravity: 10,
-                            endSocketGravity: 10,
-                        }
-                    );
+                    // we need to add highlighted prereqs last to make them pop up over non-highlighted ones
+                    if(!highlighted_classes[i]) {
+                        line = new LeaderLine(
+                            document.getElementById(from_box),
+                            document.getElementById(to_box),
+                            {
+                                path: "grid",
+                                startSocket: "bottom",
+                                endSocket: "top",
+                                // outline: true,
+                                size: 2,
+                                color: "black",
+                                // endPlugOutline: true,
+                                endPlugSize: 1.5,
+                                startSocketGravity: 10,
+                                endSocketGravity: 10,
+                            }
+                        );
+                    } else {
+                        highlighted_from_boxes.push(from_box);
+                        highlighted_to_boxes.push(to_box);
+                    }
                 } else {
                     line = new LeaderLine(
                         document.getElementById(from_box),
@@ -222,7 +242,7 @@ function drawArrows(req_matrix, prereq) {
                             size: 2,
                             startSocketGravity: 10,
                             endSocketGravity: 10,
-                            dash: true,
+                            dash: {len: 2, gap: 4},
                             endPlugSize: 0
                         }
                     );
@@ -230,6 +250,26 @@ function drawArrows(req_matrix, prereq) {
                 all_lines.push(line);
             }
         }
+    }
+
+    // create the highlighted lines
+    for(let i = 0; i < highlighted_from_boxes.length; i++) {
+        line = new LeaderLine(
+            document.getElementById(highlighted_from_boxes[i]),
+            document.getElementById(highlighted_to_boxes[i]),
+            {
+                path: "grid",
+                startSocket: "bottom",
+                endSocket: "top",
+                // outline: true,
+                size: 2,
+                color: "red",
+                // endPlugOutline: true,
+                endPlugSize: 1.5,
+                startSocketGravity: 10,
+                endSocketGravity: 10,
+            }
+        );
     }
 
     // let colors = ["aqua", "blue", "blueviolet", "brown", "cadetblue", "coral", "cyan", "darkgoldenrod", "deeppink", "greenyellow", "green", "lightpink", "palegreen", "steelblue", "wheat", "slategray", "silver", "plum"]
@@ -240,6 +280,37 @@ function drawArrows(req_matrix, prereq) {
     // }
 }
 
+// Enter or exit highlight mode
+function highlightPrereqs() {
+    // two options, either enter highlight mode or leave it
+    if(this.textContent == "Highlight Prerequisites") {
+        this.textContent = "Done Highlighting";
+
+        // set onClick of all boxes
+        let boxes = document.getElementsByClassName("box");
+        for(let i = 0; i < boxes.length; i++) {
+            boxes[i].onclick = drawHighlight;
+        }
+    } else {
+        this.textContent = "Highlight Prerequisites"
+        // set onClick of all boxes to null
+        let boxes = document.getElementsByClassName("box");
+        for(let i = 0; i < boxes.length; i++) {
+            boxes[i].onclick = null;
+        }
+    }
+}
+
+// change color of prereq arrows
+function drawHighlight() {
+    // invert highlight status of box
+    let box_num = Number(this.id.match(/\d+/g)[0]);
+    console.log(box_num)
+    highlighted_classes[box_num] = !highlighted_classes[box_num];
+    $('.leader-line').remove();
+    generateReqs(true);
+    generateReqs(false);
+}
 
 // Drag and Drop functionality: much of this taken from https://web.dev/drag-and-drop/
 function handleDragStart(e) {
