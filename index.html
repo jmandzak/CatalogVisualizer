@@ -15,13 +15,14 @@
             <select name="catalogSelection" id="dropDownWrite"></select>
             <br>
             <button type="button" class="TRMenu" id="addClass">Add New Class</button>
-            <button type="button" class="TRMenu" id="addPrereq">Add Class Progression</button>
+            <button type="button" class="TRMenu" id="addPrereq">Add Prerequisite</button>
             <button type="button" class="TRMenu" id="updatePrereqs">Update Prerequisite Lines</button>
+            <button type="button" class="TRMenu" id="editCoreq">Add/Remove Corequisite</button>
             <button type="button" class="TRMenu" id="editClasses">Edit Classes</button>
             <button type="button" class="TRMenu" id="moveClasses">Move Classes</button>
             <button type="button" class="TRMenu" id="highlightPrereqs">Highlight Prerequisites</button>
 
-            <form class="prereqForm" autocomplete="off">
+            <form class="prereqForm" id="prereqForm" autocomplete="off">
                 <h2>New Prerequisite</h2>
                 <label>
                     <strong>Class</strong>
@@ -43,7 +44,30 @@
                 <button type="button" class="cancelButton" id="cancelButton" >Close</button>
             </form>
 
-            <form class="newClassForm" autocomplete="off">
+            <form class="coreqForm" id="coreqForm" autocomplete="off">
+                <h2>Add/Remove Corequisite</h2>
+                <label>
+                    <strong>Class 1</strong>
+                </label>
+                <input type="text" id="coreq1" placeholder="Class Name" required>
+                <br>
+                Please enter class name in form PREFIX NUMBER, ex: COSC 101
+                <br>
+                <br>
+                <label>
+                    <strong>Class 2</strong>
+                </label>
+                <input type="text" id="coreq2" placeholder="Class Name"required>
+                <br>
+                Please enter class name in form PREFIX NUMBER, ex: COSC 101
+                <br>
+                <br>
+                <button type="submit" class="addCoreqButton" id="addCoreqButton" value="add">Add</button>
+                <button type="submit" class="removeCoreqButton" id="removeCoreqButton" value="remove">Remove</button>
+                <button type="button" class="cancelCoreqButton" id="cancelCoreqButton" >Close</button>
+            </form>
+
+            <form class="newClassForm" id="newClassForm" autocomplete="off">
                 <h2>New Class</h2>
                 <label>
                     <strong>Class</strong>

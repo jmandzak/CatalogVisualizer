@@ -26,15 +26,24 @@ $(document).ready(function () {
 
     let addPrereqBox = document.getElementById("addPrereq");
     addPrereqBox.onclick = openForm;
-    
-    let form = document.getElementsByClassName('prereqForm')[0];
-    form.addEventListener('submit', submitForm);
 
-    let classForm = document.getElementsByClassName('addClassForm')[0];
-    form.addEventListener('submit', classForm);
+    let editCoreqBox = document.getElementById("editCoreq");
+    editCoreqBox.onclick = openCoreqForm;
+    
+    let form = document.getElementById('prereqForm');
+    form.addEventListener('submit', submitForm);
+    
+    let coreqForm = document.getElementById('coreqForm');
+    coreqForm.addEventListener('submit', submitCoreqForm);
+
+    let classForm = document.getElementById('newClassForm');
+    classForm.addEventListener('submit', classForm);
 
     let cancelFormButton = document.getElementById("cancelButton");
     cancelFormButton.onclick = closeForm;
+
+    let cancelCoreqFormButton = document.getElementById("cancelCoreqButton");
+    cancelCoreqFormButton.onclick = closeCoreqForm;
 
     let highlightButton = document.getElementById("highlightPrereqs");
     highlightButton.onclick = highlightPrereqs;
@@ -397,13 +406,23 @@ function moveClasses() {
 
 function openClassForm() {
     console.log(test1);
-    let form = document.getElementsByClassName('newClassForm')[0];
+    let form = document.getElementById('newClassForm');
     form.style.display = "block";
     form.style.visibility = "visible";
 }
 
 function openForm() {
-    let form = document.getElementsByClassName('prereqForm')[0];
+    let form = document.getElementById('prereqForm');
+    form.style.display = "block";
+    form.style.visibility = "visible";
+    // Clear out any req lines
+    $('.leader-line').remove();
+    generateReqs(true);
+    generateReqs(false);
+}
+
+function openCoreqForm() {
+    let form = document.getElementById('coreqForm');
     form.style.display = "block";
     form.style.visibility = "visible";
     // Clear out any req lines
@@ -437,8 +456,48 @@ function submitForm(e) {
     closeForm();
 }
 
+function submitCoreqForm(e) {
+    e.preventDefault();
+
+    // Two options, either remove or add coreq. Figure out which
+    let buttonClicked = e.submitter;
+
+    let coreq1 = document.getElementById('coreq1').value;
+    let coreq2 = document.getElementById('coreq2').value;
+
+    if(buttonClicked == document.getElementById('addCoreqButton')) {
+        // Now we try to actually add the coreq
+        let catalog = $("#dropDownWrite").val();
+        if(data[catalog]['all_courses'][coreq2]) {
+            data[catalog]['all_courses'][coreq2]['coreqs'] += ' ' + coreq1;
+        } else {
+            // If the class isn't in our records, we'll create it
+            let new_class = {
+                'title': coreq2,
+                'full_description': coreq2,
+                'coreqs': coreq1,
+                'prereqs': ""
+            }
+
+            data[catalog]['all_courses'][coreq2] = new_class;
+        }
+    } else {
+        // Now we remove the coreq
+        let catalog = $("#dropDownWrite").val();
+        if(data[catalog]['all_courses'][coreq2] && data[catalog]['all_courses'][coreq2]['coreqs'].includes(coreq1)) {
+            let newCoreq = data[catalog]['all_courses'][coreq2]['coreqs'].replace(coreq1, '');
+            data[catalog]['all_courses'][coreq2]['coreqs'] = newCoreq;
+        } else if(data[catalog]['all_courses'][coreq1] && data[catalog]['all_courses'][coreq1]['coreqs'].includes(coreq2)){
+            let newCoreq = data[catalog]['all_courses'][coreq1]['coreqs'].replace(coreq2, '');
+            data[catalog]['all_courses'][coreq1]['coreqs'] = newCoreq;
+        }
+    }
+
+    closeCoreqForm();
+}
+
 function closeForm() {
-    let form = document.getElementsByClassName('prereqForm')[0];
+    let form = document.getElementById('prereqForm');
     let prereq = document.getElementById('prereq');
     let desiredClass = document.getElementById('desiredClass');
 
@@ -454,8 +513,25 @@ function closeForm() {
     generateReqs(false);
 }
 
+function closeCoreqForm() {
+    let form = document.getElementById('coreqForm');
+    let coreq1 = document.getElementById('coreq1');
+    let coreq2 = document.getElementById('coreq2');
+
+    coreq1.value = "";
+    coreq2.value = "";
+
+    form.style.display = "none";
+    form.style.visibility = "hidden";
+    
+    // Clear out any req lines
+    $('.leader-line').remove();
+    generateReqs(true);
+    generateReqs(false);
+}
+
 function closeClassForm() {
-    let form = document.getElementsByClassName('newClassForm')[0];
+    let form = document.getElementById('newClassForm');
     let newClass = document.getElementById('newClass');
     let newClassSem = document.getElementById('newClassSem');
 

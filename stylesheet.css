@@ -86,6 +86,11 @@ br{
     display:none;
 }
 
+.coreqForm {
+    visibility:hidden;
+    display:none;
+}
+
 .newClassForm {
     visibility:hidden;
     display:none;
