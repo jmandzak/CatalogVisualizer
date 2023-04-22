@@ -30,8 +30,8 @@ $(document).ready(function () {
     let editCoreqBox = document.getElementById("editCoreq");
     editCoreqBox.onclick = openCoreqForm;
     
-    let form = document.getElementById('prereqForm');
-    form.addEventListener('submit', submitForm);
+    let prereqForm = document.getElementById('prereqForm');
+    prereqForm.addEventListener('submit', submitPrereqForm);
     
     let coreqForm = document.getElementById('coreqForm');
     coreqForm.addEventListener('submit', submitCoreqForm);
@@ -39,8 +39,8 @@ $(document).ready(function () {
     let classForm = document.getElementById('newClassForm');
     classForm.addEventListener('submit', classForm);
 
-    let cancelFormButton = document.getElementById("cancelButton");
-    cancelFormButton.onclick = closeForm;
+    let cancelPrereqFormButton = document.getElementById("cancelButton");
+    cancelPrereqFormButton.onclick = closePrereqForm;
 
     let cancelCoreqFormButton = document.getElementById("cancelCoreqButton");
     cancelCoreqFormButton.onclick = closeCoreqForm;
@@ -431,29 +431,42 @@ function openCoreqForm() {
     generateReqs(false);
 }
 
-function submitForm(e) {
+function submitPrereqForm(e) {
     e.preventDefault();
+
+    // Two options, either remove or add prereq. Figure out which
+    let buttonClicked = e.submitter;
 
     let prereq = document.getElementById('prereq').value;
     let desiredClass = document.getElementById('desiredClass').value;
 
-    // Now we try to actually add the prereq
-    let catalog = $("#dropDownWrite").val();
-    if(data[catalog]['all_courses'][desiredClass]) {
-        data[catalog]['all_courses'][desiredClass]['prereqs'] += ' ' + prereq;
-    } else {
-        // If the class isn't in our records, we'll create it
-        let new_class = {
-            'title': desiredClass,
-            'full_description': desiredClass,
-            'coreqs': "",
-            'prereqs': prereq
-        }
+    if(buttonClicked == document.getElementById('addPrereqButton')) {
+        // Now we try to actually add the prereq
+        let catalog = $("#dropDownWrite").val();
+        if(data[catalog]['all_courses'][desiredClass]) {
+            data[catalog]['all_courses'][desiredClass]['prereqs'] += ' ' + prereq;
+        } else {
+            // If the class isn't in our records, we'll create it
+            let new_class = {
+                'title': desiredClass,
+                'full_description': desiredClass,
+                'coreqs': "",
+                'prereqs': prereq
+            }
 
-        data[catalog]['all_courses'][desiredClass] = new_class;
+            data[catalog]['all_courses'][desiredClass] = new_class;
+        }
+    } else {
+        // Remove the prereq
+        let catalog = $("#dropDownWrite").val();
+        if(data[catalog]['all_courses'][desiredClass]) {
+
+            let newPrereq = data[catalog]['all_courses'][desiredClass]['prereqs'].replace(prereq, '');
+            data[catalog]['all_courses'][desiredClass]['prereqs'] = newPrereq;
+        } 
     }
 
-    closeForm();
+    closePrereqForm();
 }
 
 function submitCoreqForm(e) {
@@ -496,7 +509,7 @@ function submitCoreqForm(e) {
     closeCoreqForm();
 }
 
-function closeForm() {
+function closePrereqForm() {
     let form = document.getElementById('prereqForm');
     let prereq = document.getElementById('prereq');
     let desiredClass = document.getElementById('desiredClass');
