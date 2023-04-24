@@ -21,8 +21,8 @@ $(document).ready(function () {
     let printBox = document.getElementById("printButton");
     printBox.onclick = printFunction;
 
-    let addClassBox = document.getElementById("addClass");
-    addClassBox.onclick = openClassForm;
+    // let addClassBox = document.getElementById("addClass");
+    // addClassBox.onclick = openClassForm;
 
     let addPrereqBox = document.getElementById("addPrereq");
     addPrereqBox.onclick = openForm;
@@ -36,8 +36,8 @@ $(document).ready(function () {
     let coreqForm = document.getElementById('coreqForm');
     coreqForm.addEventListener('submit', submitCoreqForm);
 
-    let classForm = document.getElementById('newClassForm');
-    classForm.addEventListener('submit', classForm);
+    // let classForm = document.getElementById('newClassForm');
+    // classForm.addEventListener('submit', classForm);
 
     let cancelPrereqFormButton = document.getElementById("cancelButton");
     cancelPrereqFormButton.onclick = closePrereqForm;
@@ -357,6 +357,12 @@ function handleDrop(e) {
     }
       
     this.classList.remove('over');
+
+    // Apparently this removes the onclick function of the spans, so add them back
+    let spans = document.getElementsByClassName("span");
+    for(let i = 0; i < spans.length; i++) {
+        spans[i].onclick = deleteText;
+    }
     
     // Clear out any req lines
     $('.leader-line').remove();
@@ -404,12 +410,12 @@ function moveClasses() {
     }
 }
 
-function openClassForm() {
-    console.log(test1);
-    let form = document.getElementById('newClassForm');
-    form.style.display = "block";
-    form.style.visibility = "visible";
-}
+// function openClassForm() {
+//     console.log(test1);
+//     let form = document.getElementById('newClassForm');
+//     form.style.display = "block";
+//     form.style.visibility = "visible";
+// }
 
 function openForm() {
     let form = document.getElementById('prereqForm');
@@ -543,18 +549,18 @@ function closeCoreqForm() {
     generateReqs(false);
 }
 
-function closeClassForm() {
-    let form = document.getElementById('newClassForm');
-    let newClass = document.getElementById('newClass');
-    let newClassSem = document.getElementById('newClassSem');
+// function closeClassForm() {
+//     let form = document.getElementById('newClassForm');
+//     let newClass = document.getElementById('newClass');
+//     let newClassSem = document.getElementById('newClassSem');
 
-    newClass.value = "";
-    newClassSem.value = "";
+//     newClass.value = "";
+//     newClassSem.value = "";
 
-    form.style.display = "none";
-    form.style.visibility = "hidden";
+//     form.style.display = "none";
+//     form.style.visibility = "hidden";
     
-}
+// }
 
 function printFunction() { 
     // change the width of page to match a piece of printer paper
@@ -619,5 +625,6 @@ function printFunction() {
   }
 
 function deleteText() {
+    console.log('Hello')
     this.parentNode.childNodes[1].textContent = "";
 }
