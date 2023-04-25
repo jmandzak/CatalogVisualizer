@@ -407,7 +407,7 @@ function editClasses() {
             boxes[i].setAttribute('contenteditable', 'false');
             boxes[i].setAttribute('draggable', 'false');
         }
-        $('.box').prepend('<span id="close">x</span>');
+        $('.box').prepend('<span id="close" class="span">x</span>');
 
         // set onclick of all spans
         let spans = document.getElementsByClassName("span");
@@ -624,7 +624,7 @@ function printFunction() {
 
     // add back x if there are any
     if(containsSpans) {
-        $('.box').prepend('<span id="close">x</span>');
+        $('.box').prepend('<span id="close" class="span">x</span>');
 
         // set onclick of all spans
         let spans = document.getElementsByClassName("span");
