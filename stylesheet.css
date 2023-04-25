@@ -64,6 +64,7 @@ br{
     background:#f10202;
     color:#fff;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .grid {
