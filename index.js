@@ -85,7 +85,7 @@ function catalogClicked(){
             all_classes.push(data[catalog]['terms'][semesters][classes]);
         }
         while(classes < 5) {
-            htmlString += '<div class="cell"><div class="box"><span class="span" id="close">x</span></div></div>';
+            htmlString += '<div class="cell"><div class="box" draggable="true"><span class="span" id="close">x</span></div></div>';
             classes = Number(classes) + 1;
         }
         // htmlString += '<br><div style="padding:30px"></div' ;
