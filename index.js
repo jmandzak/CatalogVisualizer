@@ -2,6 +2,7 @@ import data from "./scraper/all_catalogs.json"
 
 let dragSrcEl;
 let highlighted_classes = [];
+let arrow_style = ["grid", "straight", "arc", "fluid", "magnet"];
 
 // Dropdown Menu Scripts
 $(document).ready(function () {
@@ -47,6 +48,9 @@ $(document).ready(function () {
 
     let highlightButton = document.getElementById("highlightPrereqs");
     highlightButton.onclick = highlightPrereqs;
+
+    let prereqArrowButton = document.getElementById("changeArrowStyle");
+    prereqArrowButton.onclick = changeArrowStyle;
 
     // Write the dropdown box options, display classes of first possible catalog
     for(var catalogs in data) {
@@ -223,7 +227,7 @@ function drawArrows(req_matrix, prereq) {
                             document.getElementById(from_box),
                             document.getElementById(to_box),
                             {
-                                path: "grid",
+                                path: arrow_style[0],
                                 startSocket: "bottom",
                                 endSocket: "top",
                                 // outline: true,
@@ -267,7 +271,7 @@ function drawArrows(req_matrix, prereq) {
             document.getElementById(highlighted_from_boxes[i]),
             document.getElementById(highlighted_to_boxes[i]),
             {
-                path: "grid",
+                path: arrow_style[0],
                 startSocket: "bottom",
                 endSocket: "top",
                 // outline: true,
@@ -280,6 +284,9 @@ function drawArrows(req_matrix, prereq) {
             }
         );
     }
+
+    // now set the z index of all of the leader lines to be 0
+    $('.leader-line').css('z-index', '-1');
 
     // let colors = ["aqua", "blue", "blueviolet", "brown", "cadetblue", "coral", "cyan", "darkgoldenrod", "deeppink", "greenyellow", "green", "lightpink", "palegreen", "steelblue", "wheat", "slategray", "silver", "plum"]
     // for(let i = 0; i < all_lines.length; i++) {
@@ -316,6 +323,15 @@ function drawHighlight() {
     let box_num = Number(this.id.match(/\d+/g)[0]);
     console.log(box_num)
     highlighted_classes[box_num] = !highlighted_classes[box_num];
+    $('.leader-line').remove();
+    generateReqs(true);
+    generateReqs(false);
+}
+
+function changeArrowStyle() {
+    let temp = arrow_style.shift();
+    arrow_style.push(temp);
+    
     $('.leader-line').remove();
     generateReqs(true);
     generateReqs(false);
@@ -566,6 +582,7 @@ function printFunction() {
     // change the width of page to match a piece of printer paper
     let widthContainer = document.getElementById('widthContainer');
     widthContainer.style.width = "1063px";
+    widthContainer.style.height = "1300px";
     
     // remove x if there are any
     let containsSpans = false;
@@ -618,6 +635,7 @@ function printFunction() {
 
     // Change width back
     widthContainer.style.width = null;
+    widthContainer.style.height = null;
     // Clear out any req lines
     $('.leader-line').remove();
     generateReqs(true);
