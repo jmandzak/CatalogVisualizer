@@ -3,6 +3,7 @@ import data from "./scraper/all_catalogs.json"
 let dragSrcEl;
 let highlighted_classes = [];
 let arrow_style = ["grid", "straight", "arc", "fluid", "magnet"];
+let highlight_colors = ["red", "blue", "green", "yellow", "turquoise"];
 
 // Dropdown Menu Scripts
 $(document).ready(function () {
@@ -48,6 +49,10 @@ $(document).ready(function () {
 
     let prereqArrowButton = document.getElementById("changeArrowStyle");
     prereqArrowButton.onclick = changeArrowStyle;
+
+    let changeHighlightColor = document.getElementById("changeArrowColor");
+    changeHighlightColor.onclick = changeArrowColor;
+
 
     // Write the dropdown box options, display classes of first possible catalog
     for(var catalogs in data) {
@@ -273,7 +278,7 @@ function drawArrows(req_matrix, prereq) {
                 endSocket: "top",
                 // outline: true,
                 size: 2,
-                color: "red",
+                color: highlight_colors[0],
                 // endPlugOutline: true,
                 endPlugSize: 1.5,
                 startSocketGravity: 10,
@@ -328,6 +333,15 @@ function drawHighlight() {
 function changeArrowStyle() {
     let temp = arrow_style.shift();
     arrow_style.push(temp);
+    
+    $('.leader-line').remove();
+    generateReqs(true);
+    generateReqs(false);
+}
+
+function changeArrowColor() {
+    let temp = highlight_colors.shift();
+    highlight_colors.push(temp);
     
     $('.leader-line').remove();
     generateReqs(true);
