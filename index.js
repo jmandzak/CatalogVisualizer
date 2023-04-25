@@ -309,6 +309,7 @@ function highlightPrereqs() {
         for(let i = 0; i < boxes.length; i++) {
             boxes[i].onclick = drawHighlight;
         }
+        $('.box').css('cursor', 'pointer');
     } else {
         this.textContent = "Highlight Prerequisites"
         // set onClick of all boxes to null
@@ -316,6 +317,7 @@ function highlightPrereqs() {
         for(let i = 0; i < boxes.length; i++) {
             boxes[i].onclick = null;
         }
+        $('.box').css('cursor', 'move');
     }
 }
 
@@ -409,6 +411,7 @@ function editClasses() {
             boxes[i].setAttribute('contenteditable', 'true');
             boxes[i].setAttribute('draggable', 'false');
         }
+        $('.box').css('cursor', 'text');
         this.textContent = "Done Editing";
     }
     // If done editing, add span back
@@ -425,6 +428,7 @@ function editClasses() {
         for(let i = 0; i < spans.length; i++) {
             spans[i].onclick = deleteText;
         }
+        $('.box').css('cursor', 'move');
         this.textContent = "Edit Classes";
     }
 }
