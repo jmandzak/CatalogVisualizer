@@ -15,9 +15,6 @@ $(document).ready(function () {
 
     let editClassesBox = document.getElementById("editClasses");
     editClassesBox.onclick = editClasses;
-
-    let moveClassesBox = document.getElementById("moveClasses");
-    moveClassesBox.onclick = moveClasses;
     
     let printBox = document.getElementById("printButton");
     printBox.onclick = printFunction;
@@ -79,7 +76,7 @@ function catalogClicked(){
         // let semesterPrint = parseInt(semesters) + 1 ;
         // boxSection.innerHTML += '<div class="semesterCol"> Semester '+semesterPrint+'</div>' ;
         for( var classes in data[catalog]['terms'][semesters]){
-            htmlString += '<div class="cell"><div class="box"><span class="span" id="close">x</span>' + data[catalog]['terms'][semesters][classes] + '</div></div>' ; 
+            htmlString += '<div class="cell"><div class="box" draggable="true"><span class="span" id="close">x</span>' + data[catalog]['terms'][semesters][classes] + '</div></div>' ; 
             all_classes.push(data[catalog]['terms'][semesters][classes]);
         }
         while(classes < 5) {
@@ -405,7 +402,7 @@ function editClasses() {
         let boxes = document.getElementsByClassName('box');
         for(let i = 0; i < boxes.length; i++) {
             boxes[i].setAttribute('contenteditable', 'false');
-            boxes[i].setAttribute('draggable', 'false');
+            boxes[i].setAttribute('draggable', 'true');
         }
         $('.box').prepend('<span id="close" class="span">x</span>');
 
@@ -415,14 +412,6 @@ function editClasses() {
             spans[i].onclick = deleteText;
         }
         this.textContent = "Edit Classes";
-    }
-}
-
-function moveClasses() {
-    let boxes = document.getElementsByClassName('box');
-    for(let i = 0; i < boxes.length; i++) {
-        boxes[i].setAttribute('contenteditable', 'false');
-        boxes[i].setAttribute('draggable', 'true');
     }
 }
 
