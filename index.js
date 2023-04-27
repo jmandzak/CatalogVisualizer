@@ -325,7 +325,6 @@ function highlightPrereqs() {
 function drawHighlight() {
     // invert highlight status of box
     let box_num = Number(this.id.match(/\d+/g)[0]);
-    console.log(box_num)
     highlighted_classes[box_num] = !highlighted_classes[box_num];
     $('.leader-line').remove();
     generateReqs(true);
@@ -488,11 +487,30 @@ function submitPrereqForm(e) {
     } else {
         // Remove the prereq
         let catalog = $("#dropDownWrite").val();
-        if(data[catalog]['all_courses'][desiredClass]) {
 
-            let newPrereq = data[catalog]['all_courses'][desiredClass]['prereqs'].replace(prereq, '');
-            data[catalog]['all_courses'][desiredClass]['prereqs'] = newPrereq;
-        } 
+        // since some boxes have multiple classes, we want to remove all prereqs between those two boxes
+        let boxes = document.getElementsByClassName('box');
+        let from_classes = [];
+        let to_classes = [];
+        const class_regex_string = /[A-Z][A-Z]+ [0-9][0-9]+/g
+
+        for(let i = 0; i < boxes.length; i++) {
+            if(boxes[i].textContent.includes(desiredClass)) {
+                to_classes = [...boxes[i].textContent.matchAll(class_regex_string)]
+            } else if(boxes[i].textContent.includes(prereq)) {
+                from_classes = [...boxes[i].textContent.matchAll(class_regex_string)]
+            }
+        }
+        
+        // now go through and remove all of the prereqs for each of the to_classes
+        for(let i = 0; i < to_classes.length; i++) {
+            for(let j = 0; j < from_classes.length; j++) {
+                if(data[catalog]['all_courses'][desiredClass]) {
+                    let newPrereq = data[catalog]['all_courses'][to_classes[i]]['prereqs'].replace(from_classes[j], '');
+                    data[catalog]['all_courses'][to_classes[i]]['prereqs'] = newPrereq;
+                }
+            }
+        }
     }
 
     closePrereqForm();
@@ -526,12 +544,35 @@ function submitCoreqForm(e) {
     } else {
         // Now we remove the coreq
         let catalog = $("#dropDownWrite").val();
-        if(data[catalog]['all_courses'][coreq2] && data[catalog]['all_courses'][coreq2]['coreqs'].includes(coreq1)) {
-            let newCoreq = data[catalog]['all_courses'][coreq2]['coreqs'].replace(coreq1, '');
-            data[catalog]['all_courses'][coreq2]['coreqs'] = newCoreq;
-        } else if(data[catalog]['all_courses'][coreq1] && data[catalog]['all_courses'][coreq1]['coreqs'].includes(coreq2)){
-            let newCoreq = data[catalog]['all_courses'][coreq1]['coreqs'].replace(coreq2, '');
-            data[catalog]['all_courses'][coreq1]['coreqs'] = newCoreq;
+
+        // since some boxes have multiple classes, we want to remove all coreqs between those two boxes
+        let boxes = document.getElementsByClassName('box');
+        let from_classes = [];
+        let to_classes = [];
+        const class_regex_string = /[A-Z][A-Z]+ [0-9][0-9]+/g
+
+        for(let i = 0; i < boxes.length; i++) {
+            if(boxes[i].textContent.includes(coreq1)) {
+                to_classes = [...boxes[i].textContent.matchAll(class_regex_string)]
+            } else if(boxes[i].textContent.includes(coreq2)) {
+                from_classes = [...boxes[i].textContent.matchAll(class_regex_string)]
+            }
+        }
+
+        
+        // now go through and remove all of the coreqs for each of the to_classes
+        for(let i = 0; i < to_classes.length; i++) {
+            for(let j = 0; j < from_classes.length; j++) {
+                // We need to do this from both to->from and from->to since it's a coreq
+                if(data[catalog]['all_courses'][to_classes[i]]) {
+                    let newCoreq = data[catalog]['all_courses'][to_classes[i]]['coreqs'].replace(from_classes[j], '');
+                    data[catalog]['all_courses'][to_classes[i]]['coreqs'] = newCoreq;
+                }
+                if(data[catalog]['all_courses'][from_classes[j]]) {
+                    let newCoreq2 = data[catalog]['all_courses'][from_classes[j]]['coreqs'].replace(to_classes[i], '');
+                    data[catalog]['all_courses'][from_classes[j]]['coreqs'] = newCoreq2;
+                }
+            }
         }
     }
 
@@ -650,6 +691,5 @@ function printFunction() {
   }
 
 function deleteText() {
-    console.log('Hello')
     this.parentNode.childNodes[1].textContent = "";
 }
