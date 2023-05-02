@@ -692,4 +692,9 @@ function printFunction() {
 
 function deleteText() {
     this.parentNode.childNodes[1].textContent = "";
+    
+    // Redraw the lines in case cells get resized
+    $('.leader-line').remove();
+    generateReqs(true);
+    generateReqs(false);
 }
