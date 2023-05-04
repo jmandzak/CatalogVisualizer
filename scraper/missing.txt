@@ -1,7 +1,0 @@
-These are the classes I know for sure are missing, look for these in debugging
-
-cs-2022:
-ECE 347,357,358
-
-90% of the missing classes come from the fact that, for some reason, on random classes the page will open a new
-window to show the class description instead of just doing a popup like every other class

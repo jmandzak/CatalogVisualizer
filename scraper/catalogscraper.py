@@ -1,3 +1,5 @@
+# Copyright 2023, Josh Mandzak & Swasti Mishra
+
 import requests
 from selenium import webdriver
 from selenium.common.exceptions import StaleElementReferenceException

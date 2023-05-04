@@ -1,3 +1,5 @@
+// Copyright 2023, Josh Mandzak & Swasti Mishra
+
 import data from "./scraper/all_catalogs.json"
 
 let dragSrcEl;

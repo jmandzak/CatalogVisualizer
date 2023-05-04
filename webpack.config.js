@@ -1,3 +1,5 @@
+// Copyright 2023, Josh Mandzak & Swasti Mishra
+
 const path = require("path");
 
 module.exports = {
