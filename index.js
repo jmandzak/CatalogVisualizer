@@ -10,8 +10,12 @@ let highlight_colors = ["red", "blue", "green", "yellow", "turquoise"];
 // Dropdown Menu Scripts
 $(document).ready(function () {
     // Set the onclick of the buttons
-    let dropDownBox = document.getElementById("dropDownWrite")
-    dropDownBox.onchange = catalogClicked;
+    let dropDownBox = document.getElementById("dropDownWrite");
+    dropDownBox.onclick = catalogClicked;
+
+    let classDropDown = document.getElementById("dropDownClass");
+    classDropDown.addEventListener('change', classClicked)
+    // classDropDown.onchange = classClicked;
 
     let updatePrereqBox = document.getElementById("updatePrereqs");
     updatePrereqBox.onclick = generateReqs;
@@ -68,6 +72,19 @@ $(document).ready(function () {
 // Dropdown menu kind of works- next step is only writing the applicable catalog to the page
 function catalogClicked(){
     let catalog = $("#dropDownWrite").val()
+    let all_course_names = [];
+    
+    // Create the class dropdown box options
+    $('#classes').empty();
+    $("#classes").append('<option value="">' + "" + '</option>');
+    for(let course in data[catalog]['all_courses']) {
+        all_course_names.push(data[catalog]['all_courses'][course]['title']);
+        // $("#classes").append('<option value="' + data[catalog]['all_courses'][course]['title'] + '">' + data[catalog]['all_courses'][course]['title'] + '</option>'); 
+    }
+    all_course_names.sort();
+    for(let course in all_course_names) {
+        $("#classes").append('<option value="' + all_course_names[course] + '">' + all_course_names[course] + '</option>');
+    }
 
     // Clear out whatever is in there currently
     boxSection.innerHTML = "";
@@ -124,6 +141,24 @@ function catalogClicked(){
     $('.leader-line').remove();
     generateReqs(true);
     generateReqs(false);
+}
+
+function classClicked() {
+    let course = $("#dropDownClass").val()
+    let catalog = $("#dropDownWrite").val()
+    let message = "";
+
+    console.log(data[catalog]['all_courses'][course])
+
+    message += "Title: " + data[catalog]['all_courses'][course]['title'] + "\n\n";
+    message += "Description: " + data[catalog]['all_courses'][course]['full_description'] + "\n\n";
+    message += "Prerequisites: " + data[catalog]['all_courses'][course]['prereqs'] + "\n\n";
+    message += "Corequisites: " + data[catalog]['all_courses'][course]['coreqs'] + "\n\n";
+
+    window.alert(message);
+
+    let select = document.getElementById('dropDownClass');
+    select.value = '';
 }
 
 // Parameter prereq is true if generating prereqs, false for coreqs
